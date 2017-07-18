@@ -426,19 +426,19 @@ namespace CommonPortCmd
                         Thread.Sleep(100);
                     }
                 }
-                while (true)
-                {
-                    SendCommand("3站前白卡上升检测",out recStr);
-                    if (recStr == "status=OK")
-                    {
-                        break;
+                //while (true)
+                //{
+                //    SendCommand("3站前白卡上升检测",out recStr);
+                //    if (recStr == "status=OK")
+                //    {
+                //        break;
 
-                    }
-                    else
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
+                //    }
+                //    else
+                //    {
+                //        Thread.Sleep(100);
+                //    }
+                //}
 
                 strHex = "72 05 13 02 02 00 81";
                 SendHex(strHex, out recStr);
@@ -694,7 +694,7 @@ namespace CommonPortCmd
         {
             
             /* 3站45度放平检测
-             * 3站前白卡上升检测
+             * 3站前白卡上升检测   富士康设备注销该命令
              * 4站天板远离检测
              * 5站隔离上升检测
              * 5站人工耳远离检测

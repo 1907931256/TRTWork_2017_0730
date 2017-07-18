@@ -466,12 +466,6 @@ namespace GeneralTst
                         PhoneCmd_.ExecuteSendData(sendCmd, out str);
                     }
                     
-                    //if (sendCmd == "Wifi state")
-                    //{
-                    //    int num_ = str.IndexOf("ip");
-                    //    string ip_ = str.Substring(num_ + 3);
-                    //    PhoneIp = ip_.Remove(ip_.Length - 1);
-                    //}
                 }
                 else
                 {

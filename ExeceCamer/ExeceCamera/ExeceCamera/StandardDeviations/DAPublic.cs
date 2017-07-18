@@ -351,7 +351,7 @@ namespace StandardDeviations
         /// <param name="t"></param>
         /// <param name="indexs"></param>
         /// <param name="new_t"></param>
-        public static void GetNewData(double[] t, int[] indexs, out double[] new_t)
+        public  void GetNewData(double[] t, int[] indexs, out double[] new_t)
         {
 
             List<double> t_List = t.ToList();
@@ -375,7 +375,7 @@ namespace StandardDeviations
         /// <param name="dt"></param>
         /// <param name="coloumnName"></param>
         /// <returns></returns>
-        public static double[] GetDataCateReturnDouble(DataTable dt, string coloumnName, string flag)
+        public double[] GetDataCateReturnDouble(DataTable dt, string coloumnName, string flag)
         {
             ArrayList aList = new ArrayList();
             ArrayList aList_ = new ArrayList();
@@ -407,7 +407,7 @@ namespace StandardDeviations
 
         }
 
-        public static string[] GetDataCateReturnString(DataTable dt, string coloumnName)
+        public string[] GetDataCateReturnString(DataTable dt, string coloumnName)
         {
             ArrayList aList = new ArrayList();
 
@@ -426,7 +426,7 @@ namespace StandardDeviations
         /// 根据行号得到数据
         /// </summary>
         /// <returns></returns>
-        public static DataTable GetDataFromIndexsReturnString(int[] indexs)
+        public DataTable GetDataFromIndexsReturnString(int[] indexs)
         {
             DataTable table = new DataTable("ErrorDatas");
             table.Columns.Add("Filename");
@@ -435,11 +435,6 @@ namespace StandardDeviations
 
 
         }
-
-
-
-
-
 
         ///// <summary>
         ///// 流程控制

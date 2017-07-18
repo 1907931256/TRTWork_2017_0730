@@ -78,6 +78,16 @@ namespace ExeceCamera
             //根据下标找到照片
             //让用户确认照片的去留
             //根据用户的选择确定系数
+            double[] r_g_1=dapublic_.GetDataCateReturnDouble(dt, "R/G_1", "0");
+            Get
+
+
+
+
+
+
+
+
 
         }
 

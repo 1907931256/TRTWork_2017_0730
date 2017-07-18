@@ -6,14 +6,24 @@
         /// 中文命令
         /// </summary>
         private string cmd;
+
+        public string Cmd
+        {
+            get { return cmd; }
+            set { cmd = value; }
+        }
         
         /// <summary>
         /// 对应的下位机命令
         /// </summary>
         private string cmdHex;
 
-        public string Cmd { get => cmd; set => cmd = value; }
-        public string CmdHex { get => cmdHex; set => cmdHex = value; }
+        public string CmdHex
+        {
+            get { return cmdHex; }
+            set { cmdHex = value; }
+        }
+
 
       
     }
