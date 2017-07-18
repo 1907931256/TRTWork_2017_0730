@@ -353,32 +353,32 @@ namespace CommonPortCmd
         {
             string strHex = string.Empty;
 
-            if (strCmd == "到位检测")
-            {
-                strHex = "72 05 " + station + " 01 01 FF 81";
+            //if (strCmd == "到位检测")
+            //{
+            //    strHex = "72 05 " + station + " 01 01 FF 81";
 
-                SendHex(strHex, out recStr);
-                Log.Debug(strCmd + "==" + recStr);
+            //    SendHex(strHex, out recStr);
+            //    Log.Debug(strCmd + "==" + recStr);
 
-                return true;
-            }
-            else if (strCmd == "报警")
-            {
-                if (station != "11")
-                {
-                    strHex = "72 05 " + station + " 05 01 00 81";
-                }
-                else
-                {
-                    strHex = "72 05 11 05 18 00 81";
-                }
+            //    return true;
+            //}
+            //else if (strCmd == "报警")
+            //{
+            //    if (station != "11")
+            //    {
+            //        strHex = "72 05 " + station + " 05 01 00 81";
+            //    }
+            //    else
+            //    {
+            //        strHex = "72 05 11 05 18 00 81";
+            //    }
 
 
-                SendHex(strHex, out recStr);
-                Log.Debug(strCmd + "==" + recStr);
-                return true;
-            }
-            else if (strCmd == "复位")
+            //    SendHex(strHex, out recStr);
+            //    Log.Debug(strCmd + "==" + recStr);
+            //    return true;
+            //}
+            if (strCmd == "复位")
             {
                 strHex = "72 04 " + station + " 5A FF 81";
 

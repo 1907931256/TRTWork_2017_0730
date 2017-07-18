@@ -134,10 +134,11 @@ e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Propert
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station1.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station2.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station3.resources
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station5.resources
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station6.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\Station.Station4.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\硬件.csproj.GenerateResource.Cache
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\硬件.exe.manifest
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\硬件.application
-E:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Release\硬件.csprojResolveAssemblyReference.cache
+E:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Release\CommonPortCmd.dll
+E:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Release\log4net.dll
+E:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Release\Newtonsoft.Json.dll
+E:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Release\CommonPortCmd.pdb

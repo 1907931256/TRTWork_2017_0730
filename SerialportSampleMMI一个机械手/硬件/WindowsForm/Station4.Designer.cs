@@ -48,6 +48,7 @@
             this.buttonXin4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -73,7 +74,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.PortConnectFlag = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_BaiGuang)).BeginInit();
@@ -297,6 +297,7 @@
             this.button9.TabIndex = 19;
             this.button9.Text = "4站状态指示灯";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // comBox_ZhiShiDeng_1
             // 
@@ -305,6 +306,18 @@
             this.comBox_ZhiShiDeng_1.Name = "comBox_ZhiShiDeng_1";
             this.comBox_ZhiShiDeng_1.Size = new System.Drawing.Size(56, 20);
             this.comBox_ZhiShiDeng_1.TabIndex = 18;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(13, 68);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(78, 16);
+            this.checkBox11.TabIndex = 14;
+            this.checkBox11.Tag = "4站测试完成";
+            this.checkBox11.Text = "4站测试中";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox22
             // 
@@ -601,18 +614,6 @@
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "信号检测";
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(13, 68);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(78, 16);
-            this.checkBox11.TabIndex = 14;
-            this.checkBox11.Tag = "4站测试完成";
-            this.checkBox11.Text = "4站测试中";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            this.checkBox11.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // Station4
             // 

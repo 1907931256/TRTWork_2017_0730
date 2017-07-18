@@ -136,5 +136,31 @@ namespace Station
         {
             txtXianShi.Text = "";
         }
+
+        /// <summary>
+        /// 状态指示灯
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string s = string.Empty;
+            if (comBox_ZhiShiDeng_1.Text == "绿灯")
+            {
+                //00H绿 / FFH红 / AAH黄
+                s = "00";
+            }
+            else if (comBox_ZhiShiDeng_1.Text == "红灯")
+            {
+                s = "255";
+            }
+            else if (comBox_ZhiShiDeng_1.Text == "黄灯")
+            {
+                s = "170";
+            }
+            EquipmentCmd.Instance.SendCommand(button9.Text, s, out res);
+            string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
+            txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button9.Text + "-->" + res + "    " + resHexs + "\r\n");
+        }
     }
 }
