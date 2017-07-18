@@ -1,0 +1,11 @@
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\TimeTest.exe.config
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\TimeTest.exe
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\TimeTest.pdb
+E:\TRTWork\NPOI\TimeTest\TimeTest\obj\Debug\TimeTest.csprojResolveAssemblyReference.cache
+E:\TRTWork\NPOI\TimeTest\TimeTest\obj\Debug\TimeTest.exe
+E:\TRTWork\NPOI\TimeTest\TimeTest\obj\Debug\TimeTest.pdb
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\NPOI.OOXML.dll
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\NPOI.OpenXml4Net.dll
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\TRTWork\NPOI\TimeTest\TimeTest\bin\Debug\NPOI.xml

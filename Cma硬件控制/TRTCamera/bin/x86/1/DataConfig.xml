@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Main>
+  <Type PC-Stance="1" Model="CAM"/>
+  <!--PC-Stance表示电脑站位，egMMI有6个站位分别对应1~6-->
+  <!--Model表示设备类别  eg MMI CAM-->
+</Main>

@@ -1,0 +1,7 @@
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\bin\x86\Debug\Test.exe
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\bin\x86\Debug\Test.pdb
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\bin\x86\Debug\MathNet.Numerics.dll
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\bin\x86\Debug\MathNet.Numerics.xml
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\obj\x86\Debug\Test.exe
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\obj\x86\Debug\Test.pdb
+E:\TRTWork\ExeceCamer\ExeceCamera\Test\obj\x86\Debug\Test.csprojResolveAssemblyReference.cache

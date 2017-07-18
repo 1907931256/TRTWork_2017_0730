@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CmdPackage>
+	<Cmd name="6站状态正常" Loop="1">
+		<before name="6站手机固定" Res="OK"/>
+		<before name="6站音量+按下" Res="OK"/>
+		<after name="6站吸盘吸合" Res="OK"/>
+	</Cmd>
+</CmdPackage>

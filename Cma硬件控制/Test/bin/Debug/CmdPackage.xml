@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CmdPackage>
+	<Cmd name="6站手机固定" Loop="1">
+		<Before action="6站USB插入" Res="OK"/>
+		<Before action="延时 2000" Res="OK"/>
+		<After action="6站状态正常" Res="OK"/>
+		<After action="延时 2000" Res="OK"/>
+		<After action="6站复位信号" Res="OK"/>
+	</Cmd>
+</CmdPackage>

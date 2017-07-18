@@ -1,0 +1,6 @@
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\bin\Debug\log4net.dll
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+e:\TRTWork\CommPortDll0_CAM\ClassLibraryDll\obj\Debug\CommonPortCmd_CAM.csprojResolveAssemblyReference.cache

@@ -1,0 +1,8 @@
+E:\TRTWork\NPOI\TimeTest\Log4Net\bin\Debug\Log4Net.exe.config
+E:\TRTWork\NPOI\TimeTest\Log4Net\bin\Debug\Log4Net.exe
+E:\TRTWork\NPOI\TimeTest\Log4Net\bin\Debug\Log4Net.pdb
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.Form1.resources
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.Properties.Resources.resources
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.csproj.GenerateResource.Cache
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.exe
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.pdb

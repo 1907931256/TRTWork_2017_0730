@@ -1,0 +1,5 @@
+E:\ysyWork\Work\CommPortDll - 副本\PortCmdDAL\bin\Debug\PortCmdDAL.dll
+E:\ysyWork\Work\CommPortDll - 副本\PortCmdDAL\bin\Debug\PortCmdDAL.pdb
+E:\ysyWork\Work\CommPortDll - 副本\PortCmdDAL\bin\Debug\System.Data.SQLite.dll
+E:\ysyWork\Work\CommPortDll - 副本\PortCmdDAL\obj\Debug\PortCmdDAL.dll
+E:\ysyWork\Work\CommPortDll - 副本\PortCmdDAL\obj\Debug\PortCmdDAL.pdb

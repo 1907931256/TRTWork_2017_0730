@@ -1,0 +1,4 @@
+1.导入log4net.dll,在项目中添加引用 
+2.导入log4net.config
+3.在Properties.AssemblyInfo.cs中加入
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "Log4Net.config", ConfigFileExtension = "config", Watch = true)]

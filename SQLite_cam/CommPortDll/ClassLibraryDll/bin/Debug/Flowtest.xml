@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="设备操作" action="2站色卡中光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Property name="2站色卡中光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	<!--
+	<Item id="2">
+		<Method name="设备操作" action="3站解析远离检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站解析远离检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="1">
+		</Property>
+	</Item><Item id="3">
+		<Method name="设备操作" action="3站45度放平检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站45度放平检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item><Item id="4">
+		<Method name="设备操作" action="3站45度顶起检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站45度顶起检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="3">
+		</Property>
+	</Item><Item id="5">
+		<Method name="设备操作" action="3站前白光源靠近检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前白光源靠近检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="4">
+		</Property>
+	</Item><Item id="6">
+		<Method name="设备操作" action="3站前白光源远离检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前白光源远离检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="5">
+		</Property>
+	</Item><Item id="7">
+		<Method name="设备操作" action="3站取放上升检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站取放上升检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="6">
+		</Property>
+	</Item><Item id="8">
+		<Method name="设备操作" action="3站取放下降检测" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站取放下降检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="7">
+		</Property>
+	</Item><Item id="9">
+		<Method name="设备操作" action="1站原点检测3" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="1站原点检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="8">
+		</Property>
+	</Item><Item id="10">
+		<Method name="设备操作" action="1站状态检测3" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="1站状态检测">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="9">
+		</Property>
+	</Item><Item id="11">
+		<Method name="设备操作" action="3站手机固定" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站手机固定">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="10">
+		</Property>
+	</Item><Item id="12">
+		<Method name="设备操作" action="3站手机松开" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站手机松开">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="11">
+		</Property>
+	</Item><Item id="13">
+		<Method name="设备操作" action="3站45度顶起" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站45度顶起">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="12">
+		</Property>
+	</Item><Item id="14">
+		<Method name="设备操作" action="3站45度放平" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站45度放平">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="13">
+		</Property>
+	</Item><Item id="15">
+		<Method name="设备操作" action="3站前白光源靠近" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前白光源靠近">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="14">
+		</Property>
+	</Item><Item id="16">
+		<Method name="设备操作" action="3站前白光源远离" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前白光源远离">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="15">
+		</Property>
+	</Item><Item id="17">
+		<Method name="设备操作" action="3站解析靠近" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站解析靠近">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="16">
+		</Property>
+	</Item><Item id="18">
+		<Method name="设备操作" action="3站解析远离" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站解析远离">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="17">
+		</Property>
+	</Item><Item id="19">
+		<Method name="设备操作" action="3站光源上升" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站光源上升">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="18">
+		</Property>
+	</Item><Item id="20">
+		<Method name="设备操作" action="3站光源下降" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站光源下降">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="19">
+		</Property>
+	</Item><Item id="21">
+		<Method name="设备操作" action="3站取放上升" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站取放上升">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="20">
+		</Property>
+	</Item><Item id="22">
+		<Method name="设备操作" action="3站取放下降" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站取放下降">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="21">
+		</Property>
+	</Item><Item id="23">
+		<Method name="设备操作" action="3站夹具固定" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站夹具固定">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="22">
+		</Property>
+	</Item><Item id="24">
+		<Method name="设备操作" action="3站夹具松开" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站夹具松开">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="23">
+		</Property>
+	</Item><Item id="25">
+		<Method name="设备操作" action="3站前色卡上光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前色卡上光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="24">
+		</Property>
+	</Item><Item id="26">
+		<Method name="设备操作" action="3站前色卡中光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站前色卡中光源调节" parameters="0" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前色卡中光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="25">
+		</Property>
+	</Item><Item id="27">
+		<Method name="设备操作" action="3站前色卡下光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站前色卡下光源调节" parameters="0" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前色卡下光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="26">
+		</Property>
+	</Item><Item id="28">
+		<Method name="设备操作" action="3站前白光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站前白光源调节" parameters="0" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站前白光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="27">
+		</Property>
+	</Item><Item id="29">
+		<Method name="设备操作" action="3站后白光源调节" parameters="100" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站后白光源调节" parameters="0" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站后白光源调节">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="28">
+		</Property>
+	</Item><Item id="30">
+		<Method name="设备操作" action="3站报警" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站报警正常" parameters="" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站报警">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="29">
+		</Property>
+	</Item><Item id="31">
+		<Method name="设备操作" action="3站状态正常" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站状态">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="30">
+		</Property>
+	</Item><Item id="32">
+		<Method name="设备操作" action="3站状态指示灯绿" parameters="" compare="S==" spec="OK" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="3站状态指示灯">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="30">
+		</Property>
+	
+	</Item>
+	-->
+	</Main>

@@ -1,0 +1,21 @@
+E:\CWorkSpace\CommPortDll\Test\bin\Release\Test.exe.config
+E:\CWorkSpace\CommPortDll\Test\obj\Release\Test.csprojResolveAssemblyReference.cache
+E:\CWorkSpace\CommPortDll\Test\bin\Release\Test.exe
+E:\CWorkSpace\CommPortDll\Test\bin\Release\Test.pdb
+E:\CWorkSpace\CommPortDll\Test\bin\Release\CommonPortCmd.dll
+E:\CWorkSpace\CommPortDll\Test\bin\Release\CommonPortCmd.pdb
+E:\CWorkSpace\CommPortDll\Test\obj\Release\Test.exe
+E:\CWorkSpace\CommPortDll\Test\obj\Release\Test.pdb
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\Test.exe.config
+e:\ysyWork\Work\CommPortDll\Test\obj\Release\Test.exe
+e:\ysyWork\Work\CommPortDll\Test\obj\Release\Test.pdb
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\Test.exe
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\Test.pdb
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\CommonPortCmd.dll
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\log4net.dll
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\System.Data.SQLite.dll
+e:\ysyWork\Work\CommPortDll\Test\bin\Release\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll\Test\obj\Release\Test.csprojResolveAssemblyReference.cache
+e:\ysyWork\Work\CommPortDll - 副本\Test\bin\Release\Test.exe.config
+e:\ysyWork\Work\CommPortDll - 副本\Test\obj\Release\Test.exe
+e:\ysyWork\Work\CommPortDll - 副本\Test\obj\Release\Test.pdb

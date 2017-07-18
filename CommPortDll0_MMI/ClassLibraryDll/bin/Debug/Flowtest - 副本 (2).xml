@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="设备操作" action="6站产品到位检测" parameters="" compare="S==" spec="OK"  disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Property name="产品到位">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="6000">
+		</Property><Property hide="">
+		</Property><Property depand="">
+		</Property>
+	</Item><Item id="2">
+		<Method name="延时" action="延时" parameters="3000" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depand="1">
+		</Property>
+	</Item>
+	
+</Main>

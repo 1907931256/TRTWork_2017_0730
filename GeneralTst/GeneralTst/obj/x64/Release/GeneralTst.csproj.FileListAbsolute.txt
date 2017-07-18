@@ -1,0 +1,10 @@
+e:\TRTWork\GeneralTst\GeneralTst\bin\x64\Release\GeneralTst.exe
+e:\TRTWork\GeneralTst\GeneralTst\bin\x64\Release\GeneralTst.pdb
+e:\TRTWork\GeneralTst\GeneralTst\bin\x64\Release\log4net.dll
+e:\TRTWork\GeneralTst\GeneralTst\bin\x64\Release\Microsoft.DirectX.DirectSound.dll
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.csprojResolveAssemblyReference.cache
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.General.resources
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.Properties.Resources.resources
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.csproj.GenerateResource.Cache
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.exe
+e:\TRTWork\GeneralTst\GeneralTst\obj\x64\Release\GeneralTst.pdb

@@ -1,0 +1,10 @@
+E:\ysyWork\SQLite\CmdNameDAL\obj\x86\Release\CmdNamDAl.csprojResolveAssemblyReference.cache
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\CmdNameDAL.dll.config
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\CmdNameDAL.dll
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\CmdNameDAL.pdb
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\CmdNameModel.dll
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\System.Data.SQLite.dll
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\bin\x86\Release\CmdNameModel.pdb
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\obj\x86\Release\CmdNamDAl.csprojResolveAssemblyReference.cache
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\obj\x86\Release\CmdNameDAL.dll
+e:\ysyWork\Work\SQLite_cam\CmdNameDAL\obj\x86\Release\CmdNameDAL.pdb

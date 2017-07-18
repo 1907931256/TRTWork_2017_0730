@@ -1,0 +1,17 @@
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe.config
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.pdb
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.exe
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.pdb
+E:\ysyWork\CommPortDll\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.csprojResolveAssemblyReference.cache
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe.config
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.exe
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.pdb
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.pdb
+F:\WorkSource\CWorkSpace\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.csprojResolveAssemblyReference.cache
+E:\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe.config
+E:\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.exe
+E:\CWorkSpace\CommPortDll\AutoResetEvent\bin\Debug\AutoResetEvent.pdb
+E:\CWorkSpace\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.exe
+E:\CWorkSpace\CommPortDll\AutoResetEvent\obj\Debug\AutoResetEvent.pdb

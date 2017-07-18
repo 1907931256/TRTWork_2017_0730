@@ -1,0 +1,15 @@
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.Form1.resources
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.Properties.Resources.resources
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.csproj.GenerateResource.Cache
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\bin\Debug\TRTSpec.exe
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\bin\Debug\TRTSpec.pdb
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.exe
+e:\ysyWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.pdb
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\bin\Debug\TRTSpec.exe
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\bin\Debug\TRTSpec.pdb
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.Form1.resources
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.Properties.Resources.resources
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.RowMergeView.resources
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.csproj.GenerateResource.Cache
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.exe
+E:\TRTWork\TRT配置编辑工具\TRTSpec\TRTSpec\obj\Debug\TRTSpec.pdb

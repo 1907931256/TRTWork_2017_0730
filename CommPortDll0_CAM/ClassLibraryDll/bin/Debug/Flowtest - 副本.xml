@@ -1,0 +1,1583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="命令行操作" action="ADB命令" parameters="devices" compare="S==" spec="device" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="adb状态">
+		</Property><Property spec="device">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="30">
+		</Property><Property hide="">
+		</Property><Property depend="">
+		</Property>
+	</Item><Item id="2">
+		<Method name="辅助操作" action="APK安装" parameters="" compare="S==" spec="Pass" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="APK安装">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="结果">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="1">
+		</Property>
+	</Item><Item id="3">
+		<Method name="命令行操作" action="ADB命令" parameters="getFocusedActivity" compare="S==" spec="com.qwebob.generaldev/.GeneralDevActivity" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" spec="" disable="" bedepend="" depend="1">
+		</Method><Property name="3">
+		</Property><Property spec="com.qwebob.generaldev/.GeneralDevActivity">
+		</Property><Property specdescribe="FocusedActivity">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="100">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item><Item id="4">
+		<Method name="手机操作" action="APK通信连接" parameters="" compare="S==" spec="Pass" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="APK通信连接">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="结果">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="3">
+		</Property>
+	</Item><Item id="5">
+		<Method name="手机操作" action="Wifi open" parameters="" compare="S==" spec="PASS"  disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="3000" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="Wifi-open">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="open">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="4">
+		</Property>
+	</Item><Item id="6">
+		<Method name="手机操作" action="Wifi find" parameters="DDG" compare="S==" spec="pass" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="Wifi find" parameters="DDG" compare="S==" spec="pass" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="Wifi-find">
+		</Property><Property spec="pass">
+		</Property><Property specdescribe="名称">
+		</Property><Property enspecdescribe="find">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="5">
+		</Property>
+	</Item><Item id="7">
+		<Method name="手机操作" action="Wifi connect" parameters="DDG DDG123456" compare="S==" spec="PASS"  disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="wifi_connect">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="wifi_connect">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="6">
+		</Property>
+	</Item><Item id="8">
+		<Method name="手机操作" action="GetDevInfo" parameters="" comparetype="" compare="S==$S==$S==" spec="Lenovo$A2020a40 A2020a40_S189_161109_ROW M8909EAAAANVZM-1.46590.1.66140.1" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" comparetype="" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="GetDevInfo" parameters="" comparetype="" compare="S==$S==$S==" spec="Lenovo$A2020a40 A2020a40_S189_161109_ROW M8909EAAAANVZM-1.46590.1.66140.1" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="50" comparetype="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="版本信息">
+		</Property><Property spec="Lenovo$A2020a40 A2020a40_S189_161109_ROW M8909EAAAANVZM-1.46590.1.66140.1">
+		</Property><Property specdescribe="Model AP BB">
+		</Property><Property enspecdescribe="Model AP BB">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1 1 1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="2">
+		</Property><Property hide="">
+		</Property><Property depend="7">
+		</Property>
+	</Item><Item id="9">
+		<Method name="手机操作" action="GetSDCInfo" parameters="all" compare="D[]$D[]" spec="2000~36000 2000~36000"  disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="手机内存">
+		</Property><Property spec="2000~36000 2000~36000">
+		</Property><Property specdescribe="总量 余量">
+		</Property><Property enspecdescribe="Total1 Avail1">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="MB MB">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1 1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="8">
+		</Property>
+	</Item><Item id="10">
+		<Method name="手机操作" action="GetSDCInfo" parameters="all" compare="D[]$D[]" spec="2000~36000 2000~36000"  disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="SD卡">
+		</Property><Property spec="2000~36000 2000~36000">
+		</Property><Property specdescribe="总量 余量">
+		</Property><Property enspecdescribe="Total2 Avail2">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="MB MB">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1 1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="9">
+		</Property>
+	</Item><Item id="11">
+		<Method name="手机操作" action="BTOpen" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="BTOpen">
+		</Property><Property spec="">
+		</Property><Property specdescribe="BT">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="10">
+		</Property>
+	</Item><Item id="12">
+		<Method name="手机操作" action="Wifi state" parameters="" compare="D==$S[]" spec="1 ."  disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="Wifi state" parameters="" compare="D==$S[]" spec="1 ."  disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Property name="Wifi状态">
+		</Property><Property spec="1 .">
+		</Property><Property specdescribe="状态 IP">
+		</Property><Property enspecdescribe="connect ip">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1 1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="2">
+		</Property><Property hide="">
+		</Property><Property depend="11">
+		</Property>
+	</Item><Item id="13">
+		<Method name="手机操作" action="Gps" parameters="state" compare="S==" spec="open" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec=""  disable="" bedepand="" depand="">
+		</Method><Property name="Gps">
+		</Property><Property spec="open">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="state">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="12">
+		</Property>
+	</Item><Item id="14">
+		<Method name="手机操作" action="GetProp gsm.sn1" parameters="" compare="D[]" spec="8" disable="" bedepand="" depand="">
+		</Method><Property name="SN">
+		</Property><Property spec="8">
+		</Property><Property specdescribe="SN">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="13">
+		</Property>
+	</Item><Item id="15">
+		<Method name="手机操作" action="GetCamInfo" parameters="" compare="S==" spec="Back" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Camera Back">
+		</Property><Property spec="Back">
+		</Property><Property specdescribe="有无">
+		</Property><Property enspecdescribe="Cam0">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="14">
+		</Property>
+	</Item><Item id="16">
+		<Method name="手机操作" action="CameraStart" parameters="back" compare="S==" spec="PASS" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="CameraStart" parameters="back" compare="S==" spec="PASS" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Back Open">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="预览">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="15">
+		</Property>
+	</Item><Item id="17">
+		<Method name="手机操作" action="CameraStart" parameters="setPicSize 1280*960*0*1280*960" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="1500" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="setPicSize">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="NearFocus$Size">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="16">
+		</Property>
+	</Item><Item id="18">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/NearFocus.jpg 100" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="近焦（后）">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="17">
+		</Property>
+	</Item><Item id="19">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/NearFocus.jpg E:\\IMAGES\\NearFocus.jpg" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="pull-NearFocus">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Nearfocus$pull">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="1">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="18">
+		</Property>
+	</Item><Item id="20">
+		<Method name="手机操作" action="CameraStart" parameters="setPicSize 4160*3120*0*1280*960" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="1500" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="setPicSize">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Tvline$Size">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="19">
+		</Property>
+	</Item><Item id="21">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/Back_Tvline.jpg 100" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="解析（后）">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="20">
+		</Property>
+	</Item><Item id="22">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/Back_Tvline.jpg E:\\IMAGES\\Back_Tvline.jpg" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="pull-Back_Tvline">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Back$Tvline$Pull">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="1">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="21">
+		</Property>
+	</Item><Item id="23">
+		<Method name="手机操作" action="BTScan" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="BT-Scan">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="BT$Scan">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="22">
+		</Property>
+	</Item><Item id="24">
+		<Method name="手机操作" action="Gps start" parameters="3" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="GPS">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="搜星开始">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="23">
+		</Property>
+	</Item><Item id="25">
+		<Method name="手机操作" action="SensorByTypeStart" parameters="1" compare="D[]$D[]$D[]" spec="-0.5~0.5 -0.5~0.5 9~10.5" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="80" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="SensorByTypeStart" parameters="1" compare="D[]$D[]$D[]" spec="-0.5~0.5 -0.5~0.5 9~10.5" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="80" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="重力传感器(0)">
+		</Property><Property spec="-0.5~0.5 -0.5~0.5 9~10.5">
+		</Property><Property specdescribe="X轴 Y轴 Z轴">
+		</Property><Property enspecdescribe="X Y Z">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1 1 1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="24">
+		</Property>
+	</Item><Item id="26">
+		<Method name="手机操作" action="SensorByTypeStop" parameters="1" comparemethod="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="26">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="25">
+		</Property>
+	</Item><Item id="27">
+		<Method name="手机操作" action="GetCamInfo" parameters="" compare="S==" spec="Front" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Camera Front">
+		</Property><Property spec="Front">
+		</Property><Property specdescribe="有无">
+		</Property><Property enspecdescribe="Cam1">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="26">
+		</Property>				
+	</Item><Item id="28">
+		<Method name="手机操作" action="CameraStart" parameters="front" compare="S==" spec="PASS" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="CameraStart" parameters="front" compare="S==" spec="PASS" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Front Open">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="预览">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="27">
+		</Property>
+	</Item><Item id="29">
+		<Method name="手机操作" action="CameraStart" parameters="setPicSize 2560*1920*0*1280*960" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="1500" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="setPicSize">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Front_Tvline$Size">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="28">
+		</Property>
+	</Item><Item id="30">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/Front_Tvline.jpg 0" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="解析(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Photo">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="29">
+		</Property>
+	</Item><Item id="31">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/Front_Tvline.jpg E:\\IMAGES\\Front_Tvline.jpg" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="pull-Front_Tvline">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Front_Tvline$Pull">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="30">
+		</Property>
+	</Item><Item id="32">
+		<Method name="手机操作" action="CameraStart" parameters="setPicSize 1280*960*0*1280*960" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="1500" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="setPicSize">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Front_White$Size">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="31">
+		</Property>
+	</Item><Item id="33">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/Front_White.jpg 0" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="白图片(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Photo">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="32">
+		</Property>
+	</Item><Item id="34">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/Front_White.jpg E:\\IMAGES\\Front_White.jpg" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="pull-Front_White">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Front_White$pull">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="33">
+		</Property>
+	</Item><Item id="35">
+		<Method name="手机操作" action="CameraStop" parameters="" comparemethod="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="300" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="35">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="相机关闭">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="34">
+		</Property>
+	</Item><Item id="36">
+		<Method name="手机操作" action="BTState" parameters="" compare="D大于等于$S[]" spec="1 ."  disable="" bedepand="0" depand="">
+		</Method><Method name="延时" action="延时" parameters="150" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="BTState" parameters="" compare="D大于等于$S[]" spec="1 ."  disable="" bedepand="" depand="1">
+		</Method><Property name="蓝牙">
+		</Property><Property spec="1 .">
+		</Property><Property specdescribe="AP数量 AP地址">
+		</Property><Property enspecdescribe="AP ADDR">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="35">
+		</Property>
+	</Item><Item id="37">
+		<Method name="手机操作" action="LCDStart" parameters="white %100" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="2000" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name=""LCDStart">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="white %100">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="36">
+		</Property>
+	</Item><Item id="38">
+		<Method name="手机操作" action="Torch open" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Torch open">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Torch open">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="37">
+		</Property>
+	</Item><Item id="39">
+		<Method name="手机操作" action="Torch close" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="Torch close">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="Torch close">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="38">
+		</Property>
+	</Item><Item id="40">
+		<Method name="手机操作" action="LCDStart" parameters="white %5" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="LCDStart">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="white %5">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="39">
+		</Property>
+	</Item><Item id="41">
+		<Method name="手机操作" action="KeyStart" parameters="home" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="41">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="KeyStart">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="40">
+		</Property>
+	</Item><Item id="42">
+		<Method name="手机操作" action="Gps state" parameters="" compare="D大于等于" spec="3" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="Gps state" parameters="" compare="D大于等于" spec="3" disable="" bedepand="" depand="1">
+		</Method><Property name="GPS">
+		</Property><Property spec="pass">
+		</Property><Property specdescribe="卫星数量">
+		</Property><Property enspecdescribe="num">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="41">
+		</Property>
+	</Item><Item id="43">
+		<Method name="手机操作" action="Gps stop" parameters="" compare="S==" spec="pass" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="43">
+		</Property><Property spec="pass">
+		</Property><Property specdescribe="Gps stop">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="42">
+		</Property>
+	</Item><Item id="44">
+		<Method name="手机操作" action="SensorByTypeStart" parameters="8" compare="D==" spec="5" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="60" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="SensorByTypeStart" parameters="8" compare="D==" spec="5" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="60" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="距离传感器(远)">
+		</Property><Property spec="5">
+		</Property><Property specdescribe="距离值">
+		</Property><Property enspecdescribe="X">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="43">
+		</Property>
+	</Item><Item id="45">
+		<Method name="手机操作" action="SensorByTypeStart" parameters="8" compare="D==" spec="0" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="60" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="SensorByTypeStart" parameters="8" compare="D==" spec="0" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="60" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="距离传感器(近)">
+		</Property><Property spec="0">
+		</Property><Property specdescribe="距离值">
+		</Property><Property enspecdescribe="X">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="44">
+		</Property>
+	</Item><Item id="46">
+		<Method name="手机操作" action="SensorByTypeStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="46">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="45">
+		</Property>
+	</Item><Item id="47">
+		<Method name="手机操作" action="BTClose" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="47">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="BTClose">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="46">
+		</Property>
+	</Item><Item id="48">
+		<Method name="手机操作" action="LCDStop" parameters="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="48">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="LCDStop">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="47">
+		</Property>
+	</Item><Item id="49">
+		<Method name="RStechCmd" action="SetAppPath" parameters="D:\Program Files\TrustSystem 9.1\TrustSystem 9.1.exe" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="49">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="48">
+		</Property>
+	</Item><Item id="50">
+		<Method name="手机操作" action="录音开始" parameters="wav /storage/emulated/0/mic.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="播放声音" parameters="D:\WAV\SF.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="50">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="49">
+		</Property>
+	</Item><Item id="51">
+		<Method name="延时" action="延时" parameters="1200" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="停止播放" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="51">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="50">
+		</Property>
+	</Item><Item id="52">
+		<Method name="手机操作" action="push" parameters="D:\WAV\SF.wav /storage/emulated/0/SF.wav" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="喇叭/听筒">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="音源上传">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="51">
+		</Property>
+	</Item><Item id="53">
+		<Method name="手机操作" action="RecordStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="53">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="52">
+		</Property>
+	</Item><Item id="54">
+		<Method name="手机操作" action="SetVolume" parameters="all %100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="录音" parameters="E:\\Rec.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="手机操作" action="AudioStart" parameters="Call /storage/emulated/0/SF.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="54">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="53">
+		</Property>
+	</Item><Item id="55">
+		<Method name="延时" action="延时" parameters="1200" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="停止录音" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="55">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="54">
+		</Property>
+	</Item><Item id="56">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/mic.wav E:\\mic.wav" comparetype="" compare="S==" spec="PASS" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="56">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="MIC$pull">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="55">
+		</Property>
+	</Item><Item id="57">
+		<Method name="手机操作" action="AudioStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="57">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="56">
+		</Property>
+	</Item><Item id="58">
+		<Method name="RStechCmd" action="TSCommand" parameters="Start" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="RStechCmd" action="Goto" parameters="MIC" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="58">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="57">
+		</Property>
+	</Item><Item id="59">
+		<Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="150" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="" depand="1">
+		</Method><Property name="59">
+		</Property><Property spec="1">
+		</Property><Property specdescribe="MIC结束">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="58">
+		</Property>
+	</Item><Item id="60">
+		<Method name="RStechCmd" action="Result" parameters="" compare="S==" spec="0" disable="" bedepand="" depand="">
+		</Method><Property name="主麦">
+		</Property><Property spec="0">
+		</Property><Property specdescribe="MIC结果">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="59">
+		</Property>
+	</Item><Item id="61">
+		<Method name="RStechCmd" action="TSCommand" parameters="Start" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="RStechCmd" action="Goto" parameters="REC" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="61">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="60">
+		</Property>
+	</Item><Item id="62">
+		<Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="150" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="" depand="1">
+		</Method><Property name="62">
+		</Property><Property spec="1">
+		</Property><Property specdescribe="REC结束">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="61">
+		</Property>
+	</Item><Item id="63">
+		<Method name="RStechCmd" action="Result" parameters="" compare="S==" spec="0" disable="" bedepand="" depand="">
+		</Method><Property name="听筒">
+		</Property><Property spec="0">
+		</Property><Property specdescribe="REC结果">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="62">
+		</Property>
+	</Item><Item id="64">
+		<Method name="手机操作" action="VibrateStart" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="64">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode=""
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="63">
+		</Property>
+	</Item><Item id="65">
+		<Method name="手机操作" action="SensorByTypeStart" parameters="5" compare="D[]" spec="10" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="55" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="SensorByTypeStart" parameters="5" compare="D[]" spec="10" disable="" bedepand="" depand="1">
+		</Method><Method name="延时" action="延时" parameters="55" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="光线传感器(暗)">
+		</Property><Property spec="10">
+		</Property><Property specdescribe="亮度值">
+		</Property><Property enspecdescribe="X">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="64">
+		</Property>
+	</Item><Item id="66">
+		<Method name="手机操作" action="SensorByTypeStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="66">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="65">
+		</Property>
+	</Item><Item id="67">
+		<Method name="手机操作" action="VibrateStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="设备操作" action="5站听筒关闭" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="67">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="66">
+		</Property>
+	</Item><Item id="68">
+		<Method name="手机操作" action="SetVolume" parameters="all %100" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="录音" parameters="E:\\Spk.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="手机操作" action="AudioStart" parameters="spk /storage/emulated/0/SF.wav" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="68">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="67">
+		</Property>
+	</Item><Item id="69">
+		<Method name="延时" action="延时" parameters="1400" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="音频操作" action="停止录音" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="69">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="68">
+		</Property>
+	</Item><Item id="70">
+		<Method name="手机操作" action="AudioStop" parameters="" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="70">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="69">
+		</Property>
+	</Item><Item id="71">
+		<Method name="RStechCmd" action="TSCommand" parameters="Start" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="RStechCmd" action="Goto" parameters="SPK" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="71">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="70">
+		</Property>
+	</Item><Item id="72">
+		<Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="1" depand="">
+		</Method><Method name="延时" action="延时" parameters="150" compare="" spec="" disable="" bedepand="" depand="1">
+		</Method><Method name="RStechCmd" action="TSEnd" parameters="" compare="S==" spec="1" disable="" bedepand="" depand="1">
+		</Method><Property name="72">
+		</Property><Property spec="1">
+		</Property><Property specdescribe="SPK结束">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="71">
+		</Property>
+	</Item><Item id="73">
+		<Method name="RStechCmd" action="Result" parameters="" compare="S==" spec="0" disable="" bedepand="" depand="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" spec="" disable="" bedepand="" depand="">
+		</Method><Property name="喇叭">
+		</Property><Property spec="0">
+		</Property><Property specdescribe="SPK结果">
+		</Property><Property enspecdescribe="value">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="72">
+		</Property>			
+	</Item><Item id="74">
+		<Method name="延时" action="延时" parameters="10000" compare="" spec=""  disable="" bedepand="" depand="1">
+		</Method><Method name="手机操作" action="APK通信断开" parameters="" compare="S==" spec="Pass" disable="" bedepend="" depend="">
+		</Method><Property name="APK通信断开">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="结果">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="73">
+		</Property>
+	</Item></Main>

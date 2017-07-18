@@ -1,0 +1,14 @@
+E:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\log4net.dll
+E:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\System.Data.SQLite.dll
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\All_Test.exe.config
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\All_Test.exe
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\All_Test.pdb
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CommonPortCmd.dll
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CmdNameDAL.dll
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CmdNameModel.dll
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CommonPortCmd.pdb
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CmdNameDAL.pdb
+e:\TRTWork\SQLite_New_All\All_Test\bin\x86\Debug\CmdNameModel.pdb
+e:\TRTWork\SQLite_New_All\All_Test\obj\x86\Debug\All_Test.csprojResolveAssemblyReference.cache
+e:\TRTWork\SQLite_New_All\All_Test\obj\x86\Debug\All_Test.exe
+e:\TRTWork\SQLite_New_All\All_Test\obj\x86\Debug\All_Test.pdb

@@ -1,0 +1,59 @@
+E:\CWorkSpace\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+E:\CWorkSpace\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+E:\CWorkSpace\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+E:\CWorkSpace\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+F:\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+F:\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+F:\Work\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+F:\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+F:\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+E:\CWorkSpace\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.csprojResolveAssemblyReference.cache
+E:\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+E:\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+E:\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+E:\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+E:\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+e:\ysyWork\Work\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+e:\ysyWork\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+e:\ysyWork\Work\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\CommonPortCmd.dll.config
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\log4net.dll
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\System.Data.SQLite.dll
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\PortCmdDAL.dll
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\bin\Debug\PortCmdDAL.pdb
+e:\ysyWork\Work\CommPortDll - 副本\ClassLibraryDll\obj\Debug\CommonPortCmd.csprojResolveAssemblyReference.cache
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll.config
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameDAL.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameModel.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\System.Data.SQLite.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameDAL.pdb
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameModel.pdb
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.csprojResolveAssemblyReference.cache
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+E:\ysyWork\CWorkSpace\SQLite\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll.config
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameDAL.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameModel.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\log4net.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\System.Data.SQLite.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameDAL.pdb
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\bin\Debug\CmdNameModel.pdb
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.csprojResolveAssemblyReference.cache
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+e:\ysyWork\SQLite\CommPortDll\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb

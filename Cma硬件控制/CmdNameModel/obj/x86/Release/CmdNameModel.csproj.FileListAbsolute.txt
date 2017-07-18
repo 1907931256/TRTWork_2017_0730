@@ -1,0 +1,4 @@
+E:\ysyWork\SQLite\CmdNameModel\bin\x86\Release\CmdNameModel.dll
+E:\ysyWork\SQLite\CmdNameModel\bin\x86\Release\CmdNameModel.pdb
+E:\ysyWork\SQLite\CmdNameModel\obj\x86\Release\CmdNameModel.dll
+E:\ysyWork\SQLite\CmdNameModel\obj\x86\Release\CmdNameModel.pdb

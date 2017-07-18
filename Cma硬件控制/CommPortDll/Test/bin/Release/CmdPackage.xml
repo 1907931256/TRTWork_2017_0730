@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CmdPackage>
+	<Cmd name="2站色卡中光源调节" Loop="1">
+		<action name="2站解析远离" Res="OK"/>
+		<action name="2站增距镜靠近" Res="OK"/>
+		<action name="2站增距镜远离" Res="OK"/>
+	</Cmd>
+</CmdPackage>

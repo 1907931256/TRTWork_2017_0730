@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Main>
+  <cmd name="1站产品到位检测" hex="72 05 11 01 01 FF 81" />
+   <cmd name="1站防呆检测" hex="72 05 11 01 02 FF 81" />
+  
+  
+  
+  
+  
+</Main>

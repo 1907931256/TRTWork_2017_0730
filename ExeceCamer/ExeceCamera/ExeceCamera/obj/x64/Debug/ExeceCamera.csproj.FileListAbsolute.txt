@@ -1,0 +1,10 @@
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x64\Debug\ExeceCamera.exe.config
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\Interop.LCC11.dll
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.csproj.ResolveComReference.cache
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x64\Debug\ExeceCamera.exe
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x64\Debug\ExeceCamera.pdb
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.Form1.resources
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.Properties.Resources.resources
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.csproj.GenerateResource.Cache
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.exe
+e:\ysyWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x64\Debug\ExeceCamera.pdb

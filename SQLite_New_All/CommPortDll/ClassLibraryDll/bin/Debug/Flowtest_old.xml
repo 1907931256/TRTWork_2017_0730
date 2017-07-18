@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="adb状态" action="" parameters="" compare="S==" spec="device" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Method name="adb状态" action="" parameters="" compare="S==" spec="device" disable="" bedepend="" depend="">
+		</Method><Property name="adb状态">
+		</Property><Property spec="device">
+		</Property><Property specdescribe="状态">
+		</Property><Property enspecdescribe="state">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="1">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	<Item id="2">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="延时">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	<Item id="3">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="延时">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>	
+	<Item id="4">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="延时">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="5">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="延时">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="6">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="6站音量+弹起">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="7">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="6站TP按下">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="8">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="6站USB拔出">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="9">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="6站吸盘吸合">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="10">
+		<Method name="延时" action="延时" parameters="1" compare="" spec="" disable="" bedepend="" depend="">
+		</Method><Property name="6站耳机插入">
+		</Property><Property spec="">
+		</Property><Property specdescribe="">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+
+
+
+
+
+
+	
+</Main>
