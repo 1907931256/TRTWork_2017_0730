@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTest", "TimeTest\TimeTest.csproj", "{5536924B-F862-4CAC-81BA-DF4ECF1C47B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4Net", "Log4Net\Log4Net.csproj", "{D623EF5A-42B9-400A-89C3-101818EB4FAC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRestEventTest_", "AutoRestEventTest\AutoRestEventTest_.csproj", "{296E2E95-B8AD-4DD2-BDA1-448C44D1D13F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{D623EF5A-42B9-400A-89C3-101818EB4FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D623EF5A-42B9-400A-89C3-101818EB4FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D623EF5A-42B9-400A-89C3-101818EB4FAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{296E2E95-B8AD-4DD2-BDA1-448C44D1D13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{296E2E95-B8AD-4DD2-BDA1-448C44D1D13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{296E2E95-B8AD-4DD2-BDA1-448C44D1D13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{296E2E95-B8AD-4DD2-BDA1-448C44D1D13F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

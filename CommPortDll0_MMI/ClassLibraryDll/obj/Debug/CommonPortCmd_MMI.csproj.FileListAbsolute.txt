@@ -1,6 +1,6 @@
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\log4net.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\Newtonsoft.Json.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\CommonPortCmd.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\CommonPortCmd.pdb
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\log4net.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Debug\Newtonsoft.Json.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Debug\CommonPortCmd.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Debug\CommonPortCmd.pdb
