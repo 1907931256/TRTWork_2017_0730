@@ -1,6 +1,0 @@
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Release\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Release\CommonPortCmd.pdb
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Release\log4net.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\Release\Newtonsoft.Json.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Release\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\Release\CommonPortCmd.pdb

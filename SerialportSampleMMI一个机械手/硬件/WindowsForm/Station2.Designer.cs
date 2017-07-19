@@ -792,8 +792,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Button1;
-        private System.Windows.Forms.Button Button2;
         private System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Button Button4;
         private System.Windows.Forms.Button Button5;

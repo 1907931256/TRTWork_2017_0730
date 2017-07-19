@@ -606,7 +606,6 @@
         private System.Windows.Forms.TextBox txtXianShi;
         private System.Windows.Forms.Label PortConnectFlag;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox22;
         private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -634,11 +633,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button11;
