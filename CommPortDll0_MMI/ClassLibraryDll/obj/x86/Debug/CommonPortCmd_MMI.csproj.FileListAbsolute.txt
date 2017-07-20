@@ -1,7 +1,6 @@
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\CommonPortCmd.pdb
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\log4net.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\Newtonsoft.Json.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\x86\Debug\CommonPortCmd.dll
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\x86\Debug\CommonPortCmd.pdb
-e:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\x86\Debug\CommonPortCmd_MMI.csprojResolveAssemblyReference.cache
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\CommonPortCmd.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\CommonPortCmd.pdb
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\log4net.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\bin\x86\Debug\Newtonsoft.Json.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\x86\Debug\CommonPortCmd.dll
+E:\TRTWork\CommPortDll0_MMI\ClassLibraryDll\obj\x86\Debug\CommonPortCmd.pdb

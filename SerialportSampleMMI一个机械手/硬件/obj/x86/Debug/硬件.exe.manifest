@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>QG7XBt7/p/1FhsTDoUAz6QiCcXE=</dsig:DigestValue>
+        <dsig:DigestValue>uM9UvGLhQLj+kOYBgqV1uvko5s4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="硬件.exe" size="3775488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="硬件.exe" size="3776000">
       <assemblyIdentity name="硬件" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>eOo5d+uueFDyt/sIQsJdFXpV0uo=</dsig:DigestValue>
+        <dsig:DigestValue>aleiRTPThOV9xjn7YI6eaVTIkpI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

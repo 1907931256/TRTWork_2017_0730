@@ -16,7 +16,7 @@ namespace Station
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Station5());
+            Application.Run(new Station1());
             StartConnectPortThread();
         }
 

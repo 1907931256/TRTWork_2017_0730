@@ -83,6 +83,8 @@ namespace CommonPortCmd
            int countPram= Regex.Matches(str, @" ").Count;//利用正则表达式
            string[] strPram = new string[countPram + 1];//创建一个数组保存参数数据
              ArrayList lt = new ArrayList(); //存放空格出现的位置
+
+
            if (countPram>0)
            {
                int index = 0;
@@ -109,27 +111,35 @@ namespace CommonPortCmd
                    }
                  
                }
-               //for (int i = 0; i < strPram.Length; i++)
-               //{
-               //  strPram[i]=ShujuChuli.StrToGaoDiWei(strPram[i]);
-               //  strReturn += strPram[i]+" ";
-               //}
-               #region  针对trt机械手做特殊处理
-               strPram[0] = ShujuChuli.StrToGaoDiWei(strPram[0]);
-               strPram[1] = ShujuChuli.StrToGaoDiWei(strPram[1]);
-               strPram[2] = ShujuChuli.StrToHex(strPram[2]);
-               strPram[3] = ShujuChuli.StrToHex(strPram[3]);
-               strPram[4] = ShujuChuli.StrToHex(strPram[4]);
-               strPram[5] = ShujuChuli.StrToGaoDiWei(strPram[5]);
-               strReturn = strPram[0] + " " + strPram[1] + " " + strPram[2]+ " " + strPram[3]+ " " + strPram[4]+ " " + strPram[5];
-               #endregion
-
            }
-           else
+            if (countPram==5)//机械手处理
+	        {
+                       #region  针对trt机械手做特殊处理
+                       strPram[0] = ShujuChuli.StrToGaoDiWei(strPram[0]);
+                       strPram[1] = ShujuChuli.StrToGaoDiWei(strPram[1]);
+                       strPram[2] = ShujuChuli.StringToHexString(strPram[2]);
+                       strPram[3] = ShujuChuli.StringToHexString(strPram[3]);
+                       strPram[4] = ShujuChuli.StringToHexString(strPram[4]);
+                       strPram[5] = ShujuChuli.StrToGaoDiWei(strPram[5]);
+                       strReturn = strPram[0] + " " + strPram[1] + " " + strPram[2] + " " + strPram[3] + " " + strPram[4] + " " + strPram[5];
+                       #endregion
+	        }
+           else if (countPram==2)
+	        {
+                strPram[0] = ShujuChuli.StringToHexString(strPram[0]);
+                strPram[1] = ShujuChuli.StringToHexString(strPram[1]);
+                strPram[2] = ShujuChuli.StringToHexString(strPram[2]);
+                strReturn = strPram[0] + " " + strPram[1] + " " + strPram[2];
+	        }
+           else //参数只有一个
            {
-                strReturn = Convert.ToString(Convert.ToInt32(str), 16);
-                //strReturn = Convert.ToInt32(str).ToString("x2");
-            }
+               strReturn = ShujuChuli.StringToHexString(str);
+               if (strReturn.Length > 2 && strReturn.Length<5)//参数大于255
+               {
+                   strReturn =strReturn.Substring(2) +" " + strReturn.Substring(0, 2);
+               }
+               
+           }
             //可以判断是否有空格，是否是多个参数
 
 
@@ -162,7 +172,11 @@ namespace CommonPortCmd
          return Convert.ToInt32(strHex, 16).ToString();
         }
 
-
+        /// <summary>
+        /// 字节数组转换成字符串
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static string ByteToHexString(byte[] data)
         {
             string hex = string.Empty;
@@ -174,6 +188,20 @@ namespace CommonPortCmd
             }
             return hex;
         }
+
+        /// <summary>
+        ///   string 转 HexString
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string StringToHexString(string str)
+        {
+            string strReturn=string.Empty;
+            strReturn = Convert.ToString(Convert.ToInt32(str), 16);
+            return strReturn;
+        }
+
+
 }
   
 }

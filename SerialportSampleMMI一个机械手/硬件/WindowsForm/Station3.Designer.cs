@@ -32,6 +32,9 @@
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.PortConnectFlag = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -69,9 +72,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.trackBar_JiaoZhun = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +117,37 @@
             this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "3站状态指示";
+            // 
+            // button15
+            // 
+            this.button15.ForeColor = System.Drawing.Color.Maroon;
+            this.button15.Location = new System.Drawing.Point(75, 121);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(88, 23);
+            this.button15.TabIndex = 39;
+            this.button15.Text = "3站状态灯";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // comBox_ZhiShiDeng_1
+            // 
+            this.comBox_ZhiShiDeng_1.FormattingEnabled = true;
+            this.comBox_ZhiShiDeng_1.Location = new System.Drawing.Point(13, 124);
+            this.comBox_ZhiShiDeng_1.Name = "comBox_ZhiShiDeng_1";
+            this.comBox_ZhiShiDeng_1.Size = new System.Drawing.Size(56, 20);
+            this.comBox_ZhiShiDeng_1.TabIndex = 38;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(13, 65);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(78, 16);
+            this.checkBox7.TabIndex = 14;
+            this.checkBox7.Tag = "3站测试完成";
+            this.checkBox7.Text = "3站测试中";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox22
             // 
@@ -537,37 +568,6 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "天瑞通硬件调试工具";
             // 
-            // button15
-            // 
-            this.button15.ForeColor = System.Drawing.Color.Maroon;
-            this.button15.Location = new System.Drawing.Point(75, 121);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(88, 23);
-            this.button15.TabIndex = 39;
-            this.button15.Text = "3站状态灯";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // comBox_ZhiShiDeng_1
-            // 
-            this.comBox_ZhiShiDeng_1.FormattingEnabled = true;
-            this.comBox_ZhiShiDeng_1.Location = new System.Drawing.Point(13, 124);
-            this.comBox_ZhiShiDeng_1.Name = "comBox_ZhiShiDeng_1";
-            this.comBox_ZhiShiDeng_1.Size = new System.Drawing.Size(56, 20);
-            this.comBox_ZhiShiDeng_1.TabIndex = 38;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(13, 65);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(78, 16);
-            this.checkBox7.TabIndex = 14;
-            this.checkBox7.Tag = "3站测试完成";
-            this.checkBox7.Text = "3站测试中";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
             // Station3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -584,6 +584,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Station3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);

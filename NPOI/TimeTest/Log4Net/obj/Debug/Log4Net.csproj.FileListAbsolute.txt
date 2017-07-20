@@ -6,3 +6,4 @@ E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.Properties.Resources.resource
 E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.csproj.GenerateResource.Cache
 E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.exe
 E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.pdb
+E:\TRTWork\NPOI\TimeTest\Log4Net\obj\Debug\Log4Net.csprojResolveAssemblyReference.cache

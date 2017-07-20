@@ -85,6 +85,9 @@ namespace CommonPortCmd
 
         public Common()
         {
+
+           string s= ShujuChuli.StrToHex("255 255 255");
+
             string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "cmds.ini";
             INICmds_ = new INICmds(path);
 
@@ -3367,8 +3370,8 @@ namespace CommonPortCmd
             str = Cam_OrginOK(pram);
             if (str == "status=OK")//电机在原点，且上到位
             {
+
                 SendCommand("1站电机左运动", out str);
-                Thread.Sleep(500);
 
                 while (true)
                 {
@@ -3391,9 +3394,6 @@ namespace CommonPortCmd
             string str = "OK";
             Cam_LeftOK(pram);
             SendCommand("1站电机右运动", out str);
-            //Thread.Sleep(2000);
-            Thread.Sleep(500);
-            //Thread.Sleep(500);
             while (true)
             {
                 str = Cam_RightOK(pram);
@@ -3416,8 +3416,6 @@ namespace CommonPortCmd
             if (str == "status=OK")//
             {
                 SendCommand("1站电机中运动", out str);
-                Thread.Sleep(500);
-                Thread.Sleep(500);
                 while (true)
                 {
                     string s = Cam_OrginOK(pram);

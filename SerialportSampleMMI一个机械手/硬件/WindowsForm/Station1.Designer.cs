@@ -60,6 +60,7 @@
             this.button58 = new System.Windows.Forms.Button();
             this.button76 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button48 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
@@ -482,6 +483,7 @@
             this.groupBox2.Controls.Add(this.button58);
             this.groupBox2.Controls.Add(this.button76);
             this.groupBox2.Controls.Add(this.button41);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button48);
             this.groupBox2.Controls.Add(this.button40);
             this.groupBox2.Controls.Add(this.button24);
@@ -604,6 +606,17 @@
             this.button41.Text = "1站吸嘴4检测";
             this.button41.UseVisualStyleBackColor = true;
             this.button41.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(458, 228);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 55);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "6站运动";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button48
             // 
@@ -1712,6 +1725,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label PortConnectFlag;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

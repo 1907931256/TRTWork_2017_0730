@@ -57,6 +57,10 @@ namespace CommonPortCmd
             {
                  b = true;
             }
+            else if(RecData.IndexOf("C3 0A 03 FF") != -1) //cam取放
+            {
+                 b = true;
+            }
             return b;
         }
 

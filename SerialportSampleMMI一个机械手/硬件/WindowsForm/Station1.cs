@@ -3,6 +3,8 @@ using EqumentCmds;
 using System.Windows.Forms;
 using System.Threading;
 
+
+
 namespace Station
 {
     public partial class Station1 : Form
@@ -214,6 +216,14 @@ namespace Station
         private void button1_Click(object sender, EventArgs e)
         {
             txtXianShi.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            EquipmentCmd.Instance.SendCommand("6站运动", "1000 1000 10 25 25 0", out res);
+
+            string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
+            txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button80.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
 
         //private void button80_Click(object sender, EventArgs e)
