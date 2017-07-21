@@ -3253,11 +3253,11 @@ namespace CommonPortCmd
                 Log.Debug(strCmd + "==" + recStr);
                 return true;
             }
-            else if (strCmd.IndexOf("测试完成状态") != -1)
-            {
-                RecTestOK(strCmd, out recStr);
-                return true;
-            }
+            //else if (strCmd.IndexOf("测试完成状态") != -1)
+            //{
+            //    RecTestOK(strCmd, out recStr);
+            //    return true;
+            //}
             else if (strCmd.IndexOf("3站取放开始") != -1)
             {
                 CamStartStation_3(strCmd, out recStr);
@@ -3284,11 +3284,9 @@ namespace CommonPortCmd
         /// <param name="recStr"></param>
         private void CamStartStation_4(string strCmd, out string recStr)
         {
-            //string quStation = "10000";
             string fangStation = "19400";
             string yuanStation = "19400";
             string s1;
-            //int timeAbrsore = 500;//吸取时间
             while (true)
             {
                 SendCommand("3站出仓原点检测", out s1);
