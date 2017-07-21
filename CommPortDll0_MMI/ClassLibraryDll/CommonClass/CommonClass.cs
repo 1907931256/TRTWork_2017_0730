@@ -86,8 +86,6 @@ namespace CommonPortCmd
         public Common()
         {
 
-           string s= ShujuChuli.StrToHex("255 255 255");
-
             string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "cmds.ini";
             INICmds_ = new INICmds(path);
 
@@ -3243,28 +3241,13 @@ namespace CommonPortCmd
 
                 SendHex(strHex, out recStr);
                 Log.Debug(strCmd + "==" + recStr);
+                //recStr = recDataStr;
 
-                return true;
-            }
-            else if (strCmd == "报警")
-            {
-                if (station != "11")
-                {
-                    strHex = "72 05 " + station + " 05 01 00 81";
-                }
-                else
-                {
-                    strHex = "72 05 11 05 18 00 81";
-                }
-
-
-                SendHex(strHex, out recStr);
-                Log.Debug(strCmd + "==" + recStr);
                 return true;
             }
             else if (strCmd == "复位")
             {
-                strHex = "72 04 " + station + " 5A FF 81";
+                strHex = "72 04 " + station + " 0F 00 81";
 
                 SendHex(strHex, out recStr);
                 Log.Debug(strCmd + "==" + recStr);
@@ -3272,7 +3255,18 @@ namespace CommonPortCmd
             }
             else if (strCmd.IndexOf("测试完成状态") != -1)
             {
-                Room_RecTestOK(strCmd, out recStr);
+                RecTestOK(strCmd, out recStr);
+                return true;
+            }
+            else if (strCmd.IndexOf("3站取放开始") != -1)
+            {
+                CamStartStation_3(strCmd, out recStr);
+                return true;
+            }
+            else if (strCmd.IndexOf("4站取放开始") != -1)
+            {
+                recStr = "status=OK";
+                CamStartStation_4(strCmd, out recStr);
                 return true;
             }
             else
@@ -3281,6 +3275,223 @@ namespace CommonPortCmd
                 return true;
             }
 
+        }
+
+        /// <summary>
+        /// 4站电机取放
+        /// </summary>
+        /// <param name="strCmd"></param>
+        /// <param name="recStr"></param>
+        private void CamStartStation_4(string strCmd, out string recStr)
+        {
+            //string quStation = "10000";
+            string fangStation = "19400";
+            string yuanStation = "19400";
+            string s1;
+            //int timeAbrsore = 500;//吸取时间
+            while (true)
+            {
+                SendCommand("3站出仓原点检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+            }
+            while (true)
+            {
+                SendCommand("3站取放3抬起检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+            }
+
+            SendCommand("3站电机放", fangStation, out s1);//放
+            //DianJiYuDongOkEvent.WaitOne();
+            Thread.Sleep(500);
+            while (true)
+            {
+                SendCommand("3站取放3出仓检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+            }
+
+            //3站取放3松开
+            SendCommand("3站取放3下压", out s1);
+            while (true)
+            {
+                SendCommand("3站取放3下压检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+
+            }
+
+            SendCommand("3站取放3松开", out s1);
+            Thread.Sleep(100);
+            SendCommand("3站取放3抬起", out s1);
+
+            while (true)
+            {
+                SendCommand("3站取放3抬起检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+            }
+            //3站取放3出仓检测
+            SendCommand("3站电机", yuanStation, out s1);//原点
+            Thread.Sleep(500);
+            //DianJiYuDongOkEvent.WaitOne();
+            recStr = "status=OK";
+        }
+
+        /// <summary>
+        /// 3站电机取放动作
+        /// </summary>
+        /// <param name="strCmd"></param>
+        /// <param name="recStr"></param>
+        private void CamStartStation_3(string strCmd, out string recStr)
+        {
+            string quStation = "10900";
+            //string fangStation = "30000";
+            string yuanStation = "10900";
+            string s1;
+            int timeAbrsore = 500;//吸取时间
+            while (true)
+            {
+                SendCommand("3站出仓原点检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+            }
+            while (true)
+            {
+                //3站取放3抬起检测
+                SendCommand("3站取放3抬起检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+
+            }
+
+            SendCommand("3站电机取", quStation, out s1);//取
+            //DianJiYuDongOkEvent.WaitOne();
+            Thread.Sleep(500);
+            while (true)
+            {
+                SendCommand("3站右取放检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+
+            }
+
+            //Thread.Sleep(2000);
+            SendCommand("3站取放3下压", out s1);
+            while (true)
+            {
+                SendCommand("3站取放3下压检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+
+            }
+            SendCommand("3站取放3吸取", out s1);
+            Thread.Sleep(timeAbrsore);
+            SendCommand("3站取放3抬起", out s1);
+            while (true)
+            {
+                //3站取放3抬起检测
+                SendCommand("3站取放3抬起检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }
+
+            }
+            while (true)
+            {
+                SendCommand("3站取放3吸取检测", out s1);
+                if (s1 == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    SendCommand("3站取放3下压", out s1);
+                    while (true)
+                    {
+                        SendCommand("3站取放3下压检测", out s1);
+                        if (s1 == "status=OK")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Thread.Sleep(100);
+                        }
+
+                    }
+                    SendCommand("3站取放3吸取", out s1);
+                    Thread.Sleep(timeAbrsore);
+                    SendCommand("3站取放3抬起", out s1);
+                    Thread.Sleep(1000);
+                }
+            }
+
+
+            SendCommand("3站电机放", yuanStation, out s1);//放
+            Thread.Sleep(500);
+
+            recStr = "status=OK";
         }
 
         private bool Cam_Package(string strCmd, string param, out string recStr)
@@ -3290,60 +3501,11 @@ namespace CommonPortCmd
             if (strCmd == "1站取放")
             {
                 Cam_LeftDo(param);
-                Cam_RightDo(param); 
+                Cam_RightDo(param);
                 Cam_MidDo(param);
                 recStr = "status=OK";
                 return true;
             }
-            else if (strCmd == "警告")
-            {
-                if (station != "11")
-                {
-                    strHex = "72 05 " + station + " 05 01 00 81";
-                }
-                else
-                {
-                    strHex = "72 05 11 02 1b " + ShujuChuli.StrToHex(param) + " 81";
-                }
-
-                SendHex(strHex, out recStr);//发送命令
-                Log.Debug(strCmd + "==" + recStr);
-
-                return true;
-            }
-            else if (strCmd == "报警")
-            {
-                if (station != "11")
-                {
-                    strHex = "72 05 " + station + " 05 01 00 81";
-                }
-                else
-                {
-                    strHex = "72 05 11 02 18" + ShujuChuli.StrToHex(param) + " 81";
-                }
-
-                SendHex(strHex, out recStr);//发送命令
-                Log.Debug(strCmd + "==" + recStr);
-
-                return true;
-            }
-            else if (strCmd == "报警取消")
-            {
-                if (station != "11")
-                {
-                    strHex = "72 05 " + station + " 05 01 FF 81";
-                }
-                else
-                {
-                    strHex = "72 05 11 02 18 00 81";
-                }
-
-                SendHex(strHex, out recStr);//发送命令
-                Log.Debug(strCmd + "==" + recStr);
-
-                return true;
-            }
-
             else
             {
                 recStr = "status=NOT";
@@ -3352,13 +3514,6 @@ namespace CommonPortCmd
 
 
         }
-
-
-
-        //private void Cam_RecTestOK(string strCmd, out string recStr)
-        //{
-        //}
-
 
         /// <summary>
         /// 左运动

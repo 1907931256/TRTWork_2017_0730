@@ -57,9 +57,14 @@ namespace CommonPortCmd
             {
                  b = true;
             }
-            else if(RecData.IndexOf("C3 0A 03 FF") != -1) //cam取放
+            //下面部分是 Cam 部分
+            else if (RecData.IndexOf("C3 0A 03 FF") != -1)//3站运动完成主动上报
             {
-                 b = true;
+                b = true;
+            }
+            else if (RecData.IndexOf("C1 0A 03 FF") != -1)//1站运动完成主动上报
+            {
+                b = true;
             }
             return b;
         }

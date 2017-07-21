@@ -10,7 +10,13 @@ namespace TRTSpec
         /// <summary>
         /// 测试项目
         /// </summary>
-        private string item;
+        private string itme;
+
+        public string Itme
+        {
+            get { return itme; }
+            set { itme = value; }
+        }
 
         /// <summary>
         /// 说明
@@ -61,7 +67,6 @@ namespace TRTSpec
             set { specenable = value; }
         }
 
-        public string Item { get => item; set => item = value; }
 
         public Specs()
         {
