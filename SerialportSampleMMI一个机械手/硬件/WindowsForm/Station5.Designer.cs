@@ -33,6 +33,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
@@ -46,6 +48,11 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonXin6 = new System.Windows.Forms.Button();
+            this.buttonXin4 = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -57,13 +64,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
-            this.buttonXin6 = new System.Windows.Forms.Button();
-            this.buttonXin4 = new System.Windows.Forms.Button();
             this.PortConnectFlag = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -130,15 +130,39 @@
             this.checkBox11.UseVisualStyleBackColor = true;
             this.checkBox11.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(129, 172);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(97, 29);
+            this.button11.TabIndex = 47;
+            this.button11.Text = "5站隔音箱下降";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(11, 172);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 29);
+            this.button10.TabIndex = 47;
+            this.button10.Text = "5站隔音箱上升";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
             this.checkBox13.Location = new System.Drawing.Point(129, 130);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(90, 16);
+            this.checkBox13.Size = new System.Drawing.Size(96, 16);
             this.checkBox13.TabIndex = 19;
-            this.checkBox13.Tag = "5站MIC1关闭";
-            this.checkBox13.Text = "5站MIC1打开";
+            this.checkBox13.Tag = "5站辅MIC关闭";
+            this.checkBox13.Text = "5站辅MIC打开";
             this.checkBox13.UseVisualStyleBackColor = true;
             this.checkBox13.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
@@ -147,10 +171,10 @@
             this.checkBox12.AutoSize = true;
             this.checkBox12.Location = new System.Drawing.Point(129, 107);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(84, 16);
+            this.checkBox12.Size = new System.Drawing.Size(96, 16);
             this.checkBox12.TabIndex = 19;
-            this.checkBox12.Tag = "5站MIC关闭";
-            this.checkBox12.Text = "5站MIC打开";
+            this.checkBox12.Tag = "5站主MIC关闭";
+            this.checkBox12.Text = "5站主MIC打开";
             this.checkBox12.UseVisualStyleBackColor = true;
             this.checkBox12.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
@@ -293,6 +317,65 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "5站状态指示";
             // 
+            // buttonXin6
+            // 
+            this.buttonXin6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonXin6.BackgroundImage")));
+            this.buttonXin6.ForeColor = System.Drawing.Color.Black;
+            this.buttonXin6.Location = new System.Drawing.Point(171, 66);
+            this.buttonXin6.Name = "buttonXin6";
+            this.buttonXin6.Size = new System.Drawing.Size(72, 32);
+            this.buttonXin6.TabIndex = 43;
+            this.buttonXin6.Text = "清屏";
+            this.buttonXin6.UseVisualStyleBackColor = true;
+            // 
+            // buttonXin4
+            // 
+            this.buttonXin4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonXin4.BackgroundImage")));
+            this.buttonXin4.ForeColor = System.Drawing.Color.Black;
+            this.buttonXin4.Location = new System.Drawing.Point(171, 20);
+            this.buttonXin4.Name = "buttonXin4";
+            this.buttonXin4.Size = new System.Drawing.Size(72, 32);
+            this.buttonXin4.TabIndex = 44;
+            this.buttonXin4.Text = "复位";
+            this.buttonXin4.UseVisualStyleBackColor = true;
+            this.buttonXin4.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(8, 68);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(78, 16);
+            this.checkBox3.TabIndex = 40;
+            this.checkBox3.Tag = "5站测试完成";
+            this.checkBox3.Text = "5站测试中";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.Location = new System.Drawing.Point(8, 43);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(90, 16);
+            this.checkBox22.TabIndex = 41;
+            this.checkBox22.Tag = "5站状态异常";
+            this.checkBox22.Text = "5站状态正常";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Location = new System.Drawing.Point(8, 21);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(90, 16);
+            this.checkBox21.TabIndex = 42;
+            this.checkBox21.Tag = "5站报警异常";
+            this.checkBox21.Text = "5站报警正常";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -341,7 +424,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(124, 30);
             this.button6.TabIndex = 42;
-            this.button6.Text = "5站隔离关闭检测";
+            this.button6.Text = "5站隔音箱下降检测";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -401,7 +484,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 31);
             this.button7.TabIndex = 48;
-            this.button7.Text = "5站隔离上升检测";
+            this.button7.Text = "5站隔音箱上升检测";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -415,89 +498,6 @@
             this.label2.Size = new System.Drawing.Size(283, 29);
             this.label2.TabIndex = 54;
             this.label2.Text = "天瑞通硬件调试工具";
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(11, 172);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(97, 29);
-            this.button10.TabIndex = 47;
-            this.button10.Text = "5站隔音箱上升";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(129, 172);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(97, 29);
-            this.button11.TabIndex = 47;
-            this.button11.Text = "5站隔音箱下降";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(8, 68);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(78, 16);
-            this.checkBox3.TabIndex = 40;
-            this.checkBox3.Tag = "5站测试完成";
-            this.checkBox3.Text = "5站测试中";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // checkBox22
-            // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.Location = new System.Drawing.Point(8, 43);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(90, 16);
-            this.checkBox22.TabIndex = 41;
-            this.checkBox22.Tag = "5站状态异常";
-            this.checkBox22.Text = "5站状态正常";
-            this.checkBox22.UseVisualStyleBackColor = true;
-            this.checkBox22.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // checkBox21
-            // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(8, 21);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(90, 16);
-            this.checkBox21.TabIndex = 42;
-            this.checkBox21.Tag = "5站报警异常";
-            this.checkBox21.Text = "5站报警正常";
-            this.checkBox21.UseVisualStyleBackColor = true;
-            this.checkBox21.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // buttonXin6
-            // 
-            this.buttonXin6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonXin6.BackgroundImage")));
-            this.buttonXin6.ForeColor = System.Drawing.Color.Black;
-            this.buttonXin6.Location = new System.Drawing.Point(171, 66);
-            this.buttonXin6.Name = "buttonXin6";
-            this.buttonXin6.Size = new System.Drawing.Size(72, 32);
-            this.buttonXin6.TabIndex = 43;
-            this.buttonXin6.Text = "清屏";
-            this.buttonXin6.UseVisualStyleBackColor = true;
-            // 
-            // buttonXin4
-            // 
-            this.buttonXin4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonXin4.BackgroundImage")));
-            this.buttonXin4.ForeColor = System.Drawing.Color.Black;
-            this.buttonXin4.Location = new System.Drawing.Point(171, 20);
-            this.buttonXin4.Name = "buttonXin4";
-            this.buttonXin4.Size = new System.Drawing.Size(72, 32);
-            this.buttonXin4.TabIndex = 44;
-            this.buttonXin4.Text = "复位";
-            this.buttonXin4.UseVisualStyleBackColor = true;
-            this.buttonXin4.Click += new System.EventHandler(this.GetButtonName);
             // 
             // PortConnectFlag
             // 

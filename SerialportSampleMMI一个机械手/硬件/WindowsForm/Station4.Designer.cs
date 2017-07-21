@@ -556,7 +556,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(124, 38);
             this.button11.TabIndex = 19;
-            this.button11.Text = "1站状态检测";
+            this.button11.Text = "4站1站状态检测";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.GetButtonName);
             // 

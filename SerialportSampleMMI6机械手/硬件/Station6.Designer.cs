@@ -549,7 +549,7 @@
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(92, 21);
             this.button23.TabIndex = 3;
-            this.button23.Text = "取放抬起检测";
+            this.button23.Text = "取放上到位检测";
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
@@ -880,9 +880,9 @@
             this.checkBox10.ForeColor = System.Drawing.Color.White;
             this.checkBox10.Location = new System.Drawing.Point(15, 153);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(96, 16);
+            this.checkBox10.Size = new System.Drawing.Size(90, 16);
             this.checkBox10.TabIndex = 22;
-            this.checkBox10.Text = "6站TOUCH按下";
+            this.checkBox10.Text = "6站指纹按下";
             this.checkBox10.UseVisualStyleBackColor = false;
             this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
             // 

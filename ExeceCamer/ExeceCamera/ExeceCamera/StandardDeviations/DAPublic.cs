@@ -326,13 +326,10 @@ namespace StandardDeviations
 
             var data_ = t.Except(remain_rg_1);//原始数据中移除 超出规格的数据
             double[] data_expect = new double[data_.Count()];
-
-
-            int[] indexs_ = new int[10];//保存超出标准数据的下标
+            int[] indexs_ = new int[50];//保存超出标准数据的下标
             int i = 0;
             foreach (var item in data_)
             {
-
                 data_expect[i] = Convert.ToDouble(item);
                 Console.WriteLine(data_expect[i].ToString());
                 indexs_[i] = Array.IndexOf(t, data_expect[i]);
@@ -426,15 +423,15 @@ namespace StandardDeviations
         /// 根据行号得到数据
         /// </summary>
         /// <returns></returns>
-        public DataTable GetDataFromIndexsReturnString(int[] indexs)
-        {
-            DataTable table = new DataTable("ErrorDatas");
-            table.Columns.Add("Filename");
-            table.Columns.Add("ID");
+        //public DataTable GetDataFromIndexsReturnString(int[] indexs)
+        //{
+        //    DataTable table = new DataTable("ErrorDatas");
+        //    table.Columns.Add("Filename");
+        //    table.Columns.Add("ID");
 
 
 
-        }
+        //}
 
         ///// <summary>
         ///// 流程控制

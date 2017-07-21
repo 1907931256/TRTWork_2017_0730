@@ -295,7 +295,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 12);
             this.label5.TabIndex = 27;
-            this.label5.Text = "2站近距内光源调节";
+            this.label5.Text = "2站近焦内光源调节";
             // 
             // trackBar_BaiGuang
             // 
@@ -330,7 +330,8 @@
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(114, 16);
             this.checkBox12.TabIndex = 22;
-            this.checkBox12.Text = "2站电机电源启动";
+            this.checkBox12.Tag = "2站防抖电机关闭";
+            this.checkBox12.Text = "2站防抖电机启动";
             this.checkBox12.UseVisualStyleBackColor = false;
             this.checkBox12.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
@@ -574,7 +575,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 12);
             this.label10.TabIndex = 27;
-            this.label10.Text = "2站近距外光源调节";
+            this.label10.Text = "2站近焦外光源调节";
             // 
             // textBox1
             // 

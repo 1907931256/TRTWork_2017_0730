@@ -976,7 +976,6 @@ namespace CommonPortCmd
         /// <returns></returns>
         private string Room_LiftDownUpAbsorb(string pram)
         {
-            #region
             int timeAbsorb = 300;//吸取时间
 
             int timeUp = 100;
@@ -1530,7 +1529,6 @@ namespace CommonPortCmd
 
                     break;
             }
-            #endregion
             return res;
         }
 
@@ -1541,7 +1539,6 @@ namespace CommonPortCmd
         /// <returns></returns>
         private string Room_RightDownAbsorb(string pram)
         {
-            #region
             int timeNOAbsorb = 300;//吸取时间
             int timeUp = 80;//间隔多久放气
             int timeNO = 100;
@@ -3146,7 +3143,6 @@ namespace CommonPortCmd
                     SendCommand("1站升降气缸5升起", out str);
                     break;
             }
-            #endregion
             return res;
         }
 
@@ -3247,7 +3243,7 @@ namespace CommonPortCmd
             }
             else if (strCmd == "复位")
             {
-                strHex = "72 04 " + station + " 0F 00 81";
+                strHex = "72 04 " + station + " 5A FF 81";
 
                 SendHex(strHex, out recStr);
                 Log.Debug(strCmd + "==" + recStr);
@@ -3526,14 +3522,9 @@ namespace CommonPortCmd
 
                 SendCommand("1站电机左运动", out str);
 
-                while (true)
-                {
-                    string s = Cam_LeftOK(pram);
-                    if (s == "status=OK")
-                    {
-                        break;
-                    }
-                }
+               
+                Cam_LeftOK(pram);
+                
                 CamLiftDownUpAbsorb(pram);
             }
         }
@@ -3576,7 +3567,11 @@ namespace CommonPortCmd
                     {
                         break;
                     }
-                    Thread.Sleep(100);
+                    else
+                    {
+                        Thread.Sleep(100);
+                    }
+                    
 
                 }
 
@@ -3590,9 +3585,8 @@ namespace CommonPortCmd
         /// <returns></returns>
         private string Cam_OrginOK(string pram)
         {
-            string res = "";
             string str = "";
-
+            int timeNO = 100;
             pram = pram.ToUpper();
 
             while (true)
@@ -3600,15 +3594,38 @@ namespace CommonPortCmd
                 SendCommand("1站取放原点检测", out str);
                 if (str == "status=OK")
                 {
-                    res = "status=OK";
                     break;
                 }
                 else
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(timeNO);
                 }
             }
-            return res;
+            while (true)
+            {
+                SendCommand("1站取放1抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+            while (true)
+            {
+                SendCommand("1站取放2抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+            return str;
         }
 
         /// <summary>
@@ -3619,33 +3636,47 @@ namespace CommonPortCmd
         private string Cam_LeftOK(string pram)
         {
 
-            string res = "";
-            string[] str = new string[20];
-            for (int i = 0; i < 20; i++)
-            {
-                str[i] = "";
-            }
-
+            string str = "";
+            int timeNO = 100;
             pram = pram.ToUpper();
             while (true)
             {
-
-                SendCommand("1站前到位检测", out str[3]);
-
-                SendCommand("1站取放1抬起检测", out str[1]);
-                SendCommand("1站取放2抬起检测", out str[2]);
-
-                //str[1] == "status=OK" &&
-
-
-                if (str[2] == "status=OK" && str[3] == "status=OK" && str[1] == "status=OK")
+                SendCommand("1站前到位检测", out str);
+                if (str== "status=OK")
                 {
-                    res = "status=OK";
                     break;
                 }
-                Thread.Sleep(100);
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
             }
-            return res;
+            while (true)
+            {
+                SendCommand("1站取放1抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+            while (true)
+            {
+                SendCommand("1站取放2抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+
+            return str;
         }
 
         /// <summary>
@@ -3656,27 +3687,48 @@ namespace CommonPortCmd
         private string Cam_RightOK(string pram)
         {
 
-            string res = "";
-            string[] str = new string[20];
-            for (int i = 0; i < 20; i++)
-            {
-                str[i] = "";
-            }
+            string str = "";
+            int timeNO = 100;
+            pram = pram.ToUpper();
             while (true)
             {
-                SendCommand("1站后到位检测", out str[1]);
-                if (str[1] == "status=OK")
+                SendCommand("1站后到位检测", out str);
+                if (str == "status=OK")
                 {
-                    res = "status=OK";
                     break;
                 }
                 else
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(timeNO);
                 }
-
             }
-            return res;
+            while (true)
+            {
+                SendCommand("1站取放1抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+            while (true)
+            {
+                SendCommand("1站取放2抬起检测", out str);
+                if (str == "status=OK")
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(timeNO);
+                }
+            }
+
+
+            return str;
         }
 
         /// <summary>
@@ -3686,32 +3738,27 @@ namespace CommonPortCmd
         /// <returns></returns>
         private string CamLiftDownUpAbsorb(string pram)
         {
-            int timeAbsorb = 500;//吸取时间
+            int timeAbsorb = 200;//吸取时间
             int timeNO = 100;
-            int timeUP = 500;
-            string res = "";
-            string[] str = new string[20];
-            for (int i = 0; i < 20; i++)
-            {
-                str[i] = "";
-            }
+            int timeUP = 200;
+            string str="" ;
+          
             pram = pram.ToUpper();
 
             switch (pram)
             {
                 case "1"://1电机
-                    while (true)
-                    {
-                        SendCommand("1站取放1下压", out str[1]);
-                        SendCommand("1站取放1吸取", out str[1]);
+                    
+                        SendCommand("1站取放1下压", out str);
+                        SendCommand("1站取放1吸取", out str);
                         Thread.Sleep(timeAbsorb);
 
                         while (true)
                         {
 
-                            SendCommand("1站取放1下压检测", out str[2]);
+                            SendCommand("1站取放1下压检测", out str);
 
-                            if (str[2] == "status=OK")
+                            if (str == "status=OK")
                             {
                                 break;
                             }
@@ -3720,36 +3767,35 @@ namespace CommonPortCmd
                                 Thread.Sleep(timeNO);
                             }
                         }
-                        SendCommand("1站取放1抬起", out str[4]);
+                        SendCommand("1站取放1抬起", out str);
                         Thread.Sleep(timeUP);
-                        SendCommand("1站取放1抬起检测", out str[2]);
-
-                        if (str[2] == "status=OK")
+                        while (true)
                         {
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(timeNO);
-                        }
+                            SendCommand("1站取放1抬起检测", out str);
 
-                    }
+                            if (str == "status=OK")
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Thread.Sleep(timeNO);
+                            }
+
+                        }
                     break;
                 case "2"://2电机
 
-                    while (true)
-                    {
-
-                        SendCommand("1站取放2下压", out str[1]);
-                        SendCommand("1站取放2吸取", out str[1]);
+                        SendCommand("1站取放2下压", out str);
+                        SendCommand("1站取放2吸取", out str);
 
                         Thread.Sleep(timeAbsorb);
                         while (true)
                         {
 
-                            SendCommand("1站取放2下压检测", out str[2]);
+                            SendCommand("1站取放2下压检测", out str);
 
-                            if (str[2] == "status=OK")
+                            if (str == "status=OK")
                             {
                                 break;
                             }
@@ -3758,40 +3804,38 @@ namespace CommonPortCmd
                                 Thread.Sleep(timeNO);
                             }
                         }
-                        SendCommand("1站取放2抬起", out str[4]);
+                        SendCommand("1站取放2抬起", out str);
 
                         Thread.Sleep(timeUP);
-
-
-                        SendCommand("1站取放2抬起检测", out str[2]);
-
-                        if (str[2] == "status=OK")
+                        while (true)
                         {
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(timeNO);
+                            SendCommand("1站取放2抬起检测", out str);
+
+                            if (str == "status=OK")
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Thread.Sleep(timeNO);
+                            }
                         }
 
-                    }
                     break;
                 case "3"://1 2电机
 
-                    while (true)
-                    {
-                        SendCommand("1站取放1下压", out str[1]);
-                        SendCommand("1站取放1吸取", out str[2]);
-                        SendCommand("1站取放2下压", out str[3]);
-                        SendCommand("1站取放2吸取", out str[4]);
+                        SendCommand("1站取放1下压", out str);
+                        SendCommand("1站取放1吸取", out str);
+                        SendCommand("1站取放2下压", out str);
+                        SendCommand("1站取放2吸取", out str);
                         Thread.Sleep(timeAbsorb);
 
                         while (true)
                         {
 
-                            SendCommand("1站取放1下压检测", out str[2]);
+                            SendCommand("1站取放1下压检测", out str);
 
-                            if (str[2] == "status=OK")
+                            if (str == "status=OK")
                             {
                                 break;
                             }
@@ -3803,9 +3847,9 @@ namespace CommonPortCmd
                         while (true)
                         {
 
-                            SendCommand("1站取放2下压检测", out str[2]);
+                            SendCommand("1站取放2下压检测", out str);
 
-                            if (str[2] == "status=OK")
+                            if (str == "status=OK")
                             {
                                 break;
                             }
@@ -3816,13 +3860,28 @@ namespace CommonPortCmd
                         }
 
 
-                        SendCommand("1站取放1抬起", out str[4]);
-                        SendCommand("1站取放2抬起", out str[4]);
+                        SendCommand("1站取放1抬起", out str);
+                        SendCommand("1站取放2抬起", out str);
                         Thread.Sleep(timeUP);
-                        SendCommand("1站取放1抬起检测", out str[2]);
-                        SendCommand("1站取放2抬起检测", out str[1]);
+                    while (true)
+                    {
+                        SendCommand("1站取放1抬起检测", out str);
 
-                        if (str[2] == "status=OK" && str[1] == "status=OK")
+                        if (str == "status=OK")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Thread.Sleep(timeNO);
+                        }
+
+                    }
+                    while (true)
+                    {
+                        SendCommand("1站取放2抬起检测", out str);
+
+                        if (str == "status=OK")
                         {
                             break;
                         }
@@ -3833,10 +3892,9 @@ namespace CommonPortCmd
 
                     }
                     break;
-
             }
 
-            return res;
+            return str;
         }
 
         /// <summary>
@@ -3846,965 +3904,110 @@ namespace CommonPortCmd
         /// <returns></returns>
         private string Cam_RightDownAbsorb(string pram)
         {
-            #region
-            // int timeAbsorb = 500;//吸取时间
-            int timeUp_ = 100;//间隔多久放气
-            int timeUp = 100;//间隔多久放气
-            string res = "";
-            string[] str = new string[20];
-            for (int i = 0; i < 20; i++)
-            {
-                str[i] = "";
-            }
+            int timeDownAbsorb = 100;//手机多久抬起
+            int timeNO = 100;
+            int timeDown = 200;
+            string str = "";
+
             pram = pram.ToUpper();
 
             switch (pram)
             {
                 case "1"://1电机
-                    SendCommand("1站取放1下压", out str[5]);
+                    SendCommand("1站取放1下压", out str);
 
-                    Thread.Sleep(timeUp_);
-                    SendCommand("1站取放1松开", out str[1]);
+                    Thread.Sleep(timeDown);
+                    SendCommand("1站取放1松开", out str);
                     while (true)
                     {
 
-                        SendCommand("1站取放1下压检测", out str[5]);
-                        if (str[5] == "status=OK")
+                        SendCommand("1站取放1下压检测", out str);
+                        if (str == "status=OK")
                         {
 
                             break;
                         }
                         else
                         {
-                            Thread.Sleep(100);
+                            Thread.Sleep(timeNO);
                         }
 
                     }
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放1抬起", out str[0]);
-                    Thread.Sleep(100);
+                    Thread.Sleep(timeDownAbsorb);
+                    SendCommand("1站取放1抬起", out str);
 
-                    while (true)
-                    {
-                        SendCommand("1站取放1抬起检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(100);
-                        }
-                    }
                     break;
-
-
-
 
                 case "2"://2电机
 
-                    SendCommand("1站取放2下压", out str[5]);
-                    Thread.Sleep(timeUp_);
-                    SendCommand("1站取放2松开", out str[1]);
+                    SendCommand("1站取放2下压", out str);
+                    Thread.Sleep(timeDown);
+                    SendCommand("1站取放2松开", out str);
                     while (true)
                     {
 
-                        SendCommand("1站取放2下压检测", out str[5]);
-                        if (str[5] == "status=OK")
+                        SendCommand("1站取放2下压检测", out str);
+                        if (str == "status=OK")
                         {
 
                             break;
                         }
                         else
                         {
-                            Thread.Sleep(100);
+                            Thread.Sleep(timeNO);
                         }
 
                     }
-                    Thread.Sleep(timeUp);
+                    Thread.Sleep(timeDown);
 
-                    SendCommand("1站取放2抬起", out str[0]);
-                    Thread.Sleep(100);
-
-                    while (true)
-                    {
-                        SendCommand("1站取放2抬起检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(100);
-                        }
-                    }
+                    SendCommand("1站取放2抬起", out str);
                     break;
                 case "3"://1 2电机
 
 
-                    SendCommand("1站取放1下压", out str[5]);
-                    SendCommand("1站取放2下压", out str[5]);
-                    Thread.Sleep(timeUp_);
-                    SendCommand("1站取放1松开", out str[1]);
-                    SendCommand("1站取放2松开", out str[1]);
+                    SendCommand("1站取放1下压", out str);
+                    SendCommand("1站取放2下压", out str);
+                    Thread.Sleep(timeDown);
+                    SendCommand("1站取放1松开", out str);
+                    SendCommand("1站取放2松开", out str);
                     while (true)
                     {
 
-                        SendCommand("1站取放1下压检测", out str[5]);
-                        if (str[5] == "status=OK")
+                        SendCommand("1站取放1下压检测", out str);
+                        if (str == "status=OK")
                         {
 
                             break;
                         }
                         else
                         {
-                            Thread.Sleep(100);
+                            Thread.Sleep(timeNO);
                         }
 
                     }
                     while (true)
                     {
 
-                        SendCommand("1站取放2下压检测", out str[5]);
-                        if (str[5] == "status=OK")
+                        SendCommand("1站取放2下压检测", out str);
+                        if (str == "status=OK")
                         {
 
                             break;
                         }
                         else
                         {
-                            Thread.Sleep(100);
+                            Thread.Sleep(timeNO);
                         }
 
                     }
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放1抬起", out str[0]);
-                    SendCommand("1站取放2抬起", out str[0]);
-                    Thread.Sleep(100);
-
-                    while (true)
-                    {
-                        SendCommand("1站取放1抬起检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(100);
-                        }
-                    }
-                    while (true)
-                    {
-                        SendCommand("1站取放2抬起检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                        else
-                        {
-                            Thread.Sleep(100);
-                        }
-                    }
-                    break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                case "4"://3电机
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    while (true)
-                    {
-                        //   Thread.Sleep(timeAbsorb);
-                        SendCommand("1站上升3检测", out str[2]);
-                        // SendCommand("1站吸嘴3检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-                        if (str[2] == "status=OK" && str[4] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸3降下", out str[5]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴3放气", out str[31]);
-                    while (true)
-                    {
-
-                        SendCommand("1站下降3检测", out str[6]);
-                        if (str[5] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升3检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "7"://1 2 3电机
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[2]);
-                        //SendCommand("1站吸嘴1检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-
-                        SendCommand("1站上升2检测", out str[8]);
-                        //SendCommand("1站吸嘴2检测", out str[9]);
-                        // SendCommand("1站电机2左边检测", out str[10]);
-
-                        SendCommand("1站上升3检测", out str[5]);
-                        //SendCommand("1站吸嘴3检测", out str[6]);
-                        // SendCommand("1站电机3左边检测", out str[7]);
-
-                        if (str[2] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK" && str[8] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1降下", out str[5]);
-                    SendCommand("1站升降气缸2降下", out str[5]);
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴1放气", out str[1]);
-                    SendCommand("1站取放吸嘴2放气", out str[1]);
-                    SendCommand("1站取放吸嘴3放气", out str[1]);
-                    while (true)
-                    {
-                        SendCommand("1站下降1检测", out str[6]);
-                        SendCommand("1站下降2检测", out str[8]);
-                        SendCommand("1站下降3检测", out str[7]);
-                        if (str[6] == "status=OK" && str[7] == "status=OK" && str[8] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[1]);
-                        SendCommand("1站上升2检测", out str[2]);
-                        SendCommand("1站上升3检测", out str[3]);
-                        if (str[1] == "status=OK" && str[2] == "status=OK" && str[3] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-                    break;
-                case "8"://4电机
-
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    while (true)
-                    {
-                        //   Thread.Sleep(timeAbsorb);
-                        SendCommand("1站上升4检测", out str[2]);
-                        //SendCommand("1站吸嘴4检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-                        if (str[2] == "status=OK" && str[4] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸4降下", out str[5]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴4放气", out str[31]);
-                    while (true)
-                    {
-
-                        SendCommand("1站下降4检测", out str[6]);
-                        if (str[5] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升4检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                #region
-                case "9"://1 4电机
-                    SendCommand("1站升降气缸1降下", out str[0]);
-                    SendCommand("1站取放吸嘴1吸取", out str[1]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站取放吸嘴4吸取", out str[7]);
-
-                    while (true)
-                    {
-                        // Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降1检测", out str[2]);
-                        SendCommand("1站吸嘴1检测", out str[3]);
-                        SendCommand("1站下降4检测", out str[8]);
-                        SendCommand("1站吸嘴4检测", out str[9]);
-                        if (str[2] == "status=OK" && str[3] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1升起", out str[4]);
-                    SendCommand("1站升降气缸4升起", out str[10]);
-
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-                        SendCommand("1站吸嘴1检测", out str[5]);
-                        SendCommand("1站吸嘴4检测", out str[9]);
-                        if (str[5] == "status=OK" && str[9] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "A"://2 4电机
-                    SendCommand("1站升降气缸2降下", out str[0]);
-                    SendCommand("1站取放吸嘴2吸取", out str[1]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站取放吸嘴4吸取", out str[7]);
-
-                    while (true)
-                    {
-                        // Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降2检测", out str[2]);
-                        SendCommand("1站吸嘴2检测", out str[3]);
-                        SendCommand("1站下降4检测", out str[8]);
-                        SendCommand("1站吸嘴4检测", out str[9]);
-                        if (str[2] == "status=OK" && str[3] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸2升起", out str[4]);
-                    SendCommand("1站升降气缸4升起", out str[10]);
-
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-                        SendCommand("1站吸嘴2检测", out str[5]);
-                        SendCommand("1站吸嘴4检测", out str[9]);
-                        if (str[5] == "status=OK" && str[9] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "B"://1 2 4电机
-
-
-                    SendCommand("1站升降气缸2降下", out str[0]);
-                    SendCommand("1站取放吸嘴2吸取", out str[1]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站取放吸嘴4吸取", out str[7]);
-                    SendCommand("1站升降气缸1降下", out str[8]);
-                    SendCommand("1站取放吸嘴1吸取", out str[9]);
-
-                    while (true)
-                    {
-                        //  Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降1检测", out str[10]);
-                        SendCommand("1站吸嘴1检测", out str[11]);
-                        SendCommand("1站下降2检测", out str[12]);
-                        SendCommand("1站吸嘴2检测", out str[13]);
-                        SendCommand("1站下降4检测", out str[14]);
-                        SendCommand("1站吸嘴4检测", out str[15]);
-                        if (str[10] == "status=OK" && str[11] == "status=OK" && str[12] == "status=OK" && str[13] == "status=OK" && str[14] == "status=OK" && str[15] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1升起", out str[4]);
-                    SendCommand("1站升降气缸2升起", out str[5]);
-                    SendCommand("1站升降气缸4升起", out str[6]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-
-                        SendCommand("1站吸嘴1检测", out str[16]);
-                        SendCommand("1站吸嘴2检测", out str[17]);
-                        SendCommand("1站吸嘴4检测", out str[18]);
-                        if (str[16] == "status=OK" && str[17] == "status=OK" && str[18] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "C"://3 4电机
-                    SendCommand("1站升降气缸4降下", out str[0]);
-                    SendCommand("1站取放吸嘴4吸取", out str[1]);
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    SendCommand("1站取放吸嘴3吸取", out str[7]);
-
-                    while (true)
-                    {
-                        //  Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降4检测", out str[2]);
-                        SendCommand("1站吸嘴4检测", out str[3]);
-                        SendCommand("1站下降3检测", out str[8]);
-                        SendCommand("1站吸嘴3检测", out str[9]);
-                        if (str[2] == "status=OK" && str[3] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸4升起", out str[4]);
-                    SendCommand("1站升降气缸3升起", out str[10]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-                        SendCommand("1站吸嘴3检测", out str[5]);
-                        SendCommand("1站吸嘴4检测", out str[9]);
-                        if (str[5] == "status=OK" && str[9] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-
-                    break;
-                case "D"://1 3 4电机
-
-                    SendCommand("1站升降气缸3降下", out str[0]);
-                    SendCommand("1站取放吸嘴3吸取", out str[1]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站取放吸嘴4吸取", out str[7]);
-                    SendCommand("1站升降气缸1降下", out str[8]);
-                    SendCommand("1站取放吸嘴1吸取", out str[9]);
-
-                    while (true)
-                    {
-                        // Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降1检测", out str[10]);
-                        SendCommand("1站吸嘴1检测", out str[11]);
-                        SendCommand("1站下降3检测", out str[12]);
-                        SendCommand("1站吸嘴3检测", out str[13]);
-                        SendCommand("1站下降4检测", out str[14]);
-                        SendCommand("1站吸嘴4检测", out str[15]);
-                        if (str[10] == "status=OK" && str[11] == "status=OK" && str[12] == "status=OK" && str[13] == "status=OK" && str[14] == "status=OK" && str[15] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1升起", out str[4]);
-                    SendCommand("1站升降气缸2升起", out str[5]);
-                    SendCommand("1站升降气缸4升起", out str[6]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-
-                        SendCommand("1站吸嘴1检测", out str[16]);
-                        SendCommand("1站吸嘴3检测", out str[17]);
-                        SendCommand("1站吸嘴4检测", out str[18]);
-                        if (str[16] == "status=OK" && str[17] == "status=OK" && str[18] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "E"://2 3 4电机
-                    SendCommand("1站升降气缸3降下", out str[0]);
-                    SendCommand("1站取放吸嘴3吸取", out str[1]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站取放吸嘴4吸取", out str[7]);
-                    SendCommand("1站升降气缸2降下", out str[8]);
-                    SendCommand("1站取放吸嘴2吸取", out str[9]);
-
-                    while (true)
-                    {
-                        // Thread.Sleep(timeAbsorb);
-                        SendCommand("1站下降2检测", out str[10]);
-                        SendCommand("1站吸嘴2检测", out str[11]);
-                        SendCommand("1站下降2检测", out str[12]);
-                        SendCommand("1站吸嘴3检测", out str[13]);
-                        SendCommand("1站下降4检测", out str[14]);
-                        SendCommand("1站吸嘴4检测", out str[15]);
-                        if (str[10] == "status=OK" && str[11] == "status=OK" && str[12] == "status=OK" && str[13] == "status=OK" && str[14] == "status=OK" && str[15] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸2升起", out str[4]);
-                    SendCommand("1站升降气缸3升起", out str[5]);
-                    SendCommand("1站升降气缸4升起", out str[6]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        Thread.Sleep(timeUp);
-
-                        SendCommand("1站吸嘴2检测", out str[16]);
-                        SendCommand("1站吸嘴3检测", out str[17]);
-                        SendCommand("1站吸嘴4检测", out str[18]);
-                        if (str[16] == "status=OK" && str[17] == "status=OK" && str[18] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-
-                    break;
-                #endregion
-                case "15"://1 2 3 4电机
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[2]);
-                        //SendCommand("1站吸嘴1检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-
-                        SendCommand("1站上升2检测", out str[8]);
-                        //SendCommand("1站吸嘴2检测", out str[9]);
-                        //  SendCommand("1站电机2左边检测", out str[10]);
-
-                        SendCommand("1站上升3检测", out str[5]);
-                        //SendCommand("1站吸嘴3检测", out str[6]);
-                        //  SendCommand("1站电机3左边检测", out str[7]);
-
-                        SendCommand("1站上升4检测", out str[11]);
-                        //SendCommand("1站吸嘴4检测", out str[12]);
-                        // SendCommand("1站电机4左边检测", out str[13]);
-
-
-                        if (str[2] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK" && str[8] == "status=OK" && str[11] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1降下", out str[5]);
-                    SendCommand("1站升降气缸2降下", out str[5]);
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴1放气", out str[1]);
-                    SendCommand("1站取放吸嘴2放气", out str[1]);
-                    SendCommand("1站取放吸嘴3放气", out str[1]);
-                    SendCommand("1站取放吸嘴4放气", out str[1]);
-                    while (true)
-                    {
-                        SendCommand("1站下降1检测", out str[6]);
-                        SendCommand("1站下降2检测", out str[8]);
-                        SendCommand("1站下降3检测", out str[7]);
-                        SendCommand("1站下降4检测", out str[9]);
-                        if (str[6] == "status=OK" && str[7] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[1]);
-                        SendCommand("1站上升2检测", out str[2]);
-                        SendCommand("1站上升3检测", out str[3]);
-                        SendCommand("1站上升4检测", out str[4]);
-                        if (str[1] == "status=OK" && str[2] == "status=OK" && str[3] == "status=OK" && str[4] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "16"://5电机
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    while (true)
-                    {
-                        //   Thread.Sleep(timeAbsorb);
-                        SendCommand("1站上升5检测", out str[2]);
-                        //SendCommand("1站吸嘴5检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-                        if (str[2] == "status=OK" && str[4] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸5降下", out str[5]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴5放气", out str[1]);
-                    while (true)
-                    {
-
-                        SendCommand("1站下降5检测", out str[6]);
-                        if (str[5] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升5检测", out str[2]);
-                        if (str[2] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "24"://4 5电机
-
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升4检测", out str[11]);
-                        //SendCommand("1站吸嘴4检测", out str[12]);
-                        // SendCommand("1站电机4左边检测", out str[13]);
-
-                        SendCommand("1站上升5检测", out str[14]);
-                        //SendCommand("1站吸嘴5检测", out str[15]);
-                        SendCommand("1站电机1右边检测", out str[16]);
-
-                        if (str[11] == "status=OK" && str[14] == "status=OK" && str[16] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站升降气缸5降下", out str[6]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴4放气", out str[1]);
-                    SendCommand("1站取放吸嘴5放气", out str[3]);
-                    while (true)
-                    {
-                        SendCommand("1站下降4检测", out str[9]);
-                        SendCommand("1站下降5检测", out str[10]);
-                        if (str[9] == "status=OK" && str[10] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升4检测", out str[4]);
-                        SendCommand("1站上升5检测", out str[5]);
-                        if (str[4] == "status=OK" && str[5] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "28"://3 4 5电机
-
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升3检测", out str[5]);
-                        //SendCommand("1站吸嘴3检测", out str[6]);
-                        // SendCommand("1站电机3左边检测", out str[7]);
-
-                        SendCommand("1站上升4检测", out str[11]);
-                        //SendCommand("1站吸嘴4检测", out str[12]);
-                        // SendCommand("1站电机4左边检测", out str[13]);
-
-                        SendCommand("1站上升5检测", out str[14]);
-                        //SendCommand("1站吸嘴5检测", out str[15]);
-                        SendCommand("1站电机1右边检测", out str[16]);
-
-                        if (str[5] == "status=OK" && str[11] == "status=OK" && str[14] == "status=OK" && str[16] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站升降气缸5降下", out str[6]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴3放气", out str[1]);
-                    SendCommand("1站取放吸嘴4放气", out str[1]);
-                    SendCommand("1站取放吸嘴5放气", out str[1]);
-                    while (true)
-                    {
-
-                        SendCommand("1站下降3检测", out str[7]);
-                        SendCommand("1站下降4检测", out str[9]);
-                        SendCommand("1站下降5检测", out str[10]);
-                        if (str[7] == "status=OK" && str[9] == "status=OK" && str[10] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-
-                        SendCommand("1站上升3检测", out str[3]);
-                        SendCommand("1站上升4检测", out str[4]);
-                        SendCommand("1站上升5检测", out str[5]);
-                        if (str[3] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "30":// 2 3 4 5电机
-
-
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-
-
-                        SendCommand("1站上升2检测", out str[8]);
-                        //SendCommand("1站吸嘴2检测", out str[9]);
-                        // SendCommand("1站电机2左边检测", out str[9]);
-
-                        SendCommand("1站上升3检测", out str[10]);
-                        //SendCommand("1站吸嘴3检测", out str[6]);
-                        //  SendCommand("1站电机3左边检测", out str[11]);
-
-                        SendCommand("1站上升4检测", out str[12]);
-                        //SendCommand("1站吸嘴4检测", out str[12]);
-                        //  SendCommand("1站电机4左边检测", out str[13]);
-
-                        SendCommand("1站上升5检测", out str[14]);
-                        //SendCommand("1站吸嘴5检测", out str[15]);
-                        SendCommand("1站电机1右边检测", out str[15]);
-
-                        if (str[8] == "status=OK" && str[10] == "status=OK" && str[12] == "status=OK" && str[14] == "status=OK" && str[15] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-
-                    SendCommand("1站升降气缸2降下", out str[5]);
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站升降气缸5降下", out str[6]);
-                    Thread.Sleep(timeUp);
-
-                    SendCommand("1站取放吸嘴2放气", out str[1]);
-                    SendCommand("1站取放吸嘴3放气", out str[2]);
-                    SendCommand("1站取放吸嘴4放气", out str[3]);
-                    SendCommand("1站取放吸嘴5放气", out str[4]);
-                    while (true)
-                    {
-
-                        SendCommand("1站下降2检测", out str[8]);
-                        SendCommand("1站下降3检测", out str[7]);
-                        SendCommand("1站下降4检测", out str[9]);
-                        SendCommand("1站下降5检测", out str[10]);
-                        if (str[7] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK" && str[10] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-
-                        SendCommand("1站上升2检测", out str[2]);
-                        SendCommand("1站上升3检测", out str[3]);
-                        SendCommand("1站上升4检测", out str[4]);
-                        SendCommand("1站上升5检测", out str[5]);
-                        if (str[2] == "status=OK" && str[3] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
-                    break;
-                case "31"://1 2 3 4 5电机
-
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[2]);
-                        //SendCommand("1站吸嘴1检测", out str[3]);
-                        SendCommand("1站电机1右边检测", out str[4]);
-
-                        SendCommand("1站上升2检测", out str[8]);
-                        //SendCommand("1站吸嘴2检测", out str[9]);
-                        // SendCommand("1站电机2左边检测", out str[10]);
-
-                        SendCommand("1站上升3检测", out str[5]);
-                        //SendCommand("1站吸嘴3检测", out str[6]);
-                        // SendCommand("1站电机3左边检测", out str[7]);
-
-                        SendCommand("1站上升4检测", out str[11]);
-                        //SendCommand("1站吸嘴4检测", out str[12]);
-                        // SendCommand("1站电机4左边检测", out str[13]);
-
-                        SendCommand("1站上升5检测", out str[14]);
-                        //SendCommand("1站吸嘴5检测", out str[15]);
-                        // SendCommand("1站电机5左边检测", out str[16]);
-
-                        if (str[2] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK" && str[8] == "status=OK" && str[11] == "status=OK" && str[14] == "status=OK")
-                        {
-                            break;
-                        }
-
-                    }
-                    SendCommand("1站升降气缸1降下", out str[5]);
-                    SendCommand("1站升降气缸2降下", out str[5]);
-                    SendCommand("1站升降气缸3降下", out str[6]);
-                    SendCommand("1站升降气缸4降下", out str[6]);
-                    SendCommand("1站升降气缸5降下", out str[6]);
-                    Thread.Sleep(timeUp);
-                    SendCommand("1站取放吸嘴1放气", out str[1]);
-                    SendCommand("1站取放吸嘴2放气", out str[1]);
-                    SendCommand("1站取放吸嘴3放气", out str[1]);
-                    SendCommand("1站取放吸嘴4放气", out str[1]);
-                    SendCommand("1站取放吸嘴5放气", out str[1]);
-                    while (true)
-                    {
-                        SendCommand("1站下降1检测", out str[6]);
-                        SendCommand("1站下降2检测", out str[8]);
-                        SendCommand("1站下降3检测", out str[7]);
-                        SendCommand("1站下降4检测", out str[9]);
-                        SendCommand("1站下降5检测", out str[10]);
-                        if (str[6] == "status=OK" && str[7] == "status=OK" && str[8] == "status=OK" && str[9] == "status=OK" && str[10] == "status=OK")
-                        {
-
-                            break;
-                        }
-                    }
-                    SendCommand("1站升降气缸1升起", out str[0]);
-                    SendCommand("1站升降气缸2升起", out str[0]);
-                    SendCommand("1站升降气缸3升起", out str[0]);
-                    SendCommand("1站升降气缸4升起", out str[0]);
-                    SendCommand("1站升降气缸5升起", out str[0]);
-                    Thread.Sleep(100);
-                    while (true)
-                    {
-                        SendCommand("1站上升1检测", out str[1]);
-                        SendCommand("1站上升2检测", out str[2]);
-                        SendCommand("1站上升3检测", out str[3]);
-                        SendCommand("1站上升4检测", out str[4]);
-                        SendCommand("1站上升5检测", out str[5]);
-                        if (str[1] == "status=OK" && str[2] == "status=OK" && str[3] == "status=OK" && str[4] == "status=OK" && str[5] == "status=OK")
-                        {
-                            res = "status=OK";
-                            break;
-                        }
-                    }
-
+                    Thread.Sleep(timeDown);
+                    SendCommand("1站取放1抬起", out str);
+                    SendCommand("1站取放2抬起", out str);
                     break;
             }
-            #endregion
-            return res;
+
+            return str;
+
         }
 
         private void Cam_StartStation_4(string strCmd, out string recStr)
@@ -5008,11 +4211,7 @@ namespace CommonPortCmd
             recStr = "status=OK";
         }
 
-
         #endregion /*************  Cam  *********************************************************************/
-
-
-
 
 
     }

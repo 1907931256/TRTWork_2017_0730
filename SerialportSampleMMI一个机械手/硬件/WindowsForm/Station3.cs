@@ -212,5 +212,6 @@ namespace Station
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + label5.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
+
     }
 }

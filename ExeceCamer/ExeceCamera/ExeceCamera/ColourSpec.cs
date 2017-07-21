@@ -1,22 +1,29 @@
 ﻿using System;
-using System.Collections;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
-using MathNet.Numerics.Statistics;
 using StandardDeviations;
-using System.Collections.Generic;
 using ExeceCamera.CameraSpec;
+using System.Collections;
 
 namespace ExeceCamera
 {
     public partial class ColorSpec : Form
     {
+        /// <summary>
+        /// 良品系数
+        /// </summary>
+        private double k;
 
         private string fileName;
         private DataTable dt;
         private string filePath_ini;
+        /// <summary>
+        /// 表示上限系数
+        /// </summary>
         private double upRatio;
+        /// <summary>
+        /// 表示下限系数
+        /// </summary>
         private double downRatio;
         private bool save_flag;
         private static bool checkErroStart;
@@ -28,6 +35,42 @@ namespace ExeceCamera
         /// 表示一个复选框
         /// </summary>
         private DataGridViewCheckBoxCell checkCell;
+
+
+        /// <summary>
+        /// 列名
+        /// </summary>
+        string[] columnNames =
+        {
+                "CH",
+                "RTV",
+                "RTH",
+                "RBV",
+                "RBH",
+                "LBV",
+                "LBH",
+                "LTV",
+                "LTH",
+                "Grey-Mean-UP",
+                "Grey-Mean-Down",
+                "Grey-Mean-Left",
+                "Grey-Mean-Right",
+                "Grey-Stdev-UP",
+                "Grey-Stdev-Down",
+                "Grey-Stdev-Left",
+                "Grey-Stdev-Right",
+                "Grey-R/G-UP",
+                "Grey-R/G-Down",
+                "Grey-R/G-Left",
+                "Grey-R/G-Right",
+                "Grey-B/G-UP",
+                "Grey-B/G-Down",
+                "Grey-B/G-Left",
+                "Grey-B/G-Right"
+            };
+
+
+
 
 
         public ColorSpec()
@@ -78,13 +121,18 @@ namespace ExeceCamera
             //根据下标找到照片
             //让用户确认照片的去留
             //根据用户的选择确定系数
-            double[] r_g_1=dapublic_.GetDataCateReturnDouble(dt, "R/G_1", "0");
-            Get
+
+            ArrayList indexsCount = new ArrayList();
 
 
+            foreach (var item in columnNames)
+            {
+                double[] r_g_1 = dapublic_.GetDataCateReturnDouble(dt, item, "0");
+                int[] indexs;
+                dapublic_.GetErrorDataIndex(r_g_1, k, out indexs);
+                indexsCount.AddRange(indexs);
 
-
-
+            }
 
 
 
@@ -125,131 +173,104 @@ namespace ExeceCamera
 
 
 
-        private void GetSfrCatDate()
-        {
-            upRatio = Convert.ToDouble(textBox1.Text);
-            downRatio = Convert.ToDouble(textBox2.Text);
+        //private void GetSfrCatDate()
+        //{
+        //    upRatio = Convert.ToDouble(textBox1.Text);
+        //    downRatio = Convert.ToDouble(textBox2.Text);
 
-            //保存 标准偏差
-            double stdev;
-            double[] data;
+        //    //保存 标准偏差
+        //    double stdev;
+        //    double[] data;
 
-            string SFR4BackColor = string.Empty;
-            string SFR4BackColorFlash = string.Empty;
-            string SFR4FrontColor = string.Empty;
-            string SFR4FrontColorFlash = string.Empty;
-
-
+        //    string SFR4BackColor = string.Empty;
+        //    string SFR4BackColorFlash = string.Empty;
+        //    string SFR4FrontColor = string.Empty;
+        //    string SFR4FrontColorFlash = string.Empty;
 
 
-            string[] columnNames =
-            {
-                "CH",
-                "RTV",
-                "RTH",
-                "RBV",
-                "RBH",
-                "LBV",
-                "LBH",
-                "LTV",
-                "LTH",
-                "Grey-Mean-UP",
-                "Grey-Mean-Down",
-                "Grey-Mean-Left",
-                "Grey-Mean-Right",
-                "Grey-Stdev-UP",
-                "Grey-Stdev-Down",
-                "Grey-Stdev-Left",
-                "Grey-Stdev-Right",
-                "Grey-R/G-UP",
-                "Grey-R/G-Down",
-                "Grey-R/G-Left",
-                "Grey-R/G-Right",
-                "Grey-B/G-UP",
-                "Grey-B/G-Down",
-                "Grey-B/G-Left",
-                "Grey-B/G-Right"
-            };
-
-            for (int i = 0; i < columnNames.Length; i++)
-            {
-                if (i<=12 && i>=0)
-                {
-                    //SFR4FrontColor 前后
-                    GetDataCate(dt, columnNames[i], out data, "0");
-                    double[] new_data;
-                    double down;
-                    if (data.Length!=0)
-                    {
-                        dapublic_.GetRemoveNumData(data, out new_data);
-
-                        stdev = dapublic_.GetOffect(new_data);
 
 
-                        down = new_data[0] + stdev * downRatio;
-                        SFR4BackColor += down.ToString("f2") + ",";//数据上限
-                    }
+
+
+        //    for (int i = 0; i < columnNames.Length; i++)
+        //    {
+        //        if (i<=12 && i>=0)
+        //        {
+        //            //SFR4FrontColor 前后
+        //            GetDataCate(dt, columnNames[i], out data, "0");
+        //            double[] new_data;
+        //            double down;
+        //            if (data.Length!=0)
+        //            {
+        //                dapublic_.GetRemoveNumData(data, out new_data);
+
+        //                stdev = dapublic_.GetOffect(new_data);
+
+
+        //                down = new_data[0] + stdev * downRatio;
+        //                SFR4BackColor += down.ToString("f2") + ",";//数据上限
+        //            }
                  
 
                    
 
-                    GetDataCate(dt, columnNames[i], out data, "1");
+        //            GetDataCate(dt, columnNames[i], out data, "1");
 
-                    if (data.Length!=0)
-                    {
-                        dapublic_.GetRemoveNumData(data, out new_data);
+        //            if (data.Length!=0)
+        //            {
+        //                dapublic_.GetRemoveNumData(data, out new_data);
 
-                        stdev = dapublic_.GetOffect(new_data);
+        //                stdev = dapublic_.GetOffect(new_data);
 
 
-                        down = new_data[0] + stdev * downRatio;
-                        SFR4FrontColor += down.ToString("f2") + ",";//数据上限
-                    }
+        //                down = new_data[0] + stdev * downRatio;
+        //                SFR4FrontColor += down.ToString("f2") + ",";//数据上限
+        //            }
                    
 
-                }
-                else if (i >=13)
-                {
-                    GetDataCate(dt, columnNames[i], out data, "0");
-                    double[] new_data;
-                    double down;
-                    if (data.Length!=0)
-                    {
-                        dapublic_.GetRemoveNumData(data, out new_data);
+        //        }
+        //        else if (i >=13)
+        //        {
+        //            GetDataCate(dt, columnNames[i], out data, "0");
+        //            double[] new_data;
+        //            double down;
+        //            if (data.Length!=0)
+        //            {
+        //                dapublic_.GetRemoveNumData(data, out new_data);
 
 
-                        stdev = dapublic_.GetOffect(new_data);
+        //                stdev = dapublic_.GetOffect(new_data);
 
 
-                        down = new_data[new_data.Length - 1] + stdev * downRatio;
-                        SFR4BackColor += down.ToString("f2") + ",";//数据上限
-                    }
+        //                down = new_data[new_data.Length - 1] + stdev * downRatio;
+        //                SFR4BackColor += down.ToString("f2") + ",";//数据上限
+        //            }
 
 
-                    GetDataCate(dt, columnNames[i], out data, "1");
-                    if (data.Length!=0)
-                    {
-                        dapublic_.GetRemoveNumData(data, out new_data);
+        //            GetDataCate(dt, columnNames[i], out data, "1");
+        //            if (data.Length!=0)
+        //            {
+        //                dapublic_.GetRemoveNumData(data, out new_data);
 
-                        stdev = dapublic_.GetOffect(new_data);
+        //                stdev = dapublic_.GetOffect(new_data);
 
 
-                        down = new_data[new_data.Length - 1] + stdev * downRatio;
-                        SFR4FrontColor += down.ToString("f2") + ",";//数据上限
-                    }
-                }
+        //                down = new_data[new_data.Length - 1] + stdev * downRatio;
+        //                SFR4FrontColor += down.ToString("f2") + ",";//数据上限
+        //            }
+        //        }
 
-            }
-            if (SFR4BackColor!=string.Empty)
-            {
-                INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "SFR", "SFR4BackColor", SFR4BackColor);
-            }
-            if (SFR4FrontColor!=string.Empty)
-            {
-                INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "SFR", "SFR4FrontColor", SFR4FrontColor);
-            }
+        //    }
+        //    if (SFR4BackColor!=string.Empty)
+        //    {
+        //        INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "SFR", "SFR4BackColor", SFR4BackColor);
+        //    }
+        //    if (SFR4FrontColor!=string.Empty)
+        //    {
+        //        INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "SFR", "SFR4FrontColor", SFR4FrontColor);
+        //    }
 
-        }
+        //}
 
 
         private void ColourSpec_Load(object sender, EventArgs e)
