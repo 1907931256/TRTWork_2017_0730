@@ -557,6 +557,17 @@ namespace GeneralTst
         private void button8_Click(object sender, EventArgs e)
         {
             logCatFlag = false;
+
+            Process process = new Process();
+            process.StartInfo.FileName = "adb.exe";
+            process.StartInfo.Arguments = "logcat -s qwebob";
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.Start();
+            process.StandardInput.WriteLine("");
+            process.WaitForExit();
+            process.Close();
         }
     }
 }

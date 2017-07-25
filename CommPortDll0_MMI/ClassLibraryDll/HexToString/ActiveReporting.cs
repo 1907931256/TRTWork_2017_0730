@@ -59,11 +59,15 @@ namespace CommonPortCmd
         {
             ActiveEnumData actEnumData;
 
-            if (strHex.IndexOf("0A 01 00") != -1) ///产品检测
+            //if (strHex.IndexOf() != -1) ///产品检测
+            //{
+            //    actEnumData = ActiveEnumData.ProductInPlace_OK;
+            //}
+            if (strHex.IndexOf("01 01 00") != -1) ///产品检测   "0A 01 00"
             {
                 actEnumData = ActiveEnumData.ProductInPlace_OK;
             }
-            else if (strHex.IndexOf("0A 01 FF") != -1)
+            else if (strHex.IndexOf("01 01 FF") != -1)//"0A 01 FF"
             {
                 actEnumData = ActiveEnumData.ProductInPlace_NO;
             }

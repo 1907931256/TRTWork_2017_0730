@@ -18,7 +18,6 @@ E:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.csproj.G
 E:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.exe
 E:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.pdb
 E:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\ExeceCamera.pdb
-e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.View.resources
 e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
 e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\NPOI.dll
 e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\NPOI.OOXML.dll

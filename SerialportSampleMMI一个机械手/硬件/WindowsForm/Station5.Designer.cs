@@ -104,7 +104,7 @@
             this.groupBox1.Size = new System.Drawing.Size(249, 207);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "气缸控制";
+            this.groupBox1.Text = "硬件控制";
             // 
             // checkBox14
             // 

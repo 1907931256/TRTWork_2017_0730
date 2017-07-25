@@ -537,7 +537,7 @@
             this.groupBox2.Size = new System.Drawing.Size(191, 295);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "气缸控制";
+            this.groupBox2.Text = "硬件控制";
             // 
             // groupBox3
             // 

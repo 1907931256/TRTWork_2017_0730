@@ -40,6 +40,16 @@ namespace StandardDeviations
         }
 
         /// <summary>
+        /// 移除数组中重复的数字
+        /// </summary>
+        /// <param name="d">原始数据</param>
+        /// <param name="e">移除后剩下的数据</param>
+        public void GetRemoveSameData(int[] d, out int[] e)
+        {
+             e=d.GroupBy(p => p).Select(p => p.Key).ToArray(); 
+        }
+
+        /// <summary>
         /// 获得最小值
         /// </summary>
         /// <param name="d"></param>
@@ -180,7 +190,7 @@ namespace StandardDeviations
         /// <param name="data"></param>
         /// <param name="k"></param>
         /// <param name="new_sd_min"></param>
-        /// <param name="remain"></param>
+        /// <param name="remain">剩下的数据</param>
         public void DelErroData_Max(double[] data, double k, out double new_sd_min, out double[] remain)
         {
             if (k < 0)
@@ -316,15 +326,16 @@ namespace StandardDeviations
         /// <param name="t">输入的数组</param>
         /// <param name="k">输入的系数</param>
         /// <param name="indexs">输出的下标</param>
-        public  void GetErrorDataIndex(double[] t, double k, out int[] indexs)
+        /// 的
+        public void GetErrorDataIndex(double[] t, double k, out int[] indexs)
         {
             DAPublic dp = new DAPublic();
 
             double offect;//获得输出后的偏差
-            double[] remain_rg_1;//按照 系数移除后剩余的 数
-            dp.DelErroData_Max(t, k, out offect, out remain_rg_1);
-
-            var data_ = t.Except(remain_rg_1);//原始数据中移除 超出规格的数据
+            double[] remain;//按照 系数移除后剩余的 数
+            dp.DelErroData_Max(t, k, out offect, out remain);
+           
+            var data_ = t.Except(remain);//得到被移除的数据
             double[] data_expect = new double[data_.Count()];
             int[] indexs_ = new int[50];//保存超出标准数据的下标
             int i = 0;
@@ -350,19 +361,26 @@ namespace StandardDeviations
         /// <param name="new_t"></param>
         public  void GetNewData(double[] t, int[] indexs, out double[] new_t)
         {
-
-            List<double> t_List = t.ToList();
-            double[] BeRemove = new double[indexs.Length];
-            for (int m = 0; m < BeRemove.Length; m++)
+            if (indexs.Length==0)
             {
-                BeRemove[m] = t[indexs[m]];
+                new_t = t;
             }
-            //在rg_2中删除rg_1中超标的数据，不纳入计算
-            foreach (var item in BeRemove)
+            else
             {
-                t_List.Remove(item);
+                List<double> t_List = t.ToList();
+                double[] BeRemove = new double[indexs.Length];
+                for (int m = 0; m < BeRemove.Length; m++)
+                {
+                    BeRemove[m] = t[indexs[m]];
+                }
+                //在rg_2中删除rg_1中超标的数据，不纳入计算
+                foreach (var item in BeRemove)
+                {
+                    t_List.Remove(item);
+                }
+                new_t = t_List.ToArray();
             }
-            new_t = t_List.ToArray();
+            
 
         }
 
