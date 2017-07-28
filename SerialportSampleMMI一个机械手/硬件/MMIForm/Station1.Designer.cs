@@ -147,6 +147,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.PortConnectFlag = new System.Windows.Forms.Label();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -258,6 +259,7 @@
             this.groupBox1.Controls.Add(this.checkBox16);
             this.groupBox1.Controls.Add(this.checkBox15);
             this.groupBox1.Controls.Add(this.checkBox14);
+            this.groupBox1.Controls.Add(this.checkBox7);
             this.groupBox1.Controls.Add(this.checkBox6);
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.checkBox4);
@@ -275,7 +277,7 @@
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(238, 130);
+            this.checkBox24.Location = new System.Drawing.Point(363, 130);
             this.checkBox24.Name = "checkBox24";
             this.checkBox24.Size = new System.Drawing.Size(90, 16);
             this.checkBox24.TabIndex = 15;
@@ -311,7 +313,7 @@
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(110, 130);
+            this.checkBox21.Location = new System.Drawing.Point(238, 131);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(90, 16);
             this.checkBox21.TabIndex = 16;
@@ -1475,7 +1477,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(88, 23);
             this.button17.TabIndex = 19;
-            this.button17.Text = "1站状态指示灯";
+            this.button17.Text = "1站状态灯";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -1565,6 +1567,18 @@
             this.PortConnectFlag.Size = new System.Drawing.Size(41, 12);
             this.PortConnectFlag.TabIndex = 50;
             this.PortConnectFlag.Text = "label1";
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(110, 131);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(90, 16);
+            this.checkBox7.TabIndex = 14;
+            this.checkBox7.Tag = "1站后门关门";
+            this.checkBox7.Text = "1站后门开门";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // Station1
             // 
@@ -1727,6 +1741,7 @@
         private System.Windows.Forms.Label PortConnectFlag;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }
 

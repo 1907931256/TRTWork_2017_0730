@@ -11,6 +11,7 @@ namespace FlowtestEdit.FlowtestInstance
 
         public string name;
         public string spec;
+
         //public string specdescribe;
         //public string enspecdescribe;
         //public string errcode;

@@ -529,10 +529,12 @@ namespace CommonPortCmd
             if (strCmd == "1站取放")
             {
                 delyEvent.WaitOne();//等待延迟数据返回
-                Room_MotorCheckBeforeDo();
+
+                //Room_MotorCheckBeforeDo();
                 //Room_LeftDo(param);
                 //Room_RightDo(param);
                 //Room_MidDo(param);
+
                 if (param!="0")
                 {
                     strHex="72 05 11 04 0C " + ShujuChuli.StrToHex(param) + " 81";

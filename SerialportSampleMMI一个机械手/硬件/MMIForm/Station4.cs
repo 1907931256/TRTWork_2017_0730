@@ -48,7 +48,7 @@ namespace Station
             trackBar_BaiGuang.TickFrequency = 25;
 
             trackBar1.Minimum = 0;
-            trackBar1.Maximum = 15;
+            trackBar1.Maximum = 255;
             trackBar1.TickFrequency = 5;
             #endregion
         }

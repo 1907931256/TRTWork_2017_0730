@@ -66,6 +66,19 @@ namespace Station
             trackBar_JinJu.TickFrequency = 25;
 
             trackBar1.Minimum = 0;
+            trackBar1.Maximum = 255;
+            trackBar1.TickFrequency = 25;
+
+            trackBar2.Minimum = 0;
+            trackBar2.Maximum = 255;
+            trackBar2.TickFrequency = 25;
+
+
+
+
+
+
+            trackBar1.Minimum = 0;
             trackBar1.Maximum = 15;
             trackBar1.TickFrequency = 5;
 

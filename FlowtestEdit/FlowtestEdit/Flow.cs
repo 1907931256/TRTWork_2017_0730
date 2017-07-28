@@ -49,7 +49,6 @@ namespace FlowtestEdit
             DataTable methods = new DataTable("Methods");
 
             methods.Columns.Add("ItemId", typeof(int));
-            methods.Columns.Add("MethodId", typeof(string));
             methods.Columns.Add("MethodName", typeof(string));
             methods.Columns.Add("Action", typeof(string));
             //methods.Columns.Add("parameters", typeof(string));
@@ -60,11 +59,13 @@ namespace FlowtestEdit
 
             ds.Tables.Add(methods);
 
-            //DataTable propertys = new DataTable("Propertys");
 
-            //propertys.Columns.Add("ItemId", typeof(string));
-            //propertys.Columns.Add("PropertyName", typeof(string));
-            //propertys.Columns.Add("spec", typeof(string));
+
+            DataTable propertys = new DataTable("Propertys");
+
+            propertys.Columns.Add("ItemId", typeof(string));
+            propertys.Columns.Add("PropertyName", typeof(string));
+            propertys.Columns.Add("spec", typeof(string));
             //propertys.Columns.Add("specdescribe", typeof(string));
             //propertys.Columns.Add("enspecdescribe", typeof(string));
             //propertys.Columns.Add("errcode", typeof(string));
@@ -109,7 +110,23 @@ namespace FlowtestEdit
                                     //bedepend = (int)m.Element("bedepend"),
                                     //depend = (int)m.Element("depend")
                                 }).ToArray(),
+                    propety=
+                    (
+                        new Property
+                        {
+                           
+                            //from 
+                            //group m by m.Attribute("name") into names
+                            //select new {name=names.Key.ToString()}).ToString(),
 
+
+
+                            spec = (
+                            from m in e.Elements("Property")
+                            group m by m.Attribute("spec") into names
+                            select new { name = names.Key }).ToString()
+                        }
+                    )
 
 
 
@@ -121,10 +138,13 @@ namespace FlowtestEdit
                 foreach (Method method in item.methods)
                 {
                    int i = 0;
-                    methods.Rows.Add(new object[] { item.id,i, method.name, method.action });
+                    methods.Rows.Add(new object[] { item.id, method.name, method.action });
                     //System.Console.WriteLine(method.action);
                     i++;
                 }
+
+                System.Console.WriteLine(item.propety.name);
+                System.Console.WriteLine(item.propety.spec);
             }
 
 
