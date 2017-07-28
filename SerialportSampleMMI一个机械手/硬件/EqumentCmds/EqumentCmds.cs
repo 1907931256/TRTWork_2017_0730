@@ -1,5 +1,4 @@
 ﻿using CommonPortCmd;
-using ComPort;
 using System.Threading;
 
 namespace EqumentCmds

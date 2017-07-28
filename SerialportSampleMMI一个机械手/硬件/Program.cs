@@ -13,11 +13,11 @@ namespace Station
         [STAThread]
         static void Main()
         {
-            
+            StartConnectPortThread();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Station1());
-            StartConnectPortThread();
+            Application.Run(new Station5());
+           
         }
 
         private static void StartConnectPortThread()
@@ -30,7 +30,6 @@ namespace Station
             );
             thread_.IsBackground = true;
             thread_.Start();
-
         }
 
     }

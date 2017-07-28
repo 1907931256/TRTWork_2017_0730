@@ -73,12 +73,10 @@ namespace CommonPortCmd
         /// </summary>
         private string str_woshou;//保存握手指令Hex
 
-
         /// <summary>
         /// 发送网络命令
         /// </summary>
         private ISendCmd sendNetEqumentCmd;
-
 
         private INICmds INICmds_;
 
@@ -161,8 +159,6 @@ namespace CommonPortCmd
            
             return false;
         }
-
-
   
         /// <summary>
         ///串口数据发送
@@ -392,26 +388,26 @@ namespace CommonPortCmd
                 Room_RecTestOK(strCmd, out recStr);
                 return true;
             }
-            else if (strCmd.IndexOf("2站手机固定") != -1)
-            {
-                while (true)
-                {
-                    recStr = sendNetEqumentCmd.SendCmd(1, "1站电机1原点检测", "");
-                    if (recStr == "status=OK")
-                    {
-                        break;
+            //else if (strCmd.IndexOf("2站手机固定") != -1)
+            //{
+            //    while (true)
+            //    {
+            //        recStr = sendNetEqumentCmd.SendCmd(1, "1站电机1原点检测", "");
+            //        if (recStr == "status=OK")
+            //        {
+            //            break;
 
-                    }
-                    else
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-                strHex = "72 05 12 02 01 00 81";
-                SendHex(strHex, out recStr);
+            //        }
+            //        else
+            //        {
+            //            Thread.Sleep(100);
+            //        }
+            //    }
+            //    strHex = "72 05 12 02 01 00 81";
+            //    SendHex(strHex, out recStr);
 
-                return true;
-            }
+            //    return true;
+            //}
             else if (strCmd.IndexOf("3站45度顶起") != -1)
             {
                 while (true)
@@ -446,39 +442,39 @@ namespace CommonPortCmd
 
                 return true;
             }
-            else if (strCmd.IndexOf("3站前白卡下降") != -1)
-            {
-                while (true)
-                {
-                    recStr = sendNetEqumentCmd.SendCmd(1, "1站电机1原点检测", "");
-                    if (recStr == "status=OK")
-                    {
-                        break;
+            //else if (strCmd.IndexOf("3站前白卡下降") != -1)
+            //{
+            //    while (true)
+            //    {
+            //        recStr = sendNetEqumentCmd.SendCmd(1, "1站电机1原点检测", "");
+            //        if (recStr == "status=OK")
+            //        {
+            //            break;
 
-                    }
-                    else
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-                while (true)
-                {
-                    SendCommand("3站45度放平检测", out recStr);
-                    if (recStr == "status=OK")
-                    {
-                        break;
+            //        }
+            //        else
+            //        {
+            //            Thread.Sleep(100);
+            //        }
+            //    }
+            //    while (true)
+            //    {
+            //        SendCommand("3站45度放平检测", out recStr);
+            //        if (recStr == "status=OK")
+            //        {
+            //            break;
 
-                    }
-                    else
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-                strHex = "72 05 13 02 05 00 81";
-                SendHex(strHex, out recStr);
+            //        }
+            //        else
+            //        {
+            //            Thread.Sleep(100);
+            //        }
+            //    }
+            //    strHex = "72 05 13 02 05 00 81";
+            //    SendHex(strHex, out recStr);
 
-                return true;
-            }
+            //    return true;
+            //}
             else if (strCmd.IndexOf("4站天板靠近") != -1)
             {
                 while (true)
@@ -708,7 +704,9 @@ namespace CommonPortCmd
 
             while (true)
             {
+
                result= sendNetEqumentCmd.SendCmd(3, "3站45度放平检测","" );
+               Log.Debug("3站45度放平检测 result=" + result);
                if (result=="status=OK")
                {
                    break;
@@ -718,22 +716,24 @@ namespace CommonPortCmd
                    Thread.Sleep(timeNO);
                }
             }
-            while (true)
-            {
-                result = sendNetEqumentCmd.SendCmd(3,"3站前白卡上升检测", "");
-                if (result == "status=OK")
-                {
-                    break;
-                }
-                else
-                {
-                    Thread.Sleep(timeNO);
-                }
-            }
+            //while (true)
+            //{
+            //    result = sendNetEqumentCmd.SendCmd(3,"3站前白卡上升检测", "");
+            //    Log.Debug("3站前白卡上升检测 result=" + result);
+            //    if (result == "status=OK")
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Thread.Sleep(timeNO);
+            //    }
+            //}
 
             while (true)
             {
                 result = sendNetEqumentCmd.SendCmd(4,  "4站天板远离检测","");
+                Log.Debug("4站天板远离检测 result=" + result);
                 if (result == "status=OK")
                 {
                     break;
@@ -748,6 +748,7 @@ namespace CommonPortCmd
             while (true)
             {
                 result = sendNetEqumentCmd.SendCmd(5, "5站隔离上升检测","" );
+                Log.Debug("5站隔离上升检测 result=" + result);
                 if (result == "status=OK")
                 {
                     break;
@@ -760,6 +761,7 @@ namespace CommonPortCmd
             while (true)
             {
                 result = sendNetEqumentCmd.SendCmd(5, "5站人工耳远离检测", "");
+                Log.Debug("5站人工耳远离检测 result=" + result);
                 if (result == "status=OK")
                 {
                     break;

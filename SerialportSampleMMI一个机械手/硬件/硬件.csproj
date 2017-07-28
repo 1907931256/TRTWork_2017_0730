@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -100,6 +100,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAMFrom\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAMFrom\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="EqumentCmds\EqumentCmds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,55 +114,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\Station1.cs">
+    <Compile Include="MMIForm\Station1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\Station1.Designer.cs">
+    <Compile Include="MMIForm\Station1.Designer.cs">
       <DependentUpon>Station1.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32.cs" />
-    <Compile Include="WindowsForm\Station2.cs">
+    <Compile Include="MMIForm\Station2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\Station2.Designer.cs">
+    <Compile Include="MMIForm\Station2.Designer.cs">
       <DependentUpon>Station2.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\Station3.cs">
+    <Compile Include="MMIForm\Station3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\Station3.Designer.cs">
+    <Compile Include="MMIForm\Station3.Designer.cs">
       <DependentUpon>Station3.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\Station4.cs">
+    <Compile Include="MMIForm\Station4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\Station4.Designer.cs">
+    <Compile Include="MMIForm\Station4.Designer.cs">
       <DependentUpon>Station4.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\Station5.cs">
+    <Compile Include="MMIForm\Station5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\Station5.Designer.cs">
+    <Compile Include="MMIForm\Station5.Designer.cs">
       <DependentUpon>Station5.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CAMFrom\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\Station1.resx">
+    <EmbeddedResource Include="MMIForm\Station1.resx">
       <DependentUpon>Station1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\Station2.resx">
+    <EmbeddedResource Include="MMIForm\Station2.resx">
       <DependentUpon>Station2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\Station3.resx">
+    <EmbeddedResource Include="MMIForm\Station3.resx">
       <DependentUpon>Station3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\Station4.resx">
+    <EmbeddedResource Include="MMIForm\Station4.resx">
       <DependentUpon>Station4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\Station5.resx">
+    <EmbeddedResource Include="MMIForm\Station5.resx">
       <DependentUpon>Station5.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -192,10 +201,11 @@
   <ItemGroup>
     <Content Include="default.ico" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\CommPortDll0_MMI\ClassLibraryDll\CommonPortCmd_MMI.csproj">
+    <ProjectReference Include="..\..\CommPortDll0_MMI\ClassLibraryDll\CommonPortCmd_MMI_CAM.csproj">
       <Project>{2e2b9417-06ed-4e85-b106-5bf2ee18d840}</Project>
-      <Name>CommonPortCmd_MMI</Name>
+      <Name>CommonPortCmd_MMI_CAM</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

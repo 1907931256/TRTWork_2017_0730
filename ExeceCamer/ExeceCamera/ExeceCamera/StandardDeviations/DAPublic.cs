@@ -200,7 +200,7 @@ namespace StandardDeviations
             double[] data_ = new double[data.Length];
             Array.Copy(data, data_, data.Length);
 
-            double sd = this.GetOffect(data_);
+            double sd = this.GetOffect(data_)/this.GetAvage(data_);
 
             //int i = 1;
 
@@ -235,7 +235,7 @@ namespace StandardDeviations
 
                     Array.Copy(list.ToArray(), remain_data, remain_data.Length);
 
-                    sd = this.GetOffect(remain_data);
+                    sd = this.GetOffect(remain_data)/this.GetAvage(data_);
 
                     data_ = list.ToArray();
 

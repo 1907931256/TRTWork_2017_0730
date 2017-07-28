@@ -155,7 +155,7 @@ namespace ComPort
             //数据发送间隔时间
             int timeSet = 10;
 
-            if (!recvEvent_.WaitOne())
+            if (!recvEvent_.WaitOne(1000))
             {
                 Log.Debug("SerialPort recv timeout");
 
