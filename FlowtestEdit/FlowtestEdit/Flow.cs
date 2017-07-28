@@ -101,8 +101,8 @@ namespace FlowtestEdit
                                 from m in e.Elements("Method")
                                 select new Method
                                 {
-                                    name = (string)m.Element("name"),
-                                    action = (string)m.Element("action"),
+                                    name = (string)m.Attribute("name"),
+                                    action = (string)m.Attribute("action"),
                                     //parameters = (string)m.Element("parameters"),
                                     //compare = (string)m.Element("compare"),
                                     //disable = (int)m.Element("disable"),
@@ -120,7 +120,10 @@ namespace FlowtestEdit
                 items.Rows.Add(new object[] { item.id });
                 foreach (Method method in item.methods)
                 {
-                    methods.Rows.Add(new object[] { method.name, method.action });
+                   int i = 0;
+                    methods.Rows.Add(new object[] { item.id,i, method.name, method.action });
+                    //System.Console.WriteLine(method.action);
+                    i++;
                 }
             }
 
@@ -139,11 +142,35 @@ namespace FlowtestEdit
                 new
                 {
                     ItemId = x.Field<int>("ItemId"),
+                    methods=
+                    from o in x.GetChildRows("ItemMethods")
+                    group o by x.GetChildRows("ItemMethods") into methods
+                    select new
+                    {
+                        names=from m in methods
+                              select new { name=m.Field<string>("MethodName") },
+
+                        actions= from o in methods
+                                 select new {action=o.Field<string>("Action")}
+                    }
+
                 };
 
             foreach (var item in itemsGroup)
             {
                 System.Console.WriteLine(item.ItemId);
+                foreach (var m in item.methods)
+                {
+
+                    foreach (var x in m.names)
+                    {
+                        System.Console.WriteLine(x.name);
+                    }
+                    foreach (var y in m.actions)
+                    {
+                        System.Console.WriteLine(y.action);
+                    }
+                }
             }
         }
 
