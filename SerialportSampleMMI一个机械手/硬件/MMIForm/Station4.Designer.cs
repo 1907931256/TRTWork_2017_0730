@@ -444,6 +444,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(38, 21);
             this.textBox5.TabIndex = 29;
+            this.textBox5.Text = "0";
             // 
             // trackBar_BaiGuang
             // 
@@ -467,6 +468,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(38, 21);
             this.textBox1.TabIndex = 29;
+            this.textBox1.Text = "0";
             // 
             // label3
             // 

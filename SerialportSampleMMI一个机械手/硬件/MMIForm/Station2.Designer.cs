@@ -87,6 +87,9 @@
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PortConnectFlag = new System.Windows.Forms.Label();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_JiaoZhun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_QianSe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_YuanJu)).BeginInit();
@@ -214,6 +217,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(49, 21);
             this.textBox2.TabIndex = 26;
+            this.textBox2.Text = "0";
             // 
             // label3
             // 
@@ -238,6 +242,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(49, 21);
             this.textBox6.TabIndex = 26;
+            this.textBox6.Text = "0";
             // 
             // label7
             // 
@@ -263,6 +268,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(49, 21);
             this.textBox3.TabIndex = 26;
+            this.textBox3.Text = "0";
             // 
             // trackBar_JinJu
             // 
@@ -278,6 +284,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(49, 21);
             this.textBox4.TabIndex = 26;
+            this.textBox4.Text = "0";
             // 
             // label4
             // 
@@ -311,6 +318,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(49, 21);
             this.textBox5.TabIndex = 26;
+            this.textBox5.Text = "0";
             // 
             // label6
             // 
@@ -326,13 +334,14 @@
             this.checkBox12.AutoSize = true;
             this.checkBox12.BackColor = System.Drawing.Color.Black;
             this.checkBox12.ForeColor = System.Drawing.Color.White;
-            this.checkBox12.Location = new System.Drawing.Point(15, 177);
+            this.checkBox12.Location = new System.Drawing.Point(15, 203);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(114, 16);
             this.checkBox12.TabIndex = 22;
             this.checkBox12.Tag = "2站防抖电机关闭";
             this.checkBox12.Text = "2站防抖电机启动";
             this.checkBox12.UseVisualStyleBackColor = false;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
             this.checkBox12.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // groupBox5
@@ -505,6 +514,7 @@
             this.fangdou_2.Name = "fangdou_2";
             this.fangdou_2.Size = new System.Drawing.Size(49, 21);
             this.fangdou_2.TabIndex = 26;
+            this.fangdou_2.Text = "0";
             // 
             // trackBar1
             // 
@@ -520,10 +530,12 @@
             this.fangdou_1.Name = "fangdou_1";
             this.fangdou_1.Size = new System.Drawing.Size(49, 21);
             this.fangdou_1.TabIndex = 26;
+            this.fangdou_1.Text = "0";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.checkBox12);
+            this.groupBox2.Controls.Add(this.checkBox8);
             this.groupBox2.Controls.Add(this.checkBox7);
             this.groupBox2.Controls.Add(this.checkBox6);
             this.groupBox2.Controls.Add(this.checkBox5);
@@ -532,9 +544,9 @@
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(165, 381);
+            this.groupBox2.Location = new System.Drawing.Point(165, 367);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(191, 295);
+            this.groupBox2.Size = new System.Drawing.Size(191, 309);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "硬件控制";
@@ -583,6 +595,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(49, 21);
             this.textBox1.TabIndex = 26;
+            this.textBox1.Text = "0";
             // 
             // trackBar3
             // 
@@ -596,7 +609,9 @@
             // 
             this.groupBox4.Controls.Add(this.Button9);
             this.groupBox4.Controls.Add(this.Button8);
+            this.groupBox4.Controls.Add(this.button15);
             this.groupBox4.Controls.Add(this.Button10);
+            this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.Button7);
             this.groupBox4.Controls.Add(this.Button11);
             this.groupBox4.Controls.Add(this.Button6);
@@ -606,9 +621,9 @@
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(7, 376);
+            this.groupBox4.Location = new System.Drawing.Point(7, 358);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(138, 300);
+            this.groupBox4.Size = new System.Drawing.Size(138, 362);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "到位检测";
@@ -617,7 +632,7 @@
             // 
             this.Button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button9.BackgroundImage")));
             this.Button9.ForeColor = System.Drawing.Color.Black;
-            this.Button9.Location = new System.Drawing.Point(14, 269);
+            this.Button9.Location = new System.Drawing.Point(14, 324);
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(115, 21);
             this.Button9.TabIndex = 48;
@@ -633,7 +648,7 @@
             this.Button8.Name = "Button8";
             this.Button8.Size = new System.Drawing.Size(115, 21);
             this.Button8.TabIndex = 21;
-            this.Button8.Text = "2站SFR远离检测";
+            this.Button8.Text = "2站色卡远离检测";
             this.Button8.UseVisualStyleBackColor = true;
             this.Button8.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -752,12 +767,50 @@
             this.PortConnectFlag.TabIndex = 45;
             this.PortConnectFlag.Text = "Port name";
             // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Black;
+            this.checkBox8.ForeColor = System.Drawing.Color.White;
+            this.checkBox8.Location = new System.Drawing.Point(15, 177);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(90, 16);
+            this.checkBox8.TabIndex = 22;
+            this.checkBox8.Tag = "2站标靶远离";
+            this.checkBox8.Text = "2站标靶靠近";
+            this.checkBox8.UseVisualStyleBackColor = false;
+            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(14, 272);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(115, 21);
+            this.button12.TabIndex = 50;
+            this.button12.Text = "2站标靶靠近检测 ";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button15
+            // 
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.ForeColor = System.Drawing.Color.Black;
+            this.button15.Location = new System.Drawing.Point(14, 297);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(115, 21);
+            this.button15.TabIndex = 49;
+            this.button15.Text = "2站标靶远离检测 ";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // Station2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(790, 685);
+            this.ClientSize = new System.Drawing.Size(790, 732);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PortConnectFlag);
             this.Controls.Add(this.groupBox4);
@@ -851,5 +904,8 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button12;
     }
 }

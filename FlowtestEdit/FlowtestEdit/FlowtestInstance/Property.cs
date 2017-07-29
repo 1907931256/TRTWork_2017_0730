@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace FlowtestEdit.FlowtestInstance
 {
@@ -28,6 +25,13 @@ namespace FlowtestEdit.FlowtestInstance
         //public string hide;
         //public string condition;
         //public string depend;
+
+
+        public Property(string name_, string spec_)
+        {
+            name_= name;
+            spec_ = spec;
+        }
 
     }
 }

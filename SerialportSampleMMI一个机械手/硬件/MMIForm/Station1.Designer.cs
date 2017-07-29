@@ -54,6 +54,7 @@
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button77 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
@@ -147,7 +148,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.PortConnectFlag = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -478,6 +480,18 @@
             this.checkBox14.UseVisualStyleBackColor = true;
             this.checkBox14.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(110, 131);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(90, 16);
+            this.checkBox7.TabIndex = 14;
+            this.checkBox7.Tag = "1站后门关门";
+            this.checkBox7.Text = "1站后门开门";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button77);
@@ -538,9 +552,11 @@
             this.groupBox2.Controls.Add(this.button35);
             this.groupBox2.Controls.Add(this.button29);
             this.groupBox2.Controls.Add(this.button34);
+            this.groupBox2.Controls.Add(this.button46);
             this.groupBox2.Controls.Add(this.button23);
             this.groupBox2.Controls.Add(this.button28);
             this.groupBox2.Controls.Add(this.button66);
+            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button22);
             this.groupBox2.Controls.Add(this.button65);
             this.groupBox2.Controls.Add(this.button64);
@@ -613,7 +629,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(458, 228);
+            this.button4.Location = new System.Drawing.Point(773, 201);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 55);
             this.button4.TabIndex = 0;
@@ -1174,7 +1190,7 @@
             // button29
             // 
             this.button29.ForeColor = System.Drawing.Color.Black;
-            this.button29.Location = new System.Drawing.Point(119, 244);
+            this.button29.Location = new System.Drawing.Point(223, 244);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(98, 22);
             this.button29.TabIndex = 0;
@@ -1196,7 +1212,7 @@
             // button23
             // 
             this.button23.ForeColor = System.Drawing.Color.Black;
-            this.button23.Location = new System.Drawing.Point(15, 244);
+            this.button23.Location = new System.Drawing.Point(119, 244);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(98, 22);
             this.button23.TabIndex = 0;
@@ -1207,7 +1223,7 @@
             // button28
             // 
             this.button28.ForeColor = System.Drawing.Color.Black;
-            this.button28.Location = new System.Drawing.Point(119, 217);
+            this.button28.Location = new System.Drawing.Point(223, 217);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(98, 22);
             this.button28.TabIndex = 0;
@@ -1229,7 +1245,7 @@
             // button22
             // 
             this.button22.ForeColor = System.Drawing.Color.Black;
-            this.button22.Location = new System.Drawing.Point(15, 217);
+            this.button22.Location = new System.Drawing.Point(119, 217);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(98, 22);
             this.button22.TabIndex = 0;
@@ -1568,17 +1584,27 @@
             this.PortConnectFlag.TabIndex = 50;
             this.PortConnectFlag.Text = "label1";
             // 
-            // checkBox7
+            // button5
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(110, 131);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(90, 16);
-            this.checkBox7.TabIndex = 14;
-            this.checkBox7.Tag = "1站后门关门";
-            this.checkBox7.Text = "1站后门开门";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(15, 217);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(98, 22);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "1站红外感应2检测";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button46
+            // 
+            this.button46.ForeColor = System.Drawing.Color.Black;
+            this.button46.Location = new System.Drawing.Point(15, 244);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(98, 22);
+            this.button46.TabIndex = 0;
+            this.button46.Text = "1站红外感应3检测";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.GetButtonName);
             // 
             // Station1
             // 
@@ -1742,6 +1768,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button button5;
     }
 }
 

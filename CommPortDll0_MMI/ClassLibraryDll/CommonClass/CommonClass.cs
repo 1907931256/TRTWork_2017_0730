@@ -127,7 +127,7 @@ namespace CommonPortCmd
         /// </summary>
         public bool ConnectPort()
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 5; i++)
             {
                 string[] ports = SerialPort.GetPortNames();
 
@@ -528,7 +528,7 @@ namespace CommonPortCmd
 
             if (strCmd == "1站取放")
             {
-                delyEvent.WaitOne();//等待延迟数据返回
+                //delyEvent.WaitOne();//等待延迟数据返回
 
                 //Room_MotorCheckBeforeDo();
                 //Room_LeftDo(param);
@@ -537,15 +537,17 @@ namespace CommonPortCmd
 
                 if (param!="0")
                 {
-                    strHex="72 05 11 04 0C " + ShujuChuli.StrToHex(param) + " 81";
+                    Log.Debug("1站取放 start");
+                    strHex ="72 05 11 04 0C " + ShujuChuli.StrToHex(param) + " 81";
                     SendHex(strHex, out recStr);//发送命令
+
                     recStr = "status=OK";
                 }
                 else
                 {
                     recStr = "status=error";
                 }
-               
+                Log.Debug("1站取放 stop");
                 return true;
             }
             else if (strCmd == "警告")

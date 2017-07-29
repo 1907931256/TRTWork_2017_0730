@@ -19,18 +19,18 @@ namespace FlowtestEdit
 
         public static Flow CreateFlow()
         {
-            if (flowtIntest!=null)
+            if (flowtIntest != null)
             {
                 return flowtIntest;
             }
             else
             {
-              return flowtIntest = new Flow();
+                return flowtIntest = new Flow();
             }
         }
-       
-            
-            
+
+
+
         private DataSet CreatDataSet()
         {
             DataSet ds = new DataSet();
@@ -110,23 +110,13 @@ namespace FlowtestEdit
                                     //bedepend = (int)m.Element("bedepend"),
                                     //depend = (int)m.Element("depend")
                                 }).ToArray(),
-                    propety=
-                    (
-                        new Property
-                        {
-                           
-                            //from 
-                            //group m by m.Attribute("name") into names
-                            //select new {name=names.Key.ToString()}).ToString(),
+                    propety =new Property(
+                        name_=e.Elements("Property").
+                        
 
 
-
-                            spec = (
-                            from m in e.Elements("Property")
-                            group m by m.Attribute("spec") into names
-                            select new { name = names.Key }).ToString()
-                        }
-                    )
+                        )
+                        
 
 
 
@@ -137,14 +127,13 @@ namespace FlowtestEdit
                 items.Rows.Add(new object[] { item.id });
                 foreach (Method method in item.methods)
                 {
-                   int i = 0;
+                    int i = 0;
                     methods.Rows.Add(new object[] { item.id, method.name, method.action });
                     //System.Console.WriteLine(method.action);
                     i++;
                 }
 
                 System.Console.WriteLine(item.propety.name);
-                System.Console.WriteLine(item.propety.spec);
             }
 
 
@@ -162,16 +151,16 @@ namespace FlowtestEdit
                 new
                 {
                     ItemId = x.Field<int>("ItemId"),
-                    methods=
+                    methods =
                     from o in x.GetChildRows("ItemMethods")
                     group o by x.GetChildRows("ItemMethods") into methods
                     select new
                     {
-                        names=from m in methods
-                              select new { name=m.Field<string>("MethodName") },
+                        names = from m in methods
+                                select new { name = m.Field<string>("MethodName") },
 
-                        actions= from o in methods
-                                 select new {action=o.Field<string>("Action")}
+                        actions = from o in methods
+                                  select new { action = o.Field<string>("Action") }
                     }
 
                 };

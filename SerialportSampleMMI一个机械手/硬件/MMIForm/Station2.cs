@@ -278,5 +278,9 @@ namespace Station
             txtXianShi.Text = "";
         }
 
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

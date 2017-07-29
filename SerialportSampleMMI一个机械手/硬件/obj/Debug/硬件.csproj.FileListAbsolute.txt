@@ -11,12 +11,8 @@ e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\Station.Station3.
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\Station.Station4.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\Station.Station5.resources
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.csproj.GenerateResource.Cache
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.exe.manifest
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.application
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.exe
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.pdb
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.exe.config
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.exe.manifest
-e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.application
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.exe
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.pdb

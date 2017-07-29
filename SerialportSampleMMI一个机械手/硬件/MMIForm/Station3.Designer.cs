@@ -72,6 +72,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.trackBar_JiaoZhun = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,7 +97,7 @@
             this.txtXianShi.Multiline = true;
             this.txtXianShi.Name = "txtXianShi";
             this.txtXianShi.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtXianShi.Size = new System.Drawing.Size(442, 573);
+            this.txtXianShi.Size = new System.Drawing.Size(442, 285);
             this.txtXianShi.TabIndex = 38;
             // 
             // PortConnectFlag
@@ -113,7 +119,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(639, 319);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(221, 167);
+            this.groupBox5.Size = new System.Drawing.Size(221, 204);
             this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "3站状态指示";
@@ -180,14 +186,18 @@
             this.groupBox4.Controls.Add(this.button13);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button12);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.button8);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(458, 492);
+            this.groupBox4.Location = new System.Drawing.Point(7, 319);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(402, 109);
+            this.groupBox4.Size = new System.Drawing.Size(442, 204);
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "状态检测";
@@ -294,6 +304,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.checkBox6);
+            this.groupBox2.Controls.Add(this.checkBox10);
+            this.groupBox2.Controls.Add(this.checkBox8);
             this.groupBox2.Controls.Add(this.checkBox5);
             this.groupBox2.Controls.Add(this.checkBox9);
             this.groupBox2.Controls.Add(this.checkBox4);
@@ -303,7 +315,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(458, 319);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(175, 167);
+            this.groupBox2.Size = new System.Drawing.Size(175, 204);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "气缸控制";
@@ -313,7 +325,7 @@
             this.checkBox6.AutoSize = true;
             this.checkBox6.BackColor = System.Drawing.Color.Black;
             this.checkBox6.ForeColor = System.Drawing.Color.White;
-            this.checkBox6.Location = new System.Drawing.Point(15, 121);
+            this.checkBox6.Location = new System.Drawing.Point(15, 119);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(90, 16);
             this.checkBox6.TabIndex = 22;
@@ -327,7 +339,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.BackColor = System.Drawing.Color.Black;
             this.checkBox5.ForeColor = System.Drawing.Color.White;
-            this.checkBox5.Location = new System.Drawing.Point(15, 142);
+            this.checkBox5.Location = new System.Drawing.Point(15, 138);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(90, 16);
             this.checkBox5.TabIndex = 22;
@@ -488,6 +500,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(48, 21);
             this.textBox4.TabIndex = 26;
+            this.textBox4.Text = "0";
             // 
             // textBox3
             // 
@@ -495,6 +508,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(48, 21);
             this.textBox3.TabIndex = 26;
+            this.textBox3.Text = "0";
             // 
             // textBox1
             // 
@@ -502,6 +516,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(48, 21);
             this.textBox1.TabIndex = 26;
+            this.textBox1.Text = "0";
             // 
             // trackBar2
             // 
@@ -517,6 +532,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(48, 21);
             this.textBox6.TabIndex = 26;
+            this.textBox6.Text = "0";
             // 
             // trackBar1
             // 
@@ -548,6 +564,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(48, 21);
             this.textBox2.TabIndex = 26;
+            this.textBox2.Text = "0";
             // 
             // trackBar_JiaoZhun
             // 
@@ -568,12 +585,84 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "天瑞通硬件调试工具";
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(15, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 21);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "3站标靶靠近检测";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(15, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 21);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "3站标靶远离检测";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(126, 101);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 21);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "3站左右靠近检测";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(126, 128);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 21);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "3站左右远离检测";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Black;
+            this.checkBox8.ForeColor = System.Drawing.Color.White;
+            this.checkBox8.Location = new System.Drawing.Point(15, 159);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(90, 16);
+            this.checkBox8.TabIndex = 22;
+            this.checkBox8.Tag = "3站标靶远离";
+            this.checkBox8.Text = "3站标靶靠近";
+            this.checkBox8.UseVisualStyleBackColor = false;
+            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.BackColor = System.Drawing.Color.Black;
+            this.checkBox10.ForeColor = System.Drawing.Color.White;
+            this.checkBox10.Location = new System.Drawing.Point(15, 180);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(90, 16);
+            this.checkBox10.TabIndex = 22;
+            this.checkBox10.Tag = "3站左右远离";
+            this.checkBox10.Text = "3站左右靠近";
+            this.checkBox10.UseVisualStyleBackColor = false;
+            this.checkBox10.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
             // Station3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(872, 602);
+            this.ClientSize = new System.Drawing.Size(872, 529);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -647,5 +736,11 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.ComboBox comBox_ZhiShiDeng_1;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox8;
     }
 }

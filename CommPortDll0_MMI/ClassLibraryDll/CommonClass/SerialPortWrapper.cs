@@ -155,7 +155,7 @@ namespace ComPort
             //数据发送间隔时间
             int timeSet = 10;
 
-            if (!recvEvent_.WaitOne(1000))
+            if (!recvEvent_.WaitOne(3000))
             {
                 Log.Debug("SerialPort recv timeout");
 
@@ -203,8 +203,8 @@ namespace ComPort
                     Thread.Sleep(100);
                     continue;
                 }
-                Log.Debug("DataReceivedHandler start");
-                Log.Debug("readBytes=" + readBytes);
+                //Log.Debug("DataReceivedHandler start");
+                //Log.Debug("readBytes=" + readBytes);
 
                 serialPort_.Read(readBuffer_, 0, readBytes);
 

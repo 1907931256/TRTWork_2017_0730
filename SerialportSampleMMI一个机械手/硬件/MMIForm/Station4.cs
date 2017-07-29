@@ -11,7 +11,7 @@ namespace Station
         public Station4()
         {
             InitializeComponent();
-            Control.CheckForIllegalCrossThreadCalls = false;   //禁止.net对线程做检测
+            Control.CheckForIllegalCrossThreadCalls = false;  
         }
         private void Form4_Load(object sender, EventArgs e)
         {
