@@ -16,3 +16,4 @@ e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\硬件.pdb
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.exe.config
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.exe
 e:\TRTWork\SerialportSampleMMI一个机械手\硬件\bin\Debug\硬件.pdb
+e:\TRTWork\SerialportSampleMMI一个机械手\硬件\obj\Debug\Station.Station6.resources

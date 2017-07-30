@@ -636,7 +636,7 @@
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(115, 21);
             this.Button9.TabIndex = 48;
-            this.Button9.Text = "1站报警取消检测 ";
+            this.Button9.Text = "2站报警取消检测";
             this.Button9.UseVisualStyleBackColor = true;
             this.Button9.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -789,7 +789,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(115, 21);
             this.button12.TabIndex = 50;
-            this.button12.Text = "2站标靶靠近检测 ";
+            this.button12.Text = "2站标靶靠近检测";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -801,7 +801,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(115, 21);
             this.button15.TabIndex = 49;
-            this.button15.Text = "2站标靶远离检测 ";
+            this.button15.Text = "2站标靶远离检测";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.GetButtonName);
             // 

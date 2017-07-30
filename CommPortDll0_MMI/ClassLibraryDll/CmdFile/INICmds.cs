@@ -23,7 +23,6 @@ namespace CmdFile
 
             foreach (var item in cmds)
             {
-                System.Console.WriteLine(item.ToString());
                 if (item.Cmd== cmd)
                 {
                     cmdHex = item.CmdHex;

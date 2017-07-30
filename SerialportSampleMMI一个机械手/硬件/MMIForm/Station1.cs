@@ -28,8 +28,7 @@ namespace Station
             ShuJuJiaZai();
 
 
-            Thread thread = new Thread(() =>
-            {
+           
                 EquipmentCmd.Instance.ReportEvent += Instance_ReportEvent;
 
                 if (EquipmentCmd.Instance.ConnectPort() == false)
@@ -40,10 +39,8 @@ namespace Station
                 {
                     PortConnectFlag.Text = "connect!";
                 }
-            });
+           
 
-            thread.IsBackground = true;
-            thread.Start();
 
         }
 

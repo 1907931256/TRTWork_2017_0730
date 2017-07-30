@@ -3,6 +3,8 @@ using System;
 using System.Threading;
 using System.Windows.Forms;
 
+using CommonClass;
+
 namespace Station
 {
     static class Program
@@ -13,11 +15,12 @@ namespace Station
         [STAThread]
         static void Main()
         {
-            StartConnectPortThread();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Station5());
-           
+            //必须放在窗体运行之后，握手才能正常握手
+            StartConnectPortThread();
+
         }
 
         private static void StartConnectPortThread()

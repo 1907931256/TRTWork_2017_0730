@@ -78,6 +78,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -181,9 +184,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button14);
             this.groupBox4.Controls.Add(this.button11);
+            this.groupBox4.Controls.Add(this.button17);
             this.groupBox4.Controls.Add(this.button13);
+            this.groupBox4.Controls.Add(this.button16);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button4);
@@ -209,7 +215,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(105, 21);
             this.button14.TabIndex = 0;
-            this.button14.Text = "3站1站原点";
+            this.button14.Text = "3站1站原点检测";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -657,6 +663,39 @@
             this.checkBox10.UseVisualStyleBackColor = false;
             this.checkBox10.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(237, 101);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 21);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "3站报警取消检测";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button16
+            // 
+            this.button16.ForeColor = System.Drawing.Color.Black;
+            this.button16.Location = new System.Drawing.Point(237, 128);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(105, 21);
+            this.button16.TabIndex = 0;
+            this.button16.Text = "3站前白靠近检测";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button17
+            // 
+            this.button17.ForeColor = System.Drawing.Color.Black;
+            this.button17.Location = new System.Drawing.Point(237, 155);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(105, 21);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "3站前白远离检测";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // Station3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -742,5 +781,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button16;
     }
 }

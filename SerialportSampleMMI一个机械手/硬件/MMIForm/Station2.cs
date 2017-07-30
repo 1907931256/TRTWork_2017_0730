@@ -6,6 +6,7 @@ namespace Station
 {
     public partial class Station2 : Form
     {
+        #region 通用代码
         private string res;
         public Station2()
         {
@@ -69,14 +70,15 @@ namespace Station
             trackBar3.Maximum = 255;
             trackBar3.TickFrequency = 25;
 
+
             trackBar1.Minimum = 0;
-            trackBar1.Maximum = 15;
+            trackBar1.Maximum = 25;
             trackBar1.TickFrequency = 5;
 
-
             trackBar2.Minimum = 0;
-            trackBar2.Maximum = 15;
+            trackBar2.Maximum = 25;
             trackBar2.TickFrequency = 5;
+
 
             textBox1.Text = "0";
             textBox2.Text = "0";
@@ -141,7 +143,7 @@ namespace Station
             return hex;
         }
 
-
+#endregion  通用代码
         //色卡上光源
         private void trackBar_QianSe_Scroll(object sender, EventArgs e)
         {

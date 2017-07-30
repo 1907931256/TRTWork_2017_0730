@@ -78,14 +78,6 @@ namespace Station
 
 
 
-            trackBar1.Minimum = 0;
-            trackBar1.Maximum = 15;
-            trackBar1.TickFrequency = 5;
-
-
-            trackBar2.Minimum = 0;
-            trackBar2.Maximum = 15;
-            trackBar2.TickFrequency = 5;
 
 
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -38,11 +37,11 @@
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -54,11 +53,11 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.comBox_ZT = new System.Windows.Forms.ComboBox();
             this.button19 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
@@ -73,14 +72,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSport = new System.Windows.Forms.Button();
             this.X_txt = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Move_txt = new System.Windows.Forms.TextBox();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.JianSuDu_txt = new System.Windows.Forms.TextBox();
             this.JiaSuDu_txt = new System.Windows.Forms.TextBox();
@@ -97,8 +91,8 @@
             this.button32 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
@@ -106,12 +100,12 @@
             this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
             this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.comboPortName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.touMing_btn3 = new System.Windows.Forms.TouMing_btn();
-            this.touMing_btn4 = new System.Windows.Forms.TouMing_btn();
-            this.touMing_btn2 = new System.Windows.Forms.TouMing_btn();
-            this.touMing_btn1 = new System.Windows.Forms.TouMing_btn();
+            this.touMing_btn3 = new System.Windows.Forms.Button();
+            this.touMing_btn4 = new System.Windows.Forms.Button();
+            this.touMing_btn2 = new System.Windows.Forms.Button();
+            this.touMing_btn1 = new System.Windows.Forms.Button();
+            this.PortConnectFlag = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -119,17 +113,6 @@
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(305, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 12);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Port name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtXianShi
             // 
@@ -169,7 +152,6 @@
             this.button3.TabIndex = 54;
             this.button3.Text = "清屏";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -178,9 +160,8 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 23);
             this.button2.TabIndex = 19;
-            this.button2.Text = "6站状态指示灯";
+            this.button2.Text = "6站状态灯";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // fuwei_btn
             // 
@@ -192,7 +173,7 @@
             this.fuwei_btn.TabIndex = 53;
             this.fuwei_btn.Text = "复位";
             this.fuwei_btn.UseVisualStyleBackColor = false;
-            this.fuwei_btn.Click += new System.EventHandler(this.button18_Click);
+            this.fuwei_btn.Click += new System.EventHandler(this.GetButtonName);
             // 
             // comBox_ZhiShiDeng_1
             // 
@@ -207,11 +188,12 @@
             this.checkBox22.AutoSize = true;
             this.checkBox22.Location = new System.Drawing.Point(13, 43);
             this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(66, 16);
+            this.checkBox22.Size = new System.Drawing.Size(90, 16);
             this.checkBox22.TabIndex = 14;
-            this.checkBox22.Text = "6站状态";
+            this.checkBox22.Tag = "6站状态异常";
+            this.checkBox22.Text = "6站状态正常";
             this.checkBox22.UseVisualStyleBackColor = true;
-            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox22_CheckedChanged);
+            this.checkBox22.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox21
             // 
@@ -220,17 +202,18 @@
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(66, 16);
             this.checkBox21.TabIndex = 14;
+            this.checkBox21.Tag = "6站报警正常";
             this.checkBox21.Text = "6站报警";
             this.checkBox21.UseVisualStyleBackColor = true;
-            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
+            this.checkBox21.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.checkBox13);
             this.groupBox3.Controls.Add(this.checkBox12);
             this.groupBox3.Controls.Add(this.checkBox9);
+            this.groupBox3.Controls.Add(this.checkBox23);
+            this.groupBox3.Controls.Add(this.checkBox20);
             this.groupBox3.Controls.Add(this.checkBox8);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(725, 237);
@@ -240,49 +223,29 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "耳机控制";
             // 
-            // button10
-            // 
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(107, 100);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(83, 20);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "6站EAR-按下";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button8
-            // 
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(107, 71);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(83, 20);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "6站EAR+按下";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(11, 100);
+            this.checkBox13.Location = new System.Drawing.Point(101, 31);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(90, 16);
             this.checkBox13.TabIndex = 14;
+            this.checkBox13.Tag = "6站美标耳机";
             this.checkBox13.Text = "6站国标耳机";
             this.checkBox13.UseVisualStyleBackColor = true;
-            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
+            this.checkBox13.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(11, 78);
+            this.checkBox12.Location = new System.Drawing.Point(10, 75);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(90, 16);
             this.checkBox12.TabIndex = 14;
+            this.checkBox12.Tag = "6站HOOK弹起";
             this.checkBox12.Text = "6站HOOK按下";
             this.checkBox12.UseVisualStyleBackColor = true;
-            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
+            this.checkBox12.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox9
             // 
@@ -291,9 +254,34 @@
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(108, 16);
             this.checkBox9.TabIndex = 14;
+            this.checkBox9.Tag = "6站EAR-MIC关闭";
             this.checkBox9.Text = "6站EAR-MIC打开";
             this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            this.checkBox9.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox23
+            // 
+            this.checkBox23.AutoSize = true;
+            this.checkBox23.Location = new System.Drawing.Point(11, 97);
+            this.checkBox23.Name = "checkBox23";
+            this.checkBox23.Size = new System.Drawing.Size(120, 16);
+            this.checkBox23.TabIndex = 14;
+            this.checkBox23.Tag = "6站耳机音量-弹起";
+            this.checkBox23.Text = "6站耳机音量-按下";
+            this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(11, 120);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(120, 16);
+            this.checkBox20.TabIndex = 14;
+            this.checkBox20.Tag = "6站耳机音量+弹起";
+            this.checkBox20.Text = "6站耳机音量+按下";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox8
             // 
@@ -302,9 +290,10 @@
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(72, 16);
             this.checkBox8.TabIndex = 14;
+            this.checkBox8.Tag = "6站EAR-R";
             this.checkBox8.Text = "6站EAR-L";
             this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
+            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // groupBox1
             // 
@@ -331,9 +320,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 22);
             this.button5.TabIndex = 1;
-            this.button5.Text = "充电电流读取";
+            this.button5.Text = "6站充电电流读取";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button4
             // 
@@ -342,9 +331,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 22);
             this.button4.TabIndex = 1;
-            this.button4.Text = "负载电流读取";
+            this.button4.Text = "6站负载电流读取";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button1
             // 
@@ -353,72 +342,77 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 22);
             this.button1.TabIndex = 1;
-            this.button1.Text = "电压读取";
+            this.button1.Text = "6站电压读取";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.GetButtonName);
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(13, 118);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 16);
+            this.checkBox5.Size = new System.Drawing.Size(90, 16);
             this.checkBox5.TabIndex = 0;
-            this.checkBox5.Text = "负载连接";
+            this.checkBox5.Tag = "6站负载断开";
+            this.checkBox5.Text = "6站负载连接";
             this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            this.checkBox5.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(13, 96);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(66, 16);
+            this.checkBox4.Size = new System.Drawing.Size(84, 16);
             this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "OTG反插";
+            this.checkBox4.Tag = "6站OTG正插";
+            this.checkBox4.Text = "6站OTG反插";
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.checkBox4.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(13, 74);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(66, 16);
+            this.checkBox3.Size = new System.Drawing.Size(84, 16);
             this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "OTG连接";
+            this.checkBox3.Tag = "6站OTG断开";
+            this.checkBox3.Text = "6站OTG连接";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBox3.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(13, 52);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(72, 16);
+            this.checkBox2.Size = new System.Drawing.Size(90, 16);
             this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "充电打开";
+            this.checkBox2.Tag = "6站充电关闭";
+            this.checkBox2.Text = "6站充电打开";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(13, 30);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.Size = new System.Drawing.Size(90, 16);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "电脑连接";
+            this.checkBox1.Tag = "6站电脑断开";
+            this.checkBox1.Text = "6站电脑连接";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.button30);
             this.groupBox2.Controls.Add(this.button29);
-            this.groupBox2.Controls.Add(this.button20);
-            this.groupBox2.Controls.Add(this.comBox_ZT);
             this.groupBox2.Controls.Add(this.button19);
+            this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button18);
             this.groupBox2.Controls.Add(this.button17);
             this.groupBox2.Controls.Add(this.button26);
@@ -440,6 +434,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "电机X位置检测";
             // 
+            // button10
+            // 
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(128, 252);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(94, 22);
+            this.button10.TabIndex = 45;
+            this.button10.Text = "6站测试完成";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // button30
             // 
             this.button30.ForeColor = System.Drawing.Color.Black;
@@ -447,39 +452,20 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(94, 22);
             this.button30.TabIndex = 45;
-            this.button30.Text = "TP按下到位";
+            this.button30.Text = "6站TP按下到位";
             this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
+            this.button30.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button29
             // 
             this.button29.ForeColor = System.Drawing.Color.Black;
-            this.button29.Location = new System.Drawing.Point(16, 224);
+            this.button29.Location = new System.Drawing.Point(16, 196);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(94, 22);
             this.button29.TabIndex = 45;
-            this.button29.Text = "6站取放中到位";
+            this.button29.Text = "6站取放中到位检测";
             this.button29.UseVisualStyleBackColor = true;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
-            // 
-            // button20
-            // 
-            this.button20.ForeColor = System.Drawing.Color.Maroon;
-            this.button20.Location = new System.Drawing.Point(128, 299);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(88, 23);
-            this.button20.TabIndex = 44;
-            this.button20.Text = "1站测试状态";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // comBox_ZT
-            // 
-            this.comBox_ZT.FormattingEnabled = true;
-            this.comBox_ZT.Location = new System.Drawing.Point(67, 301);
-            this.comBox_ZT.Name = "comBox_ZT";
-            this.comBox_ZT.Size = new System.Drawing.Size(56, 20);
-            this.comBox_ZT.TabIndex = 43;
+            this.button29.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button19
             // 
@@ -488,9 +474,20 @@
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(94, 22);
             this.button19.TabIndex = 4;
-            this.button19.Text = "报警清除检测";
+            this.button19.Text = "6站报警清除检测";
             this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.button19.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button8
+            // 
+            this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button8.Location = new System.Drawing.Point(17, 252);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(94, 22);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "6站测试中";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button18
             // 
@@ -499,20 +496,20 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(94, 22);
             this.button18.TabIndex = 4;
-            this.button18.Text = "1站原点检测";
+            this.button18.Text = "6站1站原点检测";
             this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click_1);
+            this.button18.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button17
             // 
             this.button17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button17.Location = new System.Drawing.Point(16, 196);
+            this.button17.Location = new System.Drawing.Point(16, 223);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(94, 22);
             this.button17.TabIndex = 4;
-            this.button17.Text = "1站状态检测";
+            this.button17.Text = "6站1站状态检测";
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button17.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button26
             // 
@@ -521,9 +518,9 @@
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(92, 21);
             this.button26.TabIndex = 3;
-            this.button26.Text = "取放到位检测";
+            this.button26.Text = "6站取放到位检测";
             this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
+            this.button26.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button25
             // 
@@ -532,9 +529,9 @@
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(92, 21);
             this.button25.TabIndex = 3;
-            this.button25.Text = "吸合状态检测";
+            this.button25.Text = "6站吸合状态检测";
             this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button24
             // 
@@ -543,9 +540,9 @@
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(92, 21);
             this.button24.TabIndex = 3;
-            this.button24.Text = "TP抬起检测";
+            this.button24.Text = "6站TP抬起检测";
             this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.button24.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button23
             // 
@@ -554,9 +551,9 @@
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(92, 21);
             this.button23.TabIndex = 3;
-            this.button23.Text = "取放抬起检测";
+            this.button23.Text = "6站取放上到位检测";
             this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
+            this.button23.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button22
             // 
@@ -565,9 +562,9 @@
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(94, 22);
             this.button22.TabIndex = 2;
-            this.button22.Text = "取放下压检测";
+            this.button22.Text = "6站取放下压检测";
             this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.button22.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button21
             // 
@@ -576,9 +573,9 @@
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(94, 21);
             this.button21.TabIndex = 1;
-            this.button21.Text = "电机Z位置检测";
+            this.button21.Text = "6站电机Z位置检测";
             this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.button21.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button12
             // 
@@ -587,9 +584,9 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(94, 22);
             this.button12.TabIndex = 0;
-            this.button12.Text = "USB拔出检测";
+            this.button12.Text = "6站USB拔出检测";
             this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.button12.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button11
             // 
@@ -598,9 +595,9 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(94, 22);
             this.button11.TabIndex = 0;
-            this.button11.Text = "耳机拔出检测";
+            this.button11.Text = "6站耳机拔出检测";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button9
             // 
@@ -609,9 +606,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(94, 22);
             this.button9.TabIndex = 0;
-            this.button9.Text = "电机Y位置检测";
+            this.button9.Text = "6站电机Y位置检测";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button7
             // 
@@ -620,9 +617,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(94, 22);
             this.button7.TabIndex = 0;
-            this.button7.Text = "电机X位置检测";
+            this.button7.Text = "6站电机X位置检测";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button6
             // 
@@ -631,9 +628,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(94, 22);
             this.button6.TabIndex = 0;
-            this.button6.Text = "产品到位检测";
+            this.button6.Text = "6站产品到位检测";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button13
             // 
@@ -642,20 +639,20 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(97, 26);
             this.button13.TabIndex = 41;
-            this.button13.Text = "当前位置获取";
+            this.button13.Text = "6站当前位置获取";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button14
+            // btnSport
             // 
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(340, 28);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(97, 31);
-            this.button14.TabIndex = 41;
-            this.button14.Text = "运动到指定位置";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnSport.ForeColor = System.Drawing.Color.Black;
+            this.btnSport.Location = new System.Drawing.Point(340, 28);
+            this.btnSport.Name = "btnSport";
+            this.btnSport.Size = new System.Drawing.Size(97, 31);
+            this.btnSport.TabIndex = 41;
+            this.btnSport.Text = "6站运动";
+            this.btnSport.UseVisualStyleBackColor = true;
+            this.btnSport.Click += new System.EventHandler(this.btnSport_Click);
             // 
             // X_txt
             // 
@@ -663,14 +660,10 @@
             this.X_txt.Name = "X_txt";
             this.X_txt.Size = new System.Drawing.Size(64, 21);
             this.X_txt.TabIndex = 42;
+            this.X_txt.Text = "0";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.Move_txt);
-            this.groupBox4.Controls.Add(this.button37);
-            this.groupBox4.Controls.Add(this.button36);
-            this.groupBox4.Controls.Add(this.button35);
-            this.groupBox4.Controls.Add(this.button34);
             this.groupBox4.Controls.Add(this.button15);
             this.groupBox4.Controls.Add(this.JianSuDu_txt);
             this.groupBox4.Controls.Add(this.JiaSuDu_txt);
@@ -683,7 +676,7 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.button16);
             this.groupBox4.Controls.Add(this.XieLv);
-            this.groupBox4.Controls.Add(this.button14);
+            this.groupBox4.Controls.Add(this.btnSport);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.X_txt);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
@@ -694,58 +687,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "电机点动控制";
             // 
-            // Move_txt
-            // 
-            this.Move_txt.Location = new System.Drawing.Point(126, 30);
-            this.Move_txt.Name = "Move_txt";
-            this.Move_txt.Size = new System.Drawing.Size(58, 21);
-            this.Move_txt.TabIndex = 51;
-            this.Move_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Move_txt_KeyDown);
-            // 
-            // button37
-            // 
-            this.button37.ForeColor = System.Drawing.Color.Black;
-            this.button37.Location = new System.Drawing.Point(126, 102);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(44, 21);
-            this.button37.TabIndex = 50;
-            this.button37.Text = "Y-";
-            this.button37.UseVisualStyleBackColor = true;
-            this.button37.Click += new System.EventHandler(this.button37_Click);
-            // 
-            // button36
-            // 
-            this.button36.ForeColor = System.Drawing.Color.Black;
-            this.button36.Location = new System.Drawing.Point(11, 98);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(44, 21);
-            this.button36.TabIndex = 50;
-            this.button36.Text = "Y+";
-            this.button36.UseVisualStyleBackColor = true;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
-            // 
-            // button35
-            // 
-            this.button35.ForeColor = System.Drawing.Color.Black;
-            this.button35.Location = new System.Drawing.Point(70, 129);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(44, 21);
-            this.button35.TabIndex = 50;
-            this.button35.Text = "X-";
-            this.button35.UseVisualStyleBackColor = true;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
-            // 
-            // button34
-            // 
-            this.button34.ForeColor = System.Drawing.Color.Black;
-            this.button34.Location = new System.Drawing.Point(70, 68);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(44, 21);
-            this.button34.TabIndex = 50;
-            this.button34.Text = "X+";
-            this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
-            // 
             // button15
             // 
             this.button15.ForeColor = System.Drawing.Color.Black;
@@ -753,7 +694,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(97, 26);
             this.button15.TabIndex = 49;
-            this.button15.Text = "斜率配置";
+            this.button15.Text = "6站斜率配置";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -763,6 +704,7 @@
             this.JianSuDu_txt.Name = "JianSuDu_txt";
             this.JianSuDu_txt.Size = new System.Drawing.Size(51, 21);
             this.JianSuDu_txt.TabIndex = 48;
+            this.JianSuDu_txt.Text = "10";
             // 
             // JiaSuDu_txt
             // 
@@ -770,7 +712,7 @@
             this.JiaSuDu_txt.Name = "JiaSuDu_txt";
             this.JiaSuDu_txt.Size = new System.Drawing.Size(51, 21);
             this.JiaSuDu_txt.TabIndex = 47;
-            this.JiaSuDu_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JaSuDu_txt_KeyPress);
+            this.JiaSuDu_txt.Text = "10";
             // 
             // Y_txt
             // 
@@ -778,7 +720,7 @@
             this.Y_txt.Name = "Y_txt";
             this.Y_txt.Size = new System.Drawing.Size(62, 21);
             this.Y_txt.TabIndex = 42;
-            this.Y_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Y_txt_KeyPress);
+            this.Y_txt.Text = "0";
             // 
             // SuDu_txt
             // 
@@ -786,7 +728,7 @@
             this.SuDu_txt.Name = "SuDu_txt";
             this.SuDu_txt.Size = new System.Drawing.Size(51, 21);
             this.SuDu_txt.TabIndex = 47;
-            this.SuDu_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SuDu_txt_KeyPress);
+            this.SuDu_txt.Text = "10";
             // 
             // label5
             // 
@@ -811,9 +753,10 @@
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(207, 175);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(72, 16);
+            this.checkBox7.Size = new System.Drawing.Size(90, 16);
             this.checkBox7.TabIndex = 14;
-            this.checkBox7.Text = "电机断电";
+            this.checkBox7.Tag = "6站电机上电";
+            this.checkBox7.Text = "6站电机断电";
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -832,9 +775,9 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(132, 26);
             this.button16.TabIndex = 41;
-            this.button16.Text = "回零点";
+            this.button16.Text = "6站电机回零点";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.Click += new System.EventHandler(this.GetButtonName);
             // 
             // XieLv
             // 
@@ -861,8 +804,8 @@
             this.groupBox6.Controls.Add(this.button32);
             this.groupBox6.Controls.Add(this.button33);
             this.groupBox6.Controls.Add(this.button31);
-            this.groupBox6.Controls.Add(this.button28);
-            this.groupBox6.Controls.Add(this.button27);
+            this.groupBox6.Controls.Add(this.checkBox16);
+            this.groupBox6.Controls.Add(this.checkBox6);
             this.groupBox6.Controls.Add(this.checkBox10);
             this.groupBox6.Controls.Add(this.checkBox11);
             this.groupBox6.Controls.Add(this.checkBox14);
@@ -887,7 +830,7 @@
             this.button32.TabIndex = 24;
             this.button32.Text = "6站取放下";
             this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
+            this.button32.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button33
             // 
@@ -898,7 +841,7 @@
             this.button33.TabIndex = 24;
             this.button33.Text = "6站取放上";
             this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
+            this.button33.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button31
             // 
@@ -909,31 +852,35 @@
             this.button31.TabIndex = 24;
             this.button31.Text = "6站取放中间";
             this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
+            this.button31.Click += new System.EventHandler(this.GetButtonName);
             // 
-            // button28
+            // checkBox16
             // 
-            this.button28.ForeColor = System.Drawing.Color.Black;
-            this.button28.Location = new System.Drawing.Point(111, 43);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(83, 20);
-            this.button28.TabIndex = 23;
-            this.button28.Text = "音量+按下";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button28_MouseDown);
-            this.button28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button28_MouseUp);
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.BackColor = System.Drawing.Color.Black;
+            this.checkBox16.ForeColor = System.Drawing.Color.White;
+            this.checkBox16.Location = new System.Drawing.Point(101, 43);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(96, 16);
+            this.checkBox16.TabIndex = 22;
+            this.checkBox16.Tag = "6站音量+弹起";
+            this.checkBox16.Text = "6站音量+按下";
+            this.checkBox16.UseVisualStyleBackColor = false;
+            this.checkBox16.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
-            // button27
+            // checkBox6
             // 
-            this.button27.ForeColor = System.Drawing.Color.Black;
-            this.button27.Location = new System.Drawing.Point(111, 19);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(83, 20);
-            this.button27.TabIndex = 23;
-            this.button27.Text = "音量-按下";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button27_MouseDown);
-            this.button27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button27_MouseUp);
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.BackColor = System.Drawing.Color.Black;
+            this.checkBox6.ForeColor = System.Drawing.Color.White;
+            this.checkBox6.Location = new System.Drawing.Point(15, 175);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(96, 16);
+            this.checkBox6.TabIndex = 22;
+            this.checkBox6.Tag = "6站音量-弹起";
+            this.checkBox6.Text = "6站音量-按下";
+            this.checkBox6.UseVisualStyleBackColor = false;
+            this.checkBox6.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox10
             // 
@@ -942,11 +889,12 @@
             this.checkBox10.ForeColor = System.Drawing.Color.White;
             this.checkBox10.Location = new System.Drawing.Point(15, 153);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(96, 16);
+            this.checkBox10.Size = new System.Drawing.Size(78, 16);
             this.checkBox10.TabIndex = 22;
-            this.checkBox10.Text = "6站TOUCH按下";
+            this.checkBox10.Tag = "6站吹气关";
+            this.checkBox10.Text = "6站吹气开";
             this.checkBox10.UseVisualStyleBackColor = false;
-            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
+            this.checkBox10.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox11
             // 
@@ -957,9 +905,10 @@
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(90, 16);
             this.checkBox11.TabIndex = 22;
+            this.checkBox11.Tag = "6站开机弹起";
             this.checkBox11.Text = "6站开机按下";
             this.checkBox11.UseVisualStyleBackColor = false;
-            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
+            this.checkBox11.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox14
             // 
@@ -970,9 +919,10 @@
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(90, 16);
             this.checkBox14.TabIndex = 22;
+            this.checkBox14.Tag = "6站耳机拔出";
             this.checkBox14.Text = "6站耳机插入";
             this.checkBox14.UseVisualStyleBackColor = false;
-            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
+            this.checkBox14.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox15
             // 
@@ -983,9 +933,10 @@
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(90, 16);
             this.checkBox15.TabIndex = 22;
+            this.checkBox15.Tag = "6站吸盘松开";
             this.checkBox15.Text = "6站吸盘吸合";
             this.checkBox15.UseVisualStyleBackColor = false;
-            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox15_CheckedChanged);
+            this.checkBox15.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox17
             // 
@@ -996,9 +947,10 @@
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(84, 16);
             this.checkBox17.TabIndex = 22;
+            this.checkBox17.Tag = "6站USB拔出";
             this.checkBox17.Text = "6站USB插入";
             this.checkBox17.UseVisualStyleBackColor = false;
-            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
+            this.checkBox17.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox18
             // 
@@ -1009,9 +961,10 @@
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(78, 16);
             this.checkBox18.TabIndex = 22;
+            this.checkBox18.Tag = "6站TP弹起";
             this.checkBox18.Text = "6站TP按下";
             this.checkBox18.UseVisualStyleBackColor = false;
-            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox18_CheckedChanged);
+            this.checkBox18.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox19
             // 
@@ -1022,22 +975,10 @@
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(90, 16);
             this.checkBox19.TabIndex = 22;
+            this.checkBox19.Tag = "6站手机松开";
             this.checkBox19.Text = "6站手机固定";
             this.checkBox19.UseVisualStyleBackColor = false;
-            this.checkBox19.CheckedChanged += new System.EventHandler(this.checkBox19_CheckedChanged);
-            // 
-            // comboPortName
-            // 
-            this.comboPortName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboPortName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPortName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboPortName.ForeColor = System.Drawing.Color.White;
-            this.comboPortName.FormattingEnabled = true;
-            this.comboPortName.Location = new System.Drawing.Point(371, 11);
-            this.comboPortName.Name = "comboPortName";
-            this.comboPortName.Size = new System.Drawing.Size(73, 20);
-            this.comboPortName.TabIndex = 15;
-            this.comboPortName.SelectedIndexChanged += new System.EventHandler(this.comboPortName_SelectedIndexChanged);
+            this.checkBox19.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // label2
             // 
@@ -1078,12 +1019,22 @@
             this.touMing_btn1.Size = new System.Drawing.Size(75, 23);
             this.touMing_btn1.TabIndex = 0;
             // 
+            // PortConnectFlag
+            // 
+            this.PortConnectFlag.AutoSize = true;
+            this.PortConnectFlag.Location = new System.Drawing.Point(361, 12);
+            this.PortConnectFlag.Name = "PortConnectFlag";
+            this.PortConnectFlag.Size = new System.Drawing.Size(41, 12);
+            this.PortConnectFlag.TabIndex = 57;
+            this.PortConnectFlag.Text = "label1";
+            // 
             // Station6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(932, 560);
+            this.Controls.Add(this.PortConnectFlag);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
@@ -1091,12 +1042,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboPortName);
             this.Controls.Add(this.txtXianShi);
             this.Name = "Station6";
             this.Text = "Station_6";
-            this.Load += new System.EventHandler(this.Station6_Load);
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1114,8 +1063,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtXianShi;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button2;
@@ -1123,8 +1070,6 @@
         private System.Windows.Forms.CheckBox checkBox22;
         private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.CheckBox checkBox12;
         private System.Windows.Forms.CheckBox checkBox9;
@@ -1144,12 +1089,12 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TouMing_btn touMing_btn3;
-        private System.Windows.Forms.TouMing_btn touMing_btn4;
-        private System.Windows.Forms.TouMing_btn touMing_btn2;
-        private System.Windows.Forms.TouMing_btn touMing_btn1;
+        private System.Windows.Forms.Button touMing_btn3;
+        private System.Windows.Forms.Button touMing_btn4;
+        private System.Windows.Forms.Button touMing_btn2;
+        private System.Windows.Forms.Button touMing_btn1;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSport;
         private System.Windows.Forms.TextBox X_txt;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button16;
@@ -1173,8 +1118,6 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox11;
         private System.Windows.Forms.CheckBox checkBox14;
@@ -1185,19 +1128,18 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.ComboBox comBox_ZT;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.ComboBox comboPortName;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.TextBox Move_txt;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button35;
+        private System.Windows.Forms.Label PortConnectFlag;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button8;
     }
 }

@@ -111,7 +111,14 @@
     <Compile Include="CAMFrom\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonClass\ShujuChuli.cs" />
     <Compile Include="EqumentCmds\EqumentCmds.cs" />
+    <Compile Include="MMIForm\Station6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MMIForm\Station6.Designer.cs">
+      <DependentUpon>Station6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -152,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="CAMFrom\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MMIForm\Station6.resx">
+      <DependentUpon>Station6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

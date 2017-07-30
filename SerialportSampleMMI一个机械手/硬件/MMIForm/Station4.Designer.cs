@@ -296,7 +296,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(88, 23);
             this.button9.TabIndex = 19;
-            this.button9.Text = "4站状态指示灯";
+            this.button9.Text = "4站状态灯";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
