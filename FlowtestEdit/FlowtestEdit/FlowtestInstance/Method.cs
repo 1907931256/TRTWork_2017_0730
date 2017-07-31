@@ -11,11 +11,11 @@ namespace FlowtestEdit.FlowtestInstance
 
         public string name;
         public string action;
-        //public string parameters;
-        //public string compare;
-        //public int disable;
-        //public int bedepend;
-        //public int depend;
+        public string parameters;
+        public string compare;
+        public string disable;
+        public string bedepend;
+        public string depend;
 
 
 

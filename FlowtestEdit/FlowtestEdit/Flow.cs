@@ -51,11 +51,11 @@ namespace FlowtestEdit
             methods.Columns.Add("ItemId", typeof(int));
             methods.Columns.Add("MethodName", typeof(string));
             methods.Columns.Add("Action", typeof(string));
-            //methods.Columns.Add("parameters", typeof(string));
-            //methods.Columns.Add("compare", typeof(string));
-            //methods.Columns.Add("disable", typeof(string));
-            //methods.Columns.Add("bedepend", typeof(string));
-            //methods.Columns.Add("depend", typeof(string));
+            methods.Columns.Add("parameters", typeof(string));
+            methods.Columns.Add("compare", typeof(string));
+            methods.Columns.Add("disable", typeof(string));
+            methods.Columns.Add("bedepend", typeof(string));
+            methods.Columns.Add("depend", typeof(string));
 
             ds.Tables.Add(methods);
 
@@ -95,47 +95,93 @@ namespace FlowtestEdit
                 from e in XDocument.Load("Flowtest.xml").Root.Elements("Item")
                 select new Item
                 {
-                    //CustomerID = (string)e.Element("id"),
                     id = (int)e.Attribute("id"),
                     methods = (
-
                                 from m in e.Elements("Method")
                                 select new Method
                                 {
                                     name = (string)m.Attribute("name"),
                                     action = (string)m.Attribute("action"),
-                                    //parameters = (string)m.Element("parameters"),
-                                    //compare = (string)m.Element("compare"),
-                                    //disable = (int)m.Element("disable"),
-                                    //bedepend = (int)m.Element("bedepend"),
-                                    //depend = (int)m.Element("depend")
+                                    parameters = (string)m.Element("parameters"),
+                                    compare = (string)m.Element("compare"),
+                                    disable = (string)m.Element("disable"),
+                                    bedepend = (string)m.Element("bedepend"),
+                                    depend = (string)m.Element("depend")
+
                                 }).ToArray(),
-                    propety =new Property(
-                        name_=e.Elements("Property").
-                        
 
-
-                        )
-                        
-
-
+                    property_name = (from p in e.Elements("Property")
+                                     select p.ToString()
+                                    ).ToArray()[0],
+                    property_spec = (from p in e.Elements("Property")
+                                     select p.ToString()
+                                    ).ToArray()[1],
+                    property_specdescribe = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[2],
+                    property_enspecdescribe = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[3],
+                    property_errcode = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[4],
+                    property_specprefix = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[5],
+                    property_specsuffix = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[6],
+                    property_switch_ = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[7],
+                    property_alarm = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[8],
+                    property_disable = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[9],
+                    property_specenable = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[10],
+                    property_brother = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[11],
+                    property_timeout = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[12],
+                    property_editable = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[13],
+                    property_loop = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[14],
+                    property_hide = (from p in e.Elements("Property")
+                                             select p.ToString()
+                                    ).ToArray()[15],
+                    property_condition = (from p in e.Elements("Property")
+                                     select p.ToString()
+                                    ).ToArray()[16],
+                    property_depend = (from p in e.Elements("Property")
+                                     select p.ToString()
+                                    ).ToArray()[17]
 
                 }).ToList();
 
-            foreach (Item item in ItemList)
+
+            foreach (var item in ItemList)
             {
-                items.Rows.Add(new object[] { item.id });
-                foreach (Method method in item.methods)
-                {
-                    int i = 0;
-                    methods.Rows.Add(new object[] { item.id, method.name, method.action });
-                    //System.Console.WriteLine(method.action);
-                    i++;
-                }
 
-                System.Console.WriteLine(item.propety.name);
+                //System.Console.WriteLine(item.property_name);
+                //System.Console.WriteLine(item.property_spec);
+                //System.Console.WriteLine(item.property_specdescribe);
+                //System.Console.WriteLine(item.property_enspecdescribe);
+                //System.Console.WriteLine(item.property_errcode);
+
+                
+
+
+
             }
-
 
 
         }

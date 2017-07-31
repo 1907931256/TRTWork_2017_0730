@@ -43,7 +43,6 @@
     <Compile Include="Flow.cs" />
     <Compile Include="FlowtestInstance\Item.cs" />
     <Compile Include="FlowtestInstance\Method.cs" />
-    <Compile Include="FlowtestInstance\Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
