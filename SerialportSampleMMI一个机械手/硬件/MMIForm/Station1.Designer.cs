@@ -114,9 +114,11 @@
             this.button35 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.button66 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button65 = new System.Windows.Forms.Button();
             this.button64 = new System.Windows.Forms.Button();
@@ -148,8 +150,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.PortConnectFlag = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -179,7 +179,6 @@
             this.checkBox1.Tag = "1站USB拔出";
             this.checkBox1.Text = "1站USB插入";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.GetCheckBoxName);
             this.checkBox1.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox2
@@ -633,7 +632,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 55);
             this.button4.TabIndex = 0;
-            this.button4.Text = "6站运动";
+            this.button4.Text = "1站运动";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -1161,7 +1160,7 @@
             this.button79.Name = "button79";
             this.button79.Size = new System.Drawing.Size(98, 22);
             this.button79.TabIndex = 0;
-            this.button79.Text = "6站状态检测";
+            this.button79.Text = "1站6站状态检测";
             this.button79.UseVisualStyleBackColor = true;
             this.button79.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -1172,7 +1171,7 @@
             this.button78.Name = "button78";
             this.button78.Size = new System.Drawing.Size(98, 22);
             this.button78.TabIndex = 0;
-            this.button78.Text = "5站状态检测";
+            this.button78.Text = "1站5站状态检测";
             this.button78.UseVisualStyleBackColor = true;
             this.button78.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -1183,7 +1182,7 @@
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(98, 22);
             this.button35.TabIndex = 0;
-            this.button35.Text = "4站状态检测";
+            this.button35.Text = "1站4站状态检测";
             this.button35.UseVisualStyleBackColor = true;
             this.button35.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -1205,9 +1204,20 @@
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(98, 22);
             this.button34.TabIndex = 0;
-            this.button34.Text = "3站状态检测";
+            this.button34.Text = "1站3站状态检测";
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button46
+            // 
+            this.button46.ForeColor = System.Drawing.Color.Black;
+            this.button46.Location = new System.Drawing.Point(15, 244);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(98, 22);
+            this.button46.TabIndex = 0;
+            this.button46.Text = "1站红外感应3检测";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button23
             // 
@@ -1241,6 +1251,17 @@
             this.button66.Text = "1站USB拨出检测";
             this.button66.UseVisualStyleBackColor = true;
             this.button66.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(15, 217);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(98, 22);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "1站红外感应2检测";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button22
             // 
@@ -1282,7 +1303,7 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(98, 22);
             this.button30.TabIndex = 0;
-            this.button30.Text = "2站状态检测";
+            this.button30.Text = "1站2站状态检测";
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -1392,7 +1413,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 23);
             this.button2.TabIndex = 19;
-            this.button2.Text = "警告解除";
+            this.button2.Text = "警告";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -1583,28 +1604,6 @@
             this.PortConnectFlag.Size = new System.Drawing.Size(41, 12);
             this.PortConnectFlag.TabIndex = 50;
             this.PortConnectFlag.Text = "label1";
-            // 
-            // button5
-            // 
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(15, 217);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 22);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "1站红外感应2检测";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button46
-            // 
-            this.button46.ForeColor = System.Drawing.Color.Black;
-            this.button46.Location = new System.Drawing.Point(15, 244);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(98, 22);
-            this.button46.TabIndex = 0;
-            this.button46.Text = "1站红外感应3检测";
-            this.button46.UseVisualStyleBackColor = true;
-            this.button46.Click += new System.EventHandler(this.GetButtonName);
             // 
             // Station1
             // 

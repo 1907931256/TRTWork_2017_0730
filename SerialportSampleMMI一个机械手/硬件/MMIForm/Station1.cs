@@ -221,10 +221,14 @@ namespace Station
         {
             txtXianShi.Text = "";
         }
-
+        /// <summary>
+        /// 运动指令
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            EquipmentCmd.Instance.SendCommand("6站运动", "1000 1000 10 25 25 0", out res);
+            EquipmentCmd.Instance.SendCommand("1取放", "1000 1000 10 25 25 0", out res);
 
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button80.Text + "-->" + res + "    " + resHexs + "\r\n");

@@ -173,5 +173,15 @@ namespace Station
 
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
+
+        /// <summary>
+        /// 清屏
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtXianShi.Text = "";
+        }
     }
 }
