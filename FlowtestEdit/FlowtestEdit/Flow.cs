@@ -41,10 +41,28 @@ namespace FlowtestEdit
 
         private void CreateFlowtestTables(DataSet ds)
         {
-            DataTable items = new DataTable("Items");
-            items.Columns.Add("ItemId", typeof(int));
+            DataTable itemsTable = new DataTable("Items");
 
-            ds.Tables.Add(items);
+            itemsTable.Columns.Add("ItemId", typeof(int));
+            itemsTable.Columns.Add("property_name", typeof(string));
+            itemsTable.Columns.Add("property_spec", typeof(string));
+            itemsTable.Columns.Add("property_specdescribe", typeof(string));
+            itemsTable.Columns.Add("property_enspecdescribe", typeof(string));
+            itemsTable.Columns.Add("property_errcode", typeof(string));
+            itemsTable.Columns.Add("property_specprefix", typeof(string));
+            itemsTable.Columns.Add("property_specsuffix", typeof(string));
+            itemsTable.Columns.Add("property_switch_", typeof(string));
+            itemsTable.Columns.Add("property_alarm", typeof(string));
+            itemsTable.Columns.Add("property_disable", typeof(string));
+            itemsTable.Columns.Add("property_specenable", typeof(string));
+            itemsTable.Columns.Add("property_brother", typeof(string));
+            itemsTable.Columns.Add("property_timeout", typeof(string));
+            itemsTable.Columns.Add("property_editable", typeof(string));
+            itemsTable.Columns.Add("property_loop", typeof(string));
+            itemsTable.Columns.Add("property_hide", typeof(string));
+            itemsTable.Columns.Add("property_condition", typeof(string));
+            itemsTable.Columns.Add("property_depend", typeof(string));
+            ds.Tables.Add(itemsTable);
 
             DataTable methods = new DataTable("Methods");
 
@@ -59,43 +77,21 @@ namespace FlowtestEdit
 
             ds.Tables.Add(methods);
 
-
-
-            //DataTable propertys = new DataTable("Propertys");
-
-            //propertys.Columns.Add("ItemId", typeof(string));
-            //propertys.Columns.Add("PropertyName", typeof(string));
-            //propertys.Columns.Add("spec", typeof(string));
-            //propertys.Columns.Add("specdescribe", typeof(string));
-            //propertys.Columns.Add("enspecdescribe", typeof(string));
-            //propertys.Columns.Add("errcode", typeof(string));
-            //propertys.Columns.Add("specprefix", typeof(string));
-            //propertys.Columns.Add("specsuffix", typeof(string));
-            //propertys.Columns.Add("Switch", typeof(string));
-            //propertys.Columns.Add("alarm", typeof(string));
-            //propertys.Columns.Add("disable", typeof(string));
-            //propertys.Columns.Add("brother", typeof(string));
-            //propertys.Columns.Add("timeout", typeof(string));
-            //propertys.Columns.Add("editable", typeof(string));
-            //propertys.Columns.Add("loop", typeof(string));
-            //propertys.Columns.Add("hide", typeof(string));
-            //propertys.Columns.Add("condition", typeof(string));
-            //propertys.Columns.Add("depend", typeof(string));
-
-            //ds.Tables.Add(items);
-
             //转换2个之间的父子关系
-            DataRelation co = new DataRelation("ItemMethods", items.Columns["ItemId"], methods.Columns["ItemId"]);
+            DataRelation co = new DataRelation("ItemMethods", itemsTable.Columns["ItemId"], methods.Columns["ItemId"]);
             ds.Relations.Add(co);
 
-            //co = new DataRelation("ItemPropertys", items.Columns["ItemId"], propertys.Columns["ItemId"]);
-            //ds.Relations.Add(co);
+
+
+
+
 
             var ItemList = (
                 from e in XDocument.Load("Flowtest.xml").Root.Elements("Item")
                 select new Item
                 {
                     id = (int)e.Attribute("id"),
+
                     methods = (
                                 from m in e.Elements("Method")
                                 select new Method
@@ -168,19 +164,17 @@ namespace FlowtestEdit
                 }).ToList();
 
 
-            foreach (var item in ItemList)
+            foreach (Item item in ItemList)
             {
-
-                //System.Console.WriteLine(item.property_name);
-                //System.Console.WriteLine(item.property_spec);
-                //System.Console.WriteLine(item.property_specdescribe);
-                //System.Console.WriteLine(item.property_enspecdescribe);
-                //System.Console.WriteLine(item.property_errcode);
-
-                
-
-
-
+                itemsTable.Rows.Add(new object[] {item.id,item.property_name,item.property_spec,item.property_specdescribe,
+                    item.property_enspecdescribe,item.property_errcode,item.property_specprefix,item.property_specsuffix,item.property_switch_,
+                    item.property_alarm,item.property_disable,item.property_specenable,item.property_brother,item.property_timeout,item.property_editable,
+                    item.property_loop,item.property_hide,item.property_condition,item.property_depend,item.methods
+                });
+                foreach (Method method in item.methods)
+                {
+                    methods.Rows.Add(new object[] { method.name, method.action, method.parameters, method.compare, method.disable, method.bedepend, method.depend });
+                }
             }
 
 
@@ -197,37 +191,41 @@ namespace FlowtestEdit
                 new
                 {
                     ItemId = x.Field<int>("ItemId"),
-                    methods =
-                    from o in x.GetChildRows("ItemMethods")
-                    group o by x.GetChildRows("ItemMethods") into methods
-                    select new
-                    {
-                        names = from m in methods
-                                select new { name = m.Field<string>("MethodName") },
+                    //methods =
+                    //from o in x.GetChildRows("ItemMethods")
+                    //group o by x.GetChildRows("ItemMethods") into methods
+                    //select new
+                    //{
+                    //    names = from m in methods
+                    //            select new { name = m.Field<string>("MethodName") },
 
-                        actions = from o in methods
-                                  select new { action = o.Field<string>("Action") }
-                    }
+                    //    actions = from o in methods
+                    //              select new { action = o.Field<string>("Action") }
+                    //}
 
                 };
 
             foreach (var item in itemsGroup)
             {
-                System.Console.WriteLine(item.ItemId);
-                foreach (var m in item.methods)
-                {
+                System.Console.WriteLine(item.ItemId.ToString());
+                //foreach (var m in item.methods)
+                //{
 
-                    foreach (var x in m.names)
-                    {
-                        System.Console.WriteLine(x.name);
-                    }
-                    foreach (var y in m.actions)
-                    {
-                        System.Console.WriteLine(y.action);
-                    }
-                }
+                //    foreach (var x in m.names)
+                //    {
+                //        System.Console.WriteLine(x.name);
+                //    }
+                //    foreach (var y in m.actions)
+                //    {
+                //        System.Console.WriteLine(y.action);
+                //    }
+                //}
             }
         }
+
+
+
+
 
     }
 }
