@@ -17,7 +17,7 @@ namespace Station
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Station1());
+            Application.Run(new CAMFrom.Form1());
             //必须放在窗体运行之后，握手才能正常握手
             StartConnectPortThread();
 

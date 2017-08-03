@@ -54,7 +54,7 @@
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.clearDispaly = new System.Windows.Forms.Button();
             this.fuwei = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
@@ -70,6 +70,7 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.fangdou_1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -77,7 +78,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Button9 = new System.Windows.Forms.Button();
             this.Button8 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.Button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.Button7 = new System.Windows.Forms.Button();
             this.Button11 = new System.Windows.Forms.Button();
             this.Button6 = new System.Windows.Forms.Button();
@@ -87,9 +90,6 @@
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PortConnectFlag = new System.Windows.Forms.Label();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_JiaoZhun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_QianSe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_YuanJu)).BeginInit();
@@ -341,13 +341,12 @@
             this.checkBox12.Tag = "2站防抖电机关闭";
             this.checkBox12.Text = "2站防抖电机启动";
             this.checkBox12.UseVisualStyleBackColor = false;
-            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
             this.checkBox12.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.checkBox3);
-            this.groupBox5.Controls.Add(this.button14);
+            this.groupBox5.Controls.Add(this.clearDispaly);
             this.groupBox5.Controls.Add(this.fuwei);
             this.groupBox5.Controls.Add(this.button13);
             this.groupBox5.Controls.Add(this.comBox_ZhiShiDeng_1);
@@ -375,16 +374,16 @@
             this.checkBox3.UseVisualStyleBackColor = false;
             this.checkBox3.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
-            // button14
+            // clearDispaly
             // 
-            this.button14.ForeColor = System.Drawing.Color.DarkRed;
-            this.button14.Location = new System.Drawing.Point(285, 65);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(62, 31);
-            this.button14.TabIndex = 34;
-            this.button14.Text = "清屏";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.Button14_Click);
+            this.clearDispaly.ForeColor = System.Drawing.Color.DarkRed;
+            this.clearDispaly.Location = new System.Drawing.Point(285, 65);
+            this.clearDispaly.Name = "clearDispaly";
+            this.clearDispaly.Size = new System.Drawing.Size(62, 31);
+            this.clearDispaly.TabIndex = 34;
+            this.clearDispaly.Text = "清屏";
+            this.clearDispaly.UseVisualStyleBackColor = true;
+            this.clearDispaly.Click += new System.EventHandler(this.clearDispaly_Click);
             // 
             // fuwei
             // 
@@ -551,6 +550,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "硬件控制";
             // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Black;
+            this.checkBox8.ForeColor = System.Drawing.Color.White;
+            this.checkBox8.Location = new System.Drawing.Point(15, 177);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(90, 16);
+            this.checkBox8.TabIndex = 22;
+            this.checkBox8.Tag = "2站标靶远离";
+            this.checkBox8.Text = "2站标靶靠近";
+            this.checkBox8.UseVisualStyleBackColor = false;
+            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -652,6 +665,18 @@
             this.Button8.UseVisualStyleBackColor = true;
             this.Button8.Click += new System.EventHandler(this.GetButtonName);
             // 
+            // button15
+            // 
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.ForeColor = System.Drawing.Color.Black;
+            this.button15.Location = new System.Drawing.Point(14, 297);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(115, 21);
+            this.button15.TabIndex = 49;
+            this.button15.Text = "2站标靶远离检测";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // Button10
             // 
             this.Button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button10.BackgroundImage")));
@@ -663,6 +688,18 @@
             this.Button10.Text = "2站1站原点检测";
             this.Button10.UseVisualStyleBackColor = true;
             this.Button10.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(14, 272);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(115, 21);
+            this.button12.TabIndex = 50;
+            this.button12.Text = "2站标靶靠近检测";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.GetButtonName);
             // 
             // Button7
             // 
@@ -767,44 +804,6 @@
             this.PortConnectFlag.TabIndex = 45;
             this.PortConnectFlag.Text = "Port name";
             // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.BackColor = System.Drawing.Color.Black;
-            this.checkBox8.ForeColor = System.Drawing.Color.White;
-            this.checkBox8.Location = new System.Drawing.Point(15, 177);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(90, 16);
-            this.checkBox8.TabIndex = 22;
-            this.checkBox8.Tag = "2站标靶远离";
-            this.checkBox8.Text = "2站标靶靠近";
-            this.checkBox8.UseVisualStyleBackColor = false;
-            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // button12
-            // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(14, 272);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(115, 21);
-            this.button12.TabIndex = 50;
-            this.button12.Text = "2站标靶靠近检测";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button15
-            // 
-            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(14, 297);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(115, 21);
-            this.button15.TabIndex = 49;
-            this.button15.Text = "2站标靶远离检测";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.GetButtonName);
-            // 
             // Station2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -902,7 +901,7 @@
         private System.Windows.Forms.Button Button10;
         private System.Windows.Forms.Button Button11;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button clearDispaly;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.Button button15;

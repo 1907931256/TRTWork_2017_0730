@@ -30,8 +30,8 @@
         {
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.clearDispaly = new System.Windows.Forms.Button();
+            this.zhuangTaiDeng = new System.Windows.Forms.Button();
             this.fuwei_btn = new System.Windows.Forms.Button();
             this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
@@ -128,8 +128,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.clearDispaly);
+            this.groupBox5.Controls.Add(this.zhuangTaiDeng);
             this.groupBox5.Controls.Add(this.fuwei_btn);
             this.groupBox5.Controls.Add(this.comBox_ZhiShiDeng_1);
             this.groupBox5.Controls.Add(this.checkBox22);
@@ -142,27 +142,28 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "6站状态指示";
             // 
-            // button3
+            // clearDispaly
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(85, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 34);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "清屏";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.clearDispaly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clearDispaly.ForeColor = System.Drawing.Color.Black;
+            this.clearDispaly.Location = new System.Drawing.Point(85, 106);
+            this.clearDispaly.Name = "clearDispaly";
+            this.clearDispaly.Size = new System.Drawing.Size(69, 34);
+            this.clearDispaly.TabIndex = 54;
+            this.clearDispaly.Text = "清屏";
+            this.clearDispaly.UseVisualStyleBackColor = false;
+            this.clearDispaly.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // zhuangTaiDeng
             // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(71, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "6站状态灯";
-            this.button2.UseVisualStyleBackColor = true;
+            this.zhuangTaiDeng.ForeColor = System.Drawing.Color.Black;
+            this.zhuangTaiDeng.Location = new System.Drawing.Point(71, 66);
+            this.zhuangTaiDeng.Name = "zhuangTaiDeng";
+            this.zhuangTaiDeng.Size = new System.Drawing.Size(88, 23);
+            this.zhuangTaiDeng.TabIndex = 19;
+            this.zhuangTaiDeng.Text = "6站状态灯";
+            this.zhuangTaiDeng.UseVisualStyleBackColor = true;
+            this.zhuangTaiDeng.Click += new System.EventHandler(this.zhuangTaiDeng_Click);
             // 
             // fuwei_btn
             // 
@@ -1066,7 +1067,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtXianShi;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button zhuangTaiDeng;
         private System.Windows.Forms.ComboBox comBox_ZhiShiDeng_1;
         private System.Windows.Forms.CheckBox checkBox22;
         private System.Windows.Forms.CheckBox checkBox21;
@@ -1117,7 +1118,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button clearDispaly;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox11;

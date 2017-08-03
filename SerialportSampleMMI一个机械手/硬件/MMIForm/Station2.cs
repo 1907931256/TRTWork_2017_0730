@@ -143,7 +143,18 @@ namespace Station
             return hex;
         }
 
-#endregion  通用代码
+        /// <summary>
+        /// 清屏
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearDispaly_Click(object sender, EventArgs e)
+        {
+            txtXianShi.Text = "";
+        }
+
+
+        #endregion  通用代码
         //色卡上光源
         private void trackBar_QianSe_Scroll(object sender, EventArgs e)
         {
@@ -269,20 +280,6 @@ namespace Station
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + label9.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
-
-        /// <summary>
-        /// 清屏
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button14_Click(object sender, EventArgs e)
-        {
-            txtXianShi.Text = "";
-        }
-
-        private void checkBox12_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

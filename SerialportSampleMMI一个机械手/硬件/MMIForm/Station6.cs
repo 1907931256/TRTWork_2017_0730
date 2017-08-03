@@ -120,7 +120,7 @@ namespace Station
         /// <param name="e"></param>
         private void btnSport_Click(object sender, EventArgs e)
         {
-            string pram = X_txt.Text + " " + Y_txt.Text + " " + SuDu_txt.Text + " " + JianSuDu_txt.Text + " " + XieLv.Text;//运动所需参数
+            string pram = X_txt.Text + " " + Y_txt.Text + " " + SuDu_txt.Text + " "+JiaSuDu_txt.Text+" "+ JianSuDu_txt.Text + " " + XieLv.Text;//运动所需参数
 
             EquipmentCmd.Instance.SendCommand(btnSport.Text, pram, out res);
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
@@ -166,8 +166,8 @@ namespace Station
 
             if (resHexs.IndexOf("34 0A 16 06 05 ") != -1)
             {
-                dangQianWeiZhi_X = ShujuChuli.DiGaoBaWei(Convert.ToByte(ShujuChuli.GetIndexString(resHexs,5)), Convert.ToByte(ShujuChuli.GetIndexString(resHexs, 6)));
-                dangQianWeiZhi_Y = ShujuChuli.DiGaoBaWei(Convert.ToByte(ShujuChuli.GetIndexString(resHexs, 7)), Convert.ToByte(ShujuChuli.GetIndexString(resHexs, 8)));
+                dangQianWeiZhi_X = ShujuChuli.DiGaoBaWei(ShujuChuli.HexStringToBytes((ShujuChuli.GetIndexString(resHexs,5)))[0], ShujuChuli.HexStringToBytes((ShujuChuli.GetIndexString(resHexs, 6)))[0]);
+                dangQianWeiZhi_Y = ShujuChuli.DiGaoBaWei(ShujuChuli.HexStringToBytes((ShujuChuli.GetIndexString(resHexs, 7)))[0],ShujuChuli.HexStringToBytes((ShujuChuli.GetIndexString(resHexs, 8)))[0]);
             }
 
 
@@ -182,6 +182,31 @@ namespace Station
         private void button3_Click(object sender, EventArgs e)
         {
             txtXianShi.Text = "";
+        }
+        /// <summary>
+        /// 状态灯
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void zhuangTaiDeng_Click(object sender, EventArgs e)
+        {
+            string s = string.Empty;
+            if (comBox_ZhiShiDeng_1.Text == "绿灯")
+            {
+                //00H绿 / FFH红 / AAH黄
+                s = "00";
+            }
+            else if (comBox_ZhiShiDeng_1.Text == "红灯")
+            {
+                s = "255";
+            }
+            else if (comBox_ZhiShiDeng_1.Text == "黄灯")
+            {
+                s = "170";
+            }
+            EquipmentCmd.Instance.SendCommand(button15.Text, s, out res);
+            string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
+            txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button15.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
     }
 }

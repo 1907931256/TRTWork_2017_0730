@@ -32,23 +32,34 @@
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.PortConnectFlag = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.clearDispaly = new System.Windows.Forms.Button();
+            this.fuwei = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.comBox_ZhiShiDeng_1 = new System.Windows.Forms.ComboBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -72,15 +83,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.trackBar_JiaoZhun = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,6 +116,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.clearDispaly);
+            this.groupBox5.Controls.Add(this.fuwei);
             this.groupBox5.Controls.Add(this.button15);
             this.groupBox5.Controls.Add(this.comBox_ZhiShiDeng_1);
             this.groupBox5.Controls.Add(this.checkBox7);
@@ -127,10 +131,32 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "3站状态指示";
             // 
+            // clearDispaly
+            // 
+            this.clearDispaly.ForeColor = System.Drawing.Color.DarkRed;
+            this.clearDispaly.Location = new System.Drawing.Point(81, 138);
+            this.clearDispaly.Name = "clearDispaly";
+            this.clearDispaly.Size = new System.Drawing.Size(62, 31);
+            this.clearDispaly.TabIndex = 45;
+            this.clearDispaly.Text = "清屏";
+            this.clearDispaly.UseVisualStyleBackColor = true;
+            this.clearDispaly.Click += new System.EventHandler(this.clearDispaly_Click);
+            // 
+            // fuwei
+            // 
+            this.fuwei.ForeColor = System.Drawing.Color.DarkRed;
+            this.fuwei.Location = new System.Drawing.Point(13, 138);
+            this.fuwei.Name = "fuwei";
+            this.fuwei.Size = new System.Drawing.Size(62, 31);
+            this.fuwei.TabIndex = 46;
+            this.fuwei.Text = "复位";
+            this.fuwei.UseVisualStyleBackColor = true;
+            this.fuwei.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // button15
             // 
             this.button15.ForeColor = System.Drawing.Color.Maroon;
-            this.button15.Location = new System.Drawing.Point(75, 121);
+            this.button15.Location = new System.Drawing.Point(75, 93);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(88, 23);
             this.button15.TabIndex = 39;
@@ -141,7 +167,7 @@
             // comBox_ZhiShiDeng_1
             // 
             this.comBox_ZhiShiDeng_1.FormattingEnabled = true;
-            this.comBox_ZhiShiDeng_1.Location = new System.Drawing.Point(13, 124);
+            this.comBox_ZhiShiDeng_1.Location = new System.Drawing.Point(13, 96);
             this.comBox_ZhiShiDeng_1.Name = "comBox_ZhiShiDeng_1";
             this.comBox_ZhiShiDeng_1.Size = new System.Drawing.Size(56, 20);
             this.comBox_ZhiShiDeng_1.TabIndex = 38;
@@ -208,6 +234,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "状态检测";
             // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(237, 101);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 21);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "3站报警取消检测";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // button14
             // 
             this.button14.ForeColor = System.Drawing.Color.Black;
@@ -230,6 +267,17 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.GetButtonName);
             // 
+            // button17
+            // 
+            this.button17.ForeColor = System.Drawing.Color.Black;
+            this.button17.Location = new System.Drawing.Point(237, 155);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(105, 21);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "3站前白远离检测";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // button13
             // 
             this.button13.ForeColor = System.Drawing.Color.Black;
@@ -240,6 +288,17 @@
             this.button13.Text = "3站备用下降检测";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button16
+            // 
+            this.button16.ForeColor = System.Drawing.Color.Black;
+            this.button16.Location = new System.Drawing.Point(237, 128);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(105, 21);
+            this.button16.TabIndex = 0;
+            this.button16.Text = "3站前白靠近检测";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button10
             // 
@@ -262,6 +321,50 @@
             this.button12.Text = "3站备用上升检测";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(126, 128);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 21);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "3站左右远离检测";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(126, 101);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 21);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "3站左右靠近检测";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(15, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 21);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "3站标靶远离检测";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(15, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 21);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "3站标靶靠近检测";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button8
             // 
@@ -339,6 +442,34 @@
             this.checkBox6.Text = "3站备用上升";
             this.checkBox6.UseVisualStyleBackColor = false;
             this.checkBox6.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.BackColor = System.Drawing.Color.Black;
+            this.checkBox10.ForeColor = System.Drawing.Color.White;
+            this.checkBox10.Location = new System.Drawing.Point(15, 180);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(90, 16);
+            this.checkBox10.TabIndex = 22;
+            this.checkBox10.Tag = "3站左右远离";
+            this.checkBox10.Text = "3站左右靠近";
+            this.checkBox10.UseVisualStyleBackColor = false;
+            this.checkBox10.Click += new System.EventHandler(this.GetCheckBoxName);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Black;
+            this.checkBox8.ForeColor = System.Drawing.Color.White;
+            this.checkBox8.Location = new System.Drawing.Point(15, 159);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(90, 16);
+            this.checkBox8.TabIndex = 22;
+            this.checkBox8.Tag = "3站标靶远离";
+            this.checkBox8.Text = "3站标靶靠近";
+            this.checkBox8.UseVisualStyleBackColor = false;
+            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
             // checkBox5
             // 
@@ -591,111 +722,6 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "天瑞通硬件调试工具";
             // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(15, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 21);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "3站标靶靠近检测";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(15, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 21);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "3站标靶远离检测";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button3
-            // 
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(126, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 21);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "3站左右靠近检测";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(126, 128);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 21);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "3站左右远离检测";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.BackColor = System.Drawing.Color.Black;
-            this.checkBox8.ForeColor = System.Drawing.Color.White;
-            this.checkBox8.Location = new System.Drawing.Point(15, 159);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(90, 16);
-            this.checkBox8.TabIndex = 22;
-            this.checkBox8.Tag = "3站标靶远离";
-            this.checkBox8.Text = "3站标靶靠近";
-            this.checkBox8.UseVisualStyleBackColor = false;
-            this.checkBox8.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.BackColor = System.Drawing.Color.Black;
-            this.checkBox10.ForeColor = System.Drawing.Color.White;
-            this.checkBox10.Location = new System.Drawing.Point(15, 180);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(90, 16);
-            this.checkBox10.TabIndex = 22;
-            this.checkBox10.Tag = "3站左右远离";
-            this.checkBox10.Text = "3站左右靠近";
-            this.checkBox10.UseVisualStyleBackColor = false;
-            this.checkBox10.Click += new System.EventHandler(this.GetCheckBoxName);
-            // 
-            // button5
-            // 
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(237, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 21);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "3站报警取消检测";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button16
-            // 
-            this.button16.ForeColor = System.Drawing.Color.Black;
-            this.button16.Location = new System.Drawing.Point(237, 128);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(105, 21);
-            this.button16.TabIndex = 0;
-            this.button16.Text = "3站前白靠近检测";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button17
-            // 
-            this.button17.ForeColor = System.Drawing.Color.Black;
-            this.button17.Location = new System.Drawing.Point(237, 155);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(105, 21);
-            this.button17.TabIndex = 0;
-            this.button17.Text = "3站前白远离检测";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.GetButtonName);
-            // 
             // Station3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -784,5 +810,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button clearDispaly;
+        private System.Windows.Forms.Button fuwei;
     }
 }

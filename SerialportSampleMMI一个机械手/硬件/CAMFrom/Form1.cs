@@ -22,22 +22,16 @@ namespace Station.CAMFrom
             ShuJuJiaZai();
 
 
-            Thread thread = new Thread(() =>
-              {
-                  EquipmentCmd.Instance.ReportEvent += Instance_ReportEvent;
+            EquipmentCmd.Instance.ReportEvent += Instance_ReportEvent;
 
-                  if (EquipmentCmd.Instance.ConnectPort() == false)
-                  {
-                      PortConnectFlag.Text = "Port is not connect!";
-                  }
-                  else
-                  {
-                      PortConnectFlag.Text = "connect!";
-                  }
-              });
-            
-            thread.IsBackground= true;
-            thread.Start();
+            if (EquipmentCmd.Instance.ConnectPort() == false)
+            {
+                PortConnectFlag.Text = "Port is not connect!";
+            }
+            else
+            {
+                PortConnectFlag.Text = "connect!";
+            }
 
 
         }

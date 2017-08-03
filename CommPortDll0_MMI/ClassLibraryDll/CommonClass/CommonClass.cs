@@ -298,7 +298,7 @@ namespace CommonPortCmd
 
             string strHex = string.Empty;
             INICmds_.GetEqumentCommand(strCmd, out strHex);
-            string sendHex = (strHex + " " + ShujuChuli.StrToHex(param) + " 81");
+            string sendHex = (strHex + " " + ShujuChuli.StrToHex(param) + " 81").ToUpper();
 
             if (strHex != "")
             {

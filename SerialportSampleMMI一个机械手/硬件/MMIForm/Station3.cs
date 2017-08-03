@@ -14,6 +14,7 @@ namespace Station
 {
     public partial class Station3 : Form
     {
+        #region 通用代码
         private string res;
         public Station3()
         {
@@ -131,6 +132,16 @@ namespace Station
         }
 
         /// <summary>
+        /// 清空显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearDispaly_Click(object sender, EventArgs e)
+        {
+            txtXianShi.Text = "";
+        }
+
+        /// <summary>
         /// 3站状态灯
         /// </summary>
         /// <param name="sender"></param>
@@ -156,7 +167,7 @@ namespace Station
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button15.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
 
-
+        #endregion 通用代码
         /// <summary>
         /// 色卡上
         /// </summary>
@@ -217,6 +228,6 @@ namespace Station
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + label5.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
-
+       
     }
 }

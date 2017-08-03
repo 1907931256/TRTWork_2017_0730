@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.PortConnectFlag = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.display = new System.Windows.Forms.Label();
             this.txtXianShi = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -98,16 +98,16 @@
             this.PortConnectFlag.TabIndex = 53;
             this.PortConnectFlag.Text = "label1";
             // 
-            // label2
+            // display
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(65, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 33);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "天瑞通硬件调试工具";
+            this.display.AutoSize = true;
+            this.display.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.display.ForeColor = System.Drawing.Color.Red;
+            this.display.Location = new System.Drawing.Point(65, 2);
+            this.display.Name = "display";
+            this.display.Size = new System.Drawing.Size(276, 33);
+            this.display.TabIndex = 52;
+            this.display.Text = "天瑞通硬件调试工具";
             // 
             // txtXianShi
             // 
@@ -717,7 +717,7 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.PortConnectFlag);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.display);
             this.Controls.Add(this.txtXianShi);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -741,7 +741,7 @@
         #endregion
 
         private System.Windows.Forms.Label PortConnectFlag;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label display;
         private System.Windows.Forms.TextBox txtXianShi;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

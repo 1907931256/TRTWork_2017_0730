@@ -61,11 +61,11 @@ namespace FlowtestEdit
 
 
 
-            DataTable propertys = new DataTable("Propertys");
+            //DataTable propertys = new DataTable("Propertys");
 
-            propertys.Columns.Add("ItemId", typeof(string));
-            propertys.Columns.Add("PropertyName", typeof(string));
-            propertys.Columns.Add("spec", typeof(string));
+            //propertys.Columns.Add("ItemId", typeof(string));
+            //propertys.Columns.Add("PropertyName", typeof(string));
+            //propertys.Columns.Add("spec", typeof(string));
             //propertys.Columns.Add("specdescribe", typeof(string));
             //propertys.Columns.Add("enspecdescribe", typeof(string));
             //propertys.Columns.Add("errcode", typeof(string));
