@@ -19,6 +19,11 @@ namespace Station
 
             Control.CheckForIllegalCrossThreadCalls = false;   //禁止.net对线程做检测
         }
+
+
+
+
+
         #region  通用代码
         private string res;
 
@@ -26,8 +31,6 @@ namespace Station
         {
 
             ShuJuJiaZai();
-
-
            
                 EquipmentCmd.Instance.ReportEvent += Instance_ReportEvent;
 

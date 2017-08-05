@@ -516,7 +516,7 @@ namespace GeneralTst
            
                 Process process = new Process();
                 process.StartInfo.FileName = "adb.exe";
-                process.StartInfo.Arguments = "logcat -s qwebob";
+                process.StartInfo.Arguments = "logcat -v -s";
                 process.StartInfo.CreateNoWindow = true;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
@@ -558,16 +558,6 @@ namespace GeneralTst
         {
             logCatFlag = false;
 
-            Process process = new Process();
-            process.StartInfo.FileName = "adb.exe";
-            process.StartInfo.Arguments = "logcat -s qwebob";
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.Start();
-            process.StandardInput.WriteLine("");
-            process.WaitForExit();
-            process.Close();
         }
     }
 }

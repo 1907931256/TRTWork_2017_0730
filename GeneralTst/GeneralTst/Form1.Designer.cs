@@ -216,7 +216,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(114, 42);
             this.button7.TabIndex = 3;
-            this.button7.Text = "抓取日志";
+            this.button7.Text = "抓取日志并保存E盘";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -226,7 +226,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(114, 42);
             this.button8.TabIndex = 3;
-            this.button8.Text = "停止抓取并保存到E盘";
+            this.button8.Text = "停止抓取";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 

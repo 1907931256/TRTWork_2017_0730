@@ -57,21 +57,15 @@
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.houBaiGuangYuan = new System.Windows.Forms.TextBox();
-            this.houBai_lb = new System.Windows.Forms.Label();
-            this.trackBarHouBai = new System.Windows.Forms.TrackBar();
-            this.trackBar_qianBai = new System.Windows.Forms.TrackBar();
-            this.qianBai_lb = new System.Windows.Forms.Label();
-            this.qianBaiGuangYuan = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.clearDispaly = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button81 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button80 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.clearDispaly = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.JingGao = new System.Windows.Forms.Button();
             this.baoJin_combox = new System.Windows.Forms.ComboBox();
@@ -80,13 +74,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarHouBai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_qianBai)).BeginInit();
+            this.houBai_lb = new System.Windows.Forms.Label();
+            this.trackBarHouBai = new System.Windows.Forms.TrackBar();
+            this.trackBar_qianBai = new System.Windows.Forms.TrackBar();
+            this.qianBai_lb = new System.Windows.Forms.Label();
+            this.houBaiGuangYuan = new System.Windows.Forms.TextBox();
+            this.qianBaiGuangYuan = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarHouBai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_qianBai)).BeginInit();
             this.SuspendLayout();
             // 
             // PortConnectFlag
@@ -139,51 +139,51 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 37);
             this.button2.TabIndex = 54;
-            this.button2.Text = "1站取放前检测";
+            this.button2.Text = "1站黑卡上升检测";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button3
             // 
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(7, 106);
+            this.button3.Location = new System.Drawing.Point(7, 149);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 37);
             this.button3.TabIndex = 54;
-            this.button3.Text = "1站取放原点检测";
+            this.button3.Text = "1站取放后检测";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(7, 149);
+            this.button4.Location = new System.Drawing.Point(7, 192);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(145, 37);
             this.button4.TabIndex = 54;
-            this.button4.Text = "1站取放1抬起检测";
+            this.button4.Text = "1站取放3抬起检测";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button5
             // 
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(7, 192);
+            this.button5.Location = new System.Drawing.Point(7, 235);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(145, 37);
             this.button5.TabIndex = 54;
-            this.button5.Text = "1站取放1吸取检测";
+            this.button5.Text = "1站取放3吸取检测";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button6
             // 
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(7, 235);
+            this.button6.Location = new System.Drawing.Point(158, 235);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(145, 37);
             this.button6.TabIndex = 54;
-            this.button6.Text = "1站取放3抬起检测";
+            this.button6.Text = "1站警告取消检测";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -194,7 +194,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(145, 37);
             this.button7.TabIndex = 54;
-            this.button7.Text = "1站黑卡上升检测";
+            this.button7.Text = "1站取放原点检测";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -205,7 +205,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(145, 37);
             this.button8.TabIndex = 54;
-            this.button8.Text = "1站取放后检测";
+            this.button8.Text = "1站取放1抬起检测";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -216,7 +216,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(145, 37);
             this.button9.TabIndex = 54;
-            this.button9.Text = "1站警告取消检测";
+            this.button9.Text = "1站取放1吸取检测";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -245,11 +245,11 @@
             // button12
             // 
             this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(158, 235);
+            this.button12.Location = new System.Drawing.Point(7, 106);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(145, 37);
             this.button12.TabIndex = 54;
-            this.button12.Text = "1站取放3吸取检测";
+            this.button12.Text = "1站取放前检测";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.GetButtonName);
             // 
@@ -270,7 +270,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(4, 44);
+            this.checkBox2.Location = new System.Drawing.Point(108, 20);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(84, 16);
             this.checkBox2.TabIndex = 55;
@@ -283,7 +283,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(4, 66);
+            this.checkBox3.Location = new System.Drawing.Point(210, 22);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(90, 16);
             this.checkBox3.TabIndex = 55;
@@ -296,7 +296,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(4, 88);
+            this.checkBox4.Location = new System.Drawing.Point(6, 44);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(96, 16);
             this.checkBox4.TabIndex = 55;
@@ -309,7 +309,7 @@
             // 
             this.checkBox5.AutoSize = true;
             this.checkBox5.ForeColor = System.Drawing.Color.White;
-            this.checkBox5.Location = new System.Drawing.Point(4, 110);
+            this.checkBox5.Location = new System.Drawing.Point(108, 43);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(96, 16);
             this.checkBox5.TabIndex = 55;
@@ -322,7 +322,7 @@
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.ForeColor = System.Drawing.Color.White;
-            this.checkBox6.Location = new System.Drawing.Point(4, 132);
+            this.checkBox6.Location = new System.Drawing.Point(210, 44);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(96, 16);
             this.checkBox6.TabIndex = 55;
@@ -335,11 +335,11 @@
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.ForeColor = System.Drawing.Color.White;
-            this.checkBox7.Location = new System.Drawing.Point(94, 110);
+            this.checkBox7.Location = new System.Drawing.Point(208, 88);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(96, 16);
             this.checkBox7.TabIndex = 55;
-            this.checkBox7.Tag = "1站取放3松开";
+            this.checkBox7.Tag = "1站取放3闭气";
             this.checkBox7.Text = "1站取放3吹气";
             this.checkBox7.UseVisualStyleBackColor = true;
             this.checkBox7.Click += new System.EventHandler(this.GetCheckBoxName);
@@ -348,7 +348,7 @@
             // 
             this.checkBox8.AutoSize = true;
             this.checkBox8.ForeColor = System.Drawing.Color.White;
-            this.checkBox8.Location = new System.Drawing.Point(94, 88);
+            this.checkBox8.Location = new System.Drawing.Point(106, 88);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(96, 16);
             this.checkBox8.TabIndex = 55;
@@ -361,7 +361,7 @@
             // 
             this.checkBox9.AutoSize = true;
             this.checkBox9.ForeColor = System.Drawing.Color.White;
-            this.checkBox9.Location = new System.Drawing.Point(94, 65);
+            this.checkBox9.Location = new System.Drawing.Point(6, 88);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(96, 16);
             this.checkBox9.TabIndex = 55;
@@ -374,7 +374,7 @@
             // 
             this.checkBox10.AutoSize = true;
             this.checkBox10.ForeColor = System.Drawing.Color.White;
-            this.checkBox10.Location = new System.Drawing.Point(94, 44);
+            this.checkBox10.Location = new System.Drawing.Point(208, 66);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(96, 16);
             this.checkBox10.TabIndex = 55;
@@ -387,7 +387,7 @@
             // 
             this.checkBox11.AutoSize = true;
             this.checkBox11.ForeColor = System.Drawing.Color.White;
-            this.checkBox11.Location = new System.Drawing.Point(94, 22);
+            this.checkBox11.Location = new System.Drawing.Point(106, 65);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(96, 16);
             this.checkBox11.TabIndex = 55;
@@ -400,7 +400,7 @@
             // 
             this.checkBox12.AutoSize = true;
             this.checkBox12.ForeColor = System.Drawing.Color.White;
-            this.checkBox12.Location = new System.Drawing.Point(94, 132);
+            this.checkBox12.Location = new System.Drawing.Point(6, 110);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(90, 16);
             this.checkBox12.TabIndex = 55;
@@ -413,7 +413,7 @@
             // 
             this.checkBox13.AutoSize = true;
             this.checkBox13.ForeColor = System.Drawing.Color.White;
-            this.checkBox13.Location = new System.Drawing.Point(94, 151);
+            this.checkBox13.Location = new System.Drawing.Point(106, 110);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(48, 16);
             this.checkBox13.TabIndex = 55;
@@ -425,7 +425,7 @@
             // 
             this.checkBox14.AutoSize = true;
             this.checkBox14.ForeColor = System.Drawing.Color.White;
-            this.checkBox14.Location = new System.Drawing.Point(4, 151);
+            this.checkBox14.Location = new System.Drawing.Point(4, 65);
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(96, 16);
             this.checkBox14.TabIndex = 55;
@@ -434,74 +434,18 @@
             this.checkBox14.UseVisualStyleBackColor = true;
             this.checkBox14.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
-            // houBaiGuangYuan
-            // 
-            this.houBaiGuangYuan.Location = new System.Drawing.Point(124, 28);
-            this.houBaiGuangYuan.Name = "houBaiGuangYuan";
-            this.houBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
-            this.houBaiGuangYuan.TabIndex = 57;
-            this.houBaiGuangYuan.Text = "192";
-            // 
-            // houBai_lb
-            // 
-            this.houBai_lb.AutoSize = true;
-            this.houBai_lb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.houBai_lb.ForeColor = System.Drawing.Color.White;
-            this.houBai_lb.Location = new System.Drawing.Point(6, 31);
-            this.houBai_lb.Name = "houBai_lb";
-            this.houBai_lb.Size = new System.Drawing.Size(95, 12);
-            this.houBai_lb.TabIndex = 58;
-            this.houBai_lb.Text = "1站后白光源调节";
-            // 
-            // trackBarHouBai
-            // 
-            this.trackBarHouBai.Location = new System.Drawing.Point(173, 28);
-            this.trackBarHouBai.Name = "trackBarHouBai";
-            this.trackBarHouBai.Size = new System.Drawing.Size(142, 45);
-            this.trackBarHouBai.TabIndex = 56;
-            this.trackBarHouBai.Scroll += new System.EventHandler(this.trackBar_HouBai_Scroll);
-            // 
-            // trackBar_qianBai
-            // 
-            this.trackBar_qianBai.Location = new System.Drawing.Point(173, 68);
-            this.trackBar_qianBai.Name = "trackBar_qianBai";
-            this.trackBar_qianBai.Size = new System.Drawing.Size(142, 45);
-            this.trackBar_qianBai.TabIndex = 56;
-            this.trackBar_qianBai.Scroll += new System.EventHandler(this.trackBar_QianBai_Scroll);
-            // 
-            // qianBai_lb
-            // 
-            this.qianBai_lb.AutoSize = true;
-            this.qianBai_lb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qianBai_lb.ForeColor = System.Drawing.Color.White;
-            this.qianBai_lb.Location = new System.Drawing.Point(6, 71);
-            this.qianBai_lb.Name = "qianBai_lb";
-            this.qianBai_lb.Size = new System.Drawing.Size(95, 12);
-            this.qianBai_lb.TabIndex = 58;
-            this.qianBai_lb.Text = "1站前白光源调节";
-            // 
-            // qianBaiGuangYuan
-            // 
-            this.qianBaiGuangYuan.Location = new System.Drawing.Point(124, 68);
-            this.qianBaiGuangYuan.Name = "qianBaiGuangYuan";
-            this.qianBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
-            this.qianBaiGuangYuan.TabIndex = 57;
-            this.qianBaiGuangYuan.Text = "192";
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button13);
-            this.groupBox4.Controls.Add(this.button14);
-            this.groupBox4.Controls.Add(this.clearDispaly);
             this.groupBox4.Controls.Add(this.comboBox2);
             this.groupBox4.Controls.Add(this.button81);
             this.groupBox4.Controls.Add(this.button16);
             this.groupBox4.Controls.Add(this.button80);
             this.groupBox4.Controls.Add(this.button17);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(12, 497);
+            this.groupBox4.Location = new System.Drawing.Point(543, 320);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(507, 129);
+            this.groupBox4.Size = new System.Drawing.Size(315, 122);
             this.groupBox4.TabIndex = 59;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "机械师控制";
@@ -516,28 +460,6 @@
             this.button13.Text = "1站电机原点";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button14
-            // 
-            this.button14.ForeColor = System.Drawing.Color.Maroon;
-            this.button14.Location = new System.Drawing.Point(373, 23);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(95, 39);
-            this.button14.TabIndex = 40;
-            this.button14.Text = "复位";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // clearDispaly
-            // 
-            this.clearDispaly.ForeColor = System.Drawing.Color.Maroon;
-            this.clearDispaly.Location = new System.Drawing.Point(375, 71);
-            this.clearDispaly.Name = "clearDispaly";
-            this.clearDispaly.Size = new System.Drawing.Size(95, 39);
-            this.clearDispaly.TabIndex = 41;
-            this.clearDispaly.Text = "清屏";
-            this.clearDispaly.UseVisualStyleBackColor = true;
-            this.clearDispaly.Click += new System.EventHandler(this.clearDispaly_Click);
             // 
             // comboBox2
             // 
@@ -591,19 +513,43 @@
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
+            // button14
+            // 
+            this.button14.ForeColor = System.Drawing.Color.Maroon;
+            this.button14.Location = new System.Drawing.Point(10, 94);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(95, 39);
+            this.button14.TabIndex = 40;
+            this.button14.Text = "复位";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // clearDispaly
+            // 
+            this.clearDispaly.ForeColor = System.Drawing.Color.Maroon;
+            this.clearDispaly.Location = new System.Drawing.Point(126, 94);
+            this.clearDispaly.Name = "clearDispaly";
+            this.clearDispaly.Size = new System.Drawing.Size(95, 39);
+            this.clearDispaly.TabIndex = 41;
+            this.clearDispaly.Text = "清屏";
+            this.clearDispaly.UseVisualStyleBackColor = true;
+            this.clearDispaly.Click += new System.EventHandler(this.clearDispaly_Click);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.JingGao);
+            this.groupBox5.Controls.Add(this.clearDispaly);
+            this.groupBox5.Controls.Add(this.button14);
             this.groupBox5.Controls.Add(this.baoJin_combox);
             this.groupBox5.Controls.Add(this.zhaungTaiZhiShiDeng);
             this.groupBox5.Controls.Add(this.comBox_ZhiShiDeng_1);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(550, 515);
+            this.groupBox5.Location = new System.Drawing.Point(543, 458);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(201, 91);
+            this.groupBox5.Size = new System.Drawing.Size(315, 166);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "1站状态指示";
+            this.groupBox5.Text = "状态指示";
             // 
             // JingGao
             // 
@@ -612,7 +558,7 @@
             this.JingGao.Name = "JingGao";
             this.JingGao.Size = new System.Drawing.Size(88, 23);
             this.JingGao.TabIndex = 19;
-            this.JingGao.Text = "报警";
+            this.JingGao.Text = "警告";
             this.JingGao.UseVisualStyleBackColor = true;
             this.JingGao.Click += new System.EventHandler(this.JingGao_Click);
             // 
@@ -631,7 +577,7 @@
             this.zhaungTaiZhiShiDeng.Name = "zhaungTaiZhiShiDeng";
             this.zhaungTaiZhiShiDeng.Size = new System.Drawing.Size(113, 23);
             this.zhaungTaiZhiShiDeng.TabIndex = 19;
-            this.zhaungTaiZhiShiDeng.Text = "1站状态指示灯";
+            this.zhaungTaiZhiShiDeng.Text = "1站状态灯";
             this.zhaungTaiZhiShiDeng.UseVisualStyleBackColor = true;
             this.zhaungTaiZhiShiDeng.Click += new System.EventHandler(this.zhaungTaiZhiShiDeng_Click);
             // 
@@ -660,9 +606,9 @@
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(550, 319);
+            this.groupBox1.Location = new System.Drawing.Point(12, 488);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 182);
+            this.groupBox1.Size = new System.Drawing.Size(507, 136);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "开关控制";
@@ -684,7 +630,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(543, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(315, 282);
+            this.groupBox2.Size = new System.Drawing.Size(315, 284);
             this.groupBox2.TabIndex = 62;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "信号检测";
@@ -701,9 +647,63 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 363);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(507, 119);
-            this.groupBox3.TabIndex = 63;
+            this.groupBox3.TabIndex = 72;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "光源调节";
+            // 
+            // houBai_lb
+            // 
+            this.houBai_lb.AutoSize = true;
+            this.houBai_lb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.houBai_lb.ForeColor = System.Drawing.Color.White;
+            this.houBai_lb.Location = new System.Drawing.Point(6, 31);
+            this.houBai_lb.Name = "houBai_lb";
+            this.houBai_lb.Size = new System.Drawing.Size(95, 12);
+            this.houBai_lb.TabIndex = 58;
+            this.houBai_lb.Text = "1站后白光源调节";
+            // 
+            // trackBarHouBai
+            // 
+            this.trackBarHouBai.Location = new System.Drawing.Point(173, 28);
+            this.trackBarHouBai.Name = "trackBarHouBai";
+            this.trackBarHouBai.Size = new System.Drawing.Size(142, 45);
+            this.trackBarHouBai.TabIndex = 56;
+            this.trackBarHouBai.Scroll += new System.EventHandler(this.trackBar_HouBai_Scroll);
+            // 
+            // trackBar_qianBai
+            // 
+            this.trackBar_qianBai.Location = new System.Drawing.Point(173, 68);
+            this.trackBar_qianBai.Name = "trackBar_qianBai";
+            this.trackBar_qianBai.Size = new System.Drawing.Size(142, 45);
+            this.trackBar_qianBai.TabIndex = 56;
+            this.trackBar_qianBai.Scroll += new System.EventHandler(this.trackBar_QianBai_Scroll);
+            // 
+            // qianBai_lb
+            // 
+            this.qianBai_lb.AutoSize = true;
+            this.qianBai_lb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qianBai_lb.ForeColor = System.Drawing.Color.White;
+            this.qianBai_lb.Location = new System.Drawing.Point(6, 71);
+            this.qianBai_lb.Name = "qianBai_lb";
+            this.qianBai_lb.Size = new System.Drawing.Size(95, 12);
+            this.qianBai_lb.TabIndex = 58;
+            this.qianBai_lb.Text = "1站前白光源调节";
+            // 
+            // houBaiGuangYuan
+            // 
+            this.houBaiGuangYuan.Location = new System.Drawing.Point(124, 28);
+            this.houBaiGuangYuan.Name = "houBaiGuangYuan";
+            this.houBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
+            this.houBaiGuangYuan.TabIndex = 57;
+            this.houBaiGuangYuan.Text = "192";
+            // 
+            // qianBaiGuangYuan
+            // 
+            this.qianBaiGuangYuan.Location = new System.Drawing.Point(124, 68);
+            this.qianBaiGuangYuan.Name = "qianBaiGuangYuan";
+            this.qianBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
+            this.qianBaiGuangYuan.TabIndex = 57;
+            this.qianBaiGuangYuan.Text = "192";
             // 
             // Form1
             // 
@@ -724,8 +724,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarHouBai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_qianBai)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -733,6 +731,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarHouBai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_qianBai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -769,12 +769,6 @@
         private System.Windows.Forms.CheckBox checkBox12;
         private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.TextBox houBaiGuangYuan;
-        private System.Windows.Forms.Label houBai_lb;
-        private System.Windows.Forms.TrackBar trackBarHouBai;
-        private System.Windows.Forms.TrackBar trackBar_qianBai;
-        private System.Windows.Forms.Label qianBai_lb;
-        private System.Windows.Forms.TextBox qianBaiGuangYuan;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
@@ -792,5 +786,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label houBai_lb;
+        private System.Windows.Forms.TrackBar trackBarHouBai;
+        private System.Windows.Forms.TrackBar trackBar_qianBai;
+        private System.Windows.Forms.Label qianBai_lb;
+        private System.Windows.Forms.TextBox houBaiGuangYuan;
+        private System.Windows.Forms.TextBox qianBaiGuangYuan;
     }
 }

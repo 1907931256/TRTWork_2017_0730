@@ -3,14 +3,40 @@ namespace Station.CommonCod
 {
     class code1
     {
+
+
         #region 工具通用代码
+        //private bool flag;
         //private string res;
+
+        //private void StartConnectPortThread()
+        //{
+        //    Thread thread_ = new Thread(() =>
+        //    {
+        //        EquipmentCmd instance = EquipmentCmd.Instance;
+        //        flag = instance.ConnectPort();
+        //        if (flag == false)
+        //        {
+        //            PortConnectFlag.Text = "Port is not connect!";
+        //        }
+        //        else
+        //        {
+        //            PortConnectFlag.Text = "connect!";
+        //        }
+        //    }
+        //    );
+        //    thread_.IsBackground = true;
+        //    thread_.Start();
+        //}
+
+
+
         //public Station3()
         //{
+              //StartConnectPortThread();
         //    InitializeComponent();
         //    Control.CheckForIllegalCrossThreadCalls = false;   //禁止.net对线程做检测
         //}
-
 
         //private void Form3_Load(object sender, EventArgs e)
         //{
@@ -135,7 +161,7 @@ namespace Station.CommonCod
         ///// </summary>
         ///// <param name="sender"></param>
         ///// <param name="e"></param>
-        //private void button15_Click(object sender, EventArgs e)
+        //private void zhaungTaiZhiShiDeng_Click(object sender, EventArgs e)
         //{
         //    string s = string.Empty;
         //    if (comBox_ZhiShiDeng_1.Text == "绿灯")
@@ -151,12 +177,40 @@ namespace Station.CommonCod
         //    {
         //        s = "170";
         //    }
-        //    EquipmentCmd.Instance.SendCommand(button15.Text, s, out res);
+        //    EquipmentCmd.Instance.SendCommand(zhaungTaiZhiShiDeng.Text, s, out res);
         //    string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
-        //    txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button15.Text + "-->" + res + "    " + resHexs + "\r\n");
+        //    txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + zhaungTaiZhiShiDeng.Text + "-->" + res + "    " + resHexs + "\r\n");
+        //}
+
+        ///// <summary>
+        ///// 警告
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void JingGao_Click(object sender, EventArgs e)
+        //{
+        //    EquipmentCmd.Instance.SendCommand(JingGao.Text, baoJin_combox.Text, out res);
+
+        //    string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
+        //    txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + JingGao.Text + "-->" + res + "    " + resHexs + "\r\n");
         //}
 
 
+
+        /////// <summary>
+        /////// 后白光源调节 
+        /////// 
+        /////// 光源调节通用代码
+        /////// </summary>
+        /////// <param name="sender"></param>
+        /////// <param name="e"></param>
+        ////private void trackBar_HouBai_Scroll(object sender, EventArgs e)
+        ////{
+        ////    houBaiGuangYuan.Text = trackBarHouBai.Value.ToString();
+        ////    EquipmentCmd.Instance.SendCommand(houBai_lb.Text, houBaiGuangYuan.Text, out res);
+        ////    string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
+        ////    txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + houBai_lb.Text + "-->" + res + "    " + resHexs + "\r\n");
+        ////}
 
 
         #endregion 通用代码

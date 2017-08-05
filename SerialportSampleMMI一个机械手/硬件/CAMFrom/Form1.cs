@@ -1,29 +1,26 @@
 ﻿using EqumentCmds;
 using System;
-using System.Threading;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Station.CAMFrom
 {
     public partial class Form1 : Form
     {
+        
+        #region  通用代码
+        private string res;
         public Form1()
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;   //禁止.net对线程做检测
         }
 
-        #region  通用代码
-        private string res;
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
             ShuJuJiaZai();
-
-
             EquipmentCmd.Instance.ReportEvent += Instance_ReportEvent;
-
             if (EquipmentCmd.Instance.ConnectPort() == false)
             {
                 PortConnectFlag.Text = "Port is not connect!";
@@ -32,10 +29,7 @@ namespace Station.CAMFrom
             {
                 PortConnectFlag.Text = "connect!";
             }
-
-
         }
-
         private void Instance_ReportEvent(CommonPortCmd.ActiveEnumData eventId)
         {
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + eventId.ToString() + "\r\n");
@@ -75,21 +69,6 @@ namespace Station.CAMFrom
             trackBar_qianBai.Value = 192;
 
 
-            //comboBox3.Items.Add("01");
-            //comboBox3.Items.Add("02");
-            //comboBox3.Items.Add("04");
-            //comboBox3.Items.Add("08");
-            //comboBox3.Items.Add("16");
-            //comboBox3.Items.Add("32");
-            //comboBox3.SelectedIndex = 0;
-
-            //comboBox4.Items.Add("01");
-            //comboBox4.Items.Add("02");
-            //comboBox4.Items.Add("04");
-            //comboBox4.Items.Add("08");
-            //comboBox4.Items.Add("16");
-            //comboBox4.Items.Add("32");
-            //comboBox4.SelectedIndex = 0;
 
             #endregion
 
@@ -251,6 +230,6 @@ namespace Station.CAMFrom
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button17.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
 
-      
+       
     }
 }
