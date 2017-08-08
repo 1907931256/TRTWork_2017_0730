@@ -1,9 +1,5 @@
-﻿using EqumentCmds;
-using System;
-using System.Threading;
+﻿using System;
 using System.Windows.Forms;
-
-using CommonClass;
 
 namespace Station
 {
@@ -19,7 +15,7 @@ namespace Station
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CAMFrom.Form3());
+            Application.Run(new CAMFrom.Form2());
             //必须放在窗体运行之后，握手才能正常握手
             
 

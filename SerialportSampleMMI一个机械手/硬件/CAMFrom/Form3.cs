@@ -59,7 +59,7 @@ namespace Station.CAMFrom
             trackBar1.TickFrequency = 25;
             trackBar1.Value = 192;
 
-
+            baoJin_combox.SelectedIndex = 0;
 
             #endregion
         }

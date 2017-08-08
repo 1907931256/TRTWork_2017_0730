@@ -4,12 +4,9 @@ using System.Xml.Linq;
 
 namespace FlowtestEdit.FlowtestInstance
 {
-    class Item
+    public class Item
     {
         public int id;
-        public Method[] methods;
-
-
         public string property_name;
         public string property_spec;
         public string property_specdescribe;
@@ -28,6 +25,12 @@ namespace FlowtestEdit.FlowtestInstance
         public string property_hide;
         public string property_condition;
         public string property_depend;
+        public Method[] methods;
+       
+        
+        public Item()
+        {
 
+        }
     }
 }

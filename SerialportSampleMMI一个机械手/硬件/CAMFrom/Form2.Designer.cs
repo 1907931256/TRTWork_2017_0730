@@ -508,7 +508,7 @@
             this.qianBai_lb.Name = "qianBai_lb";
             this.qianBai_lb.Size = new System.Drawing.Size(95, 12);
             this.qianBai_lb.TabIndex = 58;
-            this.qianBai_lb.Text = "2站后白光源调节";
+            this.qianBai_lb.Text = "2站前白光源调节";
             // 
             // houBaiGuangYuan
             // 
