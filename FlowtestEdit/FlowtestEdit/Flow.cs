@@ -118,6 +118,11 @@ namespace FlowtestEdit
              errMessing = null;
              return ItemList;
             }
+          
+            catch( System.IndexOutOfRangeException range)
+            {
+                errMessing = "Property 属性个数不对,属性个数少于标定！";
+            }
             catch (System.Exception e)
             {
                 errMessing = e.ToString();

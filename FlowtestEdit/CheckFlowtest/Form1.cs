@@ -67,7 +67,7 @@ namespace CheckFlowtest
             string errMesg;
             Item[] items = flow.ReturnItemList(file, out errMesg);
 
-            dispalytxt.AppendText("***** Start ********");
+            dispalytxt.AppendText("***** Start ********"+"\r\n");
 
             dispalytxt.AppendText(errMesg+"\r\n");
             if (items != null)
@@ -83,7 +83,7 @@ namespace CheckFlowtest
                 CheckMethodName(items);
             }
 
-            dispalytxt.AppendText("****** End ********!");
+            dispalytxt.AppendText("****** End ********!"+"\r\n");
         }
 
         /// <summary>
