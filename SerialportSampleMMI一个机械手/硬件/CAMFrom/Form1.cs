@@ -203,6 +203,30 @@ namespace Station.CAMFrom
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + houBai_lb.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
+        /// <summary>
+        /// 当用用户按下enter按键后
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void houBaiGuangYuan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (Char)Keys.Enter)
+            {
+                try
+                {
+                    trackBarHouBai.Value = Convert.ToInt32(houBaiGuangYuan.Text);
+                    trackBar_HouBai_Scroll(sender, null);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("输入数据非法");
+                }
+            }
+
+
+        }
+
+
 
         /// <summary>
         /// 前白光源调节
@@ -216,6 +240,28 @@ namespace Station.CAMFrom
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + qianBai_lb.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
+        /// <summary>
+        /// 前白光源调节
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void qianBaiGuangYuan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (Char)Keys.Enter)
+            {
+                try
+                {
+                    trackBar_qianBai.Value = Convert.ToInt32(qianBaiGuangYuan.Text);
+                    trackBar_QianBai_Scroll(sender, null);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("输入数据非法");
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// 取放
@@ -229,7 +275,6 @@ namespace Station.CAMFrom
             string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
             txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + button17.Text + "-->" + res + "    " + resHexs + "\r\n");
         }
-
        
     }
 }

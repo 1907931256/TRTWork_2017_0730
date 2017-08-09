@@ -92,6 +92,7 @@
             // PortConnectFlag
             // 
             this.PortConnectFlag.AutoSize = true;
+            this.PortConnectFlag.ForeColor = System.Drawing.Color.White;
             this.PortConnectFlag.Location = new System.Drawing.Point(399, 19);
             this.PortConnectFlag.Name = "PortConnectFlag";
             this.PortConnectFlag.Size = new System.Drawing.Size(41, 12);
@@ -696,6 +697,7 @@
             this.houBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
             this.houBaiGuangYuan.TabIndex = 57;
             this.houBaiGuangYuan.Text = "192";
+            this.houBaiGuangYuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.houBaiGuangYuan_KeyPress);
             // 
             // qianBaiGuangYuan
             // 
@@ -704,6 +706,7 @@
             this.qianBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
             this.qianBaiGuangYuan.TabIndex = 57;
             this.qianBaiGuangYuan.Text = "192";
+            this.qianBaiGuangYuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qianBaiGuangYuan_KeyPress);
             // 
             // Form1
             // 

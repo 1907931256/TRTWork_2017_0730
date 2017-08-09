@@ -198,6 +198,7 @@
             this.textBox1.Size = new System.Drawing.Size(49, 21);
             this.textBox1.TabIndex = 57;
             this.textBox1.Text = "192";
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // houBaiGuangYuan
             // 
@@ -206,6 +207,7 @@
             this.houBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
             this.houBaiGuangYuan.TabIndex = 57;
             this.houBaiGuangYuan.Text = "192";
+            this.houBaiGuangYuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.houBaiGuangYuan_KeyPress);
             // 
             // qianBaiGuangYuan
             // 
@@ -214,6 +216,7 @@
             this.qianBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
             this.qianBaiGuangYuan.TabIndex = 57;
             this.qianBaiGuangYuan.Text = "192";
+            this.qianBaiGuangYuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qianBaiGuangYuan_KeyPress);
             // 
             // PortConnectFlag
             // 

@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -72,10 +76,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,6 +109,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "信号检测";
             // 
+            // button10
+            // 
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(7, 235);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(145, 37);
+            this.button10.TabIndex = 54;
+            this.button10.Text = "2站标靶靠近检测";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button12
+            // 
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(158, 149);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(145, 37);
+            this.button12.TabIndex = 54;
+            this.button12.Text = "2站警告取消检测";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // button5
             // 
             this.button5.ForeColor = System.Drawing.Color.Black;
@@ -141,6 +163,28 @@
             this.button4.Text = "2站OISZ原点检测";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button11
+            // 
+            this.button11.ForeColor = System.Drawing.Color.Black;
+            this.button11.Location = new System.Drawing.Point(158, 192);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(145, 37);
+            this.button11.TabIndex = 54;
+            this.button11.Text = "2站1站产品防呆检测";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.GetButtonName);
+            // 
+            // button9
+            // 
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(7, 192);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(145, 37);
+            this.button9.TabIndex = 54;
+            this.button9.Text = "2站色卡远离检测";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.GetButtonName);
             // 
             // button8
             // 
@@ -525,6 +569,7 @@
             this.qianBaiGuangYuan.Size = new System.Drawing.Size(49, 21);
             this.qianBaiGuangYuan.TabIndex = 57;
             this.qianBaiGuangYuan.Text = "192";
+            this.qianBaiGuangYuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qianBaiGuangYuan_KeyPress);
             // 
             // groupBox4
             // 
@@ -595,50 +640,6 @@
             this.textBox2.Size = new System.Drawing.Size(49, 21);
             this.textBox2.TabIndex = 57;
             this.textBox2.Text = "10";
-            // 
-            // button9
-            // 
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(7, 192);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(145, 37);
-            this.button9.TabIndex = 54;
-            this.button9.Text = "2站色卡远离检测";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button10
-            // 
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(7, 235);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(145, 37);
-            this.button10.TabIndex = 54;
-            this.button10.Text = "2站标靶靠近检测";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button11
-            // 
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(158, 192);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(145, 37);
-            this.button11.TabIndex = 54;
-            this.button11.Text = "2站1站产品防呆检测";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button12
-            // 
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(158, 149);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(145, 37);
-            this.button12.TabIndex = 54;
-            this.button12.Text = "2站警告取消检测";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.GetButtonName);
             // 
             // Form2
             // 

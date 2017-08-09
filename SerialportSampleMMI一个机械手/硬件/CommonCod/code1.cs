@@ -33,7 +33,7 @@ namespace Station.CommonCod
 
         //public Station3()
         //{
-              //StartConnectPortThread();
+        //StartConnectPortThread();
         //    InitializeComponent();
         //    Control.CheckForIllegalCrossThreadCalls = false;   //禁止.net对线程做检测
         //}
@@ -211,6 +211,28 @@ namespace Station.CommonCod
         ////    string resHexs = ByteToHexString(EquipmentCmd.Instance.resPort);
         ////    txtXianShi.AppendText(DateTime.Now.ToString("hh时mm分ss秒") + "  " + houBai_lb.Text + "-->" + res + "    " + resHexs + "\r\n");
         ////}
+
+        ///// <summary>
+        ///// 当用用户按下enter按键后
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void houBaiGuangYuan_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (Char)Keys.Enter)
+        //    {
+        //        try
+        //        {
+        //            trackBarHouBai.Value = Convert.ToInt32(houBaiGuangYuan.Text);
+        //            trackBarHouBai_Scroll(sender, null);
+        //        }
+        //        catch (Exception)
+        //        {
+        //            MessageBox.Show("输入数据非法");
+        //        }
+        //    }
+        //}
+
 
 
         #endregion 通用代码
