@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowtestEdit", "FlowtestEdit\FlowtestEdit.csproj", "{440EF329-36BD-4042-A8AA-731A267F20AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{C31EFFD3-FB26-472F-9F21-F5FD9A6776A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckFlowtest", "CheckFlowtest\CheckFlowtest.csproj", "{D997125D-706D-4F67-96C7-DFB8AFFB6044}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{440EF329-36BD-4042-A8AA-731A267F20AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440EF329-36BD-4042-A8AA-731A267F20AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440EF329-36BD-4042-A8AA-731A267F20AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440EF329-36BD-4042-A8AA-731A267F20AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31EFFD3-FB26-472F-9F21-F5FD9A6776A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31EFFD3-FB26-472F-9F21-F5FD9A6776A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31EFFD3-FB26-472F-9F21-F5FD9A6776A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31EFFD3-FB26-472F-9F21-F5FD9A6776A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D997125D-706D-4F67-96C7-DFB8AFFB6044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D997125D-706D-4F67-96C7-DFB8AFFB6044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D997125D-706D-4F67-96C7-DFB8AFFB6044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D997125D-706D-4F67-96C7-DFB8AFFB6044}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

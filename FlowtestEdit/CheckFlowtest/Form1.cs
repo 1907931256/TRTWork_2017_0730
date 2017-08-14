@@ -10,12 +10,12 @@ namespace CheckFlowtest
 {
     public partial class Form1 : Form
     {
-       private string file;
-       private Flow flow=Flow.CreateFlow();
+        private string file;
+        private Flow flow = Flow.CreateFlow();
 
         public Form1()
         {
-          
+
             InitializeComponent();
         }
 
@@ -67,9 +67,9 @@ namespace CheckFlowtest
             string errMesg;
             Item[] items = flow.ReturnItemList(file, out errMesg);
 
-            dispalytxt.AppendText("***** Start ********"+"\r\n");
+            dispalytxt.AppendText("***** Start ********" + "\r\n");
 
-            dispalytxt.AppendText(errMesg+"\r\n");
+            dispalytxt.AppendText(errMesg + "\r\n");
             if (items != null)
             {
                 CheckCount(items);
@@ -83,7 +83,7 @@ namespace CheckFlowtest
                 CheckMethodName(items);
             }
 
-            dispalytxt.AppendText("****** End ********!"+"\r\n");
+            dispalytxt.AppendText("****** End ********!" + "\r\n");
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace CheckFlowtest
 
                         if (compardCount != Regex.Matches(item.property_spec, @" ").Count)
                         {
-                            dispalytxt.AppendText("Item id=" + item.id.ToString() + "  compare spec 不匹配"+"\r\n");
+                            dispalytxt.AppendText("Item id=" + item.id.ToString() + "  compare spec 不匹配" + "\r\n");
 #if Test
                             Console.WriteLine("id=" + item.id.ToString() + "  compare spec 不匹配");
 #endif
@@ -288,13 +288,13 @@ namespace CheckFlowtest
                 {
                     if (method.name == null)//name
                     {
-                        dispalytxt.AppendText("CheckMethodName erro Item id=" + item.id.ToString() + "   Method里的 name 属性存在异常"+"\r\n");
+                        dispalytxt.AppendText("CheckMethodName erro Item id=" + item.id.ToString() + "   Method里的 name 属性存在异常" + "\r\n");
 #if Test
                         Console.WriteLine("CheckMethodName erro id=" + item.id.ToString() + " name=" + method.name);
 #endif
 
                     }
-                    else if (method.action==null)
+                    else if (method.action == null)
                     {
                         dispalytxt.AppendText("CheckMethodName erro Item id=" + item.id.ToString() + "   Method里的 action 属性存在异常" + "\r\n");
                     }
@@ -324,12 +324,12 @@ namespace CheckFlowtest
             }
         }
 
-            /// <summary>
-            /// 检测是否存在死循环
-            /// 检测 depend里包含id 号
-            /// </summary>
-            /// <param name="items"></param>
-            private bool CheckLoop(Item[] items)
+        /// <summary>
+        /// 检测是否存在死循环
+        /// 检测 depend里包含id 号
+        /// </summary>
+        /// <param name="items"></param>
+        private bool CheckLoop(Item[] items)
         {
             bool flag = true;
             foreach (var item in items)
@@ -339,27 +339,40 @@ namespace CheckFlowtest
                     string str = item.property_depend.Substring(item.property_depend.IndexOf("\"") + 1, (item.property_depend.LastIndexOf("\"") - item.property_depend.IndexOf("\"") - 1));
 
                     string[] str_ = str.Split(' ');
-
+                    if (str_.Length==1&&str_[0]=="\"\"")
+                    {
+                        dispalytxt.AppendText("依赖项目存在问题 Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
+                        break;
+                    }
 
                     foreach (var item_ in str_)
                     {
-                        if (Convert.ToInt32(item_) > item.id)
+                        try//depand 和depand的情况特殊处理
                         {
-                            dispalytxt.AppendText("依赖项存在问题不能依赖后面的测试项目 Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
+                            if (Convert.ToInt32(item_) > item.id)
+                            {
+                                dispalytxt.AppendText("依赖项存在问题不能依赖后面的测试项目 Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
 #if Test
                             Console.WriteLine("依赖项存在问题不能依赖后面的测试项目 id=" + item.id+" depend="+item.property_depend);
 #endif
-                            flag = false;
-                            //break;
-                        }
-                        else if (Convert.ToInt32(item_) == item.id)
-                        {
-                            dispalytxt.AppendText("不能依赖自己 存在死循环 Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
+                                flag = false;
+                                //break;
+                            }
+                            else if (Convert.ToInt32(item_) == item.id)
+                            {
+                                dispalytxt.AppendText("不能依赖自己 存在死循环 Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
 #if Test
                             Console.WriteLine("不能依赖自己 存在死循环 id=" + item.id + " depend=" + item.property_depend);
 #endif
-                            flag = false;
+                                flag = false;
+                            }
                         }
+                        catch (Exception e)
+                        {
+
+                            dispalytxt.AppendText(e.ToString()+"  Item id=" + item.id + " depend=" + item.property_depend + "\r\n");
+                        }
+                       
 
                     }
 

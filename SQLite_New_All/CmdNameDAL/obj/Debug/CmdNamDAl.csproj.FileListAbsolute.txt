@@ -1,8 +1,0 @@
-E:\ysyWork\SQLite\CmdNameDAL\obj\Debug\CmdNamDAl.csprojResolveAssemblyReference.cache
-E:\ysyWork\SQLite\CmdNameDAL\bin\Debug\CmdNameDAL.dll.config
-E:\ysyWork\SQLite\CmdNameDAL\bin\Debug\CmdNameDAL.dll
-E:\ysyWork\SQLite\CmdNameDAL\bin\Debug\CmdNameDAL.pdb
-E:\ysyWork\SQLite\CmdNameDAL\bin\Debug\CmdNameModel.dll
-E:\ysyWork\SQLite\CmdNameDAL\bin\Debug\CmdNameModel.pdb
-E:\ysyWork\SQLite\CmdNameDAL\obj\Debug\CmdNameDAL.dll
-E:\ysyWork\SQLite\CmdNameDAL\obj\Debug\CmdNameDAL.pdb

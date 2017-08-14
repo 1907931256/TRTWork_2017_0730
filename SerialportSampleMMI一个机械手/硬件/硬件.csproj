@@ -201,9 +201,9 @@
     <EmbeddedResource Include="MMIForm\Station5.resx">
       <DependentUpon>Station5.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Cmds\cmds.ini" />
+    <None Include="Cmds\cmds_富士康MMI设备命令集合.ini" />
     <None Include="Cmds\cmds_Camera.ini" />
-    <None Include="Cmds\cmds_新CAM0727.ini" />
+    <None Include="Cmds\cmds_皮带Cam.ini" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

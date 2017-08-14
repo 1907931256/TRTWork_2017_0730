@@ -61,7 +61,6 @@
             this.button58 = new System.Windows.Forms.Button();
             this.button76 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button48 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
@@ -124,6 +123,7 @@
             this.button64 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
@@ -498,7 +498,6 @@
             this.groupBox2.Controls.Add(this.button58);
             this.groupBox2.Controls.Add(this.button76);
             this.groupBox2.Controls.Add(this.button41);
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button48);
             this.groupBox2.Controls.Add(this.button40);
             this.groupBox2.Controls.Add(this.button24);
@@ -568,7 +567,6 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "状态查询";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button77
             // 
@@ -624,17 +622,6 @@
             this.button41.Text = "1站吸嘴4检测";
             this.button41.UseVisualStyleBackColor = true;
             this.button41.Click += new System.EventHandler(this.GetButtonName);
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(773, 201);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 55);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "1站运动";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button48
             // 
@@ -1318,6 +1305,17 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.GetButtonName);
             // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(1002, 333);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 55);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "前清仓";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.GetButtonName);
+            // 
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
@@ -1618,6 +1616,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtXianShi);
@@ -1626,6 +1625,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Station1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;

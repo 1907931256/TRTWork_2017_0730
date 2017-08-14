@@ -98,10 +98,10 @@
             this.checkBox11.ForeColor = System.Drawing.Color.White;
             this.checkBox11.Location = new System.Drawing.Point(158, 22);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(90, 16);
+            this.checkBox11.Size = new System.Drawing.Size(108, 16);
             this.checkBox11.TabIndex = 55;
-            this.checkBox11.Tag = "3站产品松开";
-            this.checkBox11.Text = "3站产品固定";
+            this.checkBox11.Tag = "3站1站产品松开";
+            this.checkBox11.Text = "3站1站产品固定";
             this.checkBox11.UseVisualStyleBackColor = true;
             this.checkBox11.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
@@ -114,6 +114,7 @@
             this.button14.TabIndex = 42;
             this.button14.Text = "复位";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.GetButtonName);
             // 
             // groupBox3
             // 
@@ -332,10 +333,10 @@
             this.checkBox3.ForeColor = System.Drawing.Color.White;
             this.checkBox3.Location = new System.Drawing.Point(158, 44);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(90, 16);
+            this.checkBox3.Size = new System.Drawing.Size(108, 16);
             this.checkBox3.TabIndex = 55;
-            this.checkBox3.Tag = "3站前门关闭";
-            this.checkBox3.Text = "3站前门打开";
+            this.checkBox3.Tag = "3站1站前门关闭";
+            this.checkBox3.Text = "3站1站前门打开";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.Click += new System.EventHandler(this.GetCheckBoxName);
             // 
