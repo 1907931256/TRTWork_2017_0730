@@ -1,4 +1,4 @@
-﻿#define Test
+﻿#define Test//测试用，调试问题
 using CmdFile;
 using CommonPortCmd.Net;
 using ComPort;
@@ -700,7 +700,7 @@ namespace CommonPortCmd
         }
 
         /// <summary>
-        /// 
+        /// 前清仓
         /// </summary>
         private void ClearanceBeforeRoom()
         {
@@ -711,6 +711,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr=="status=OK")
                 {
                     break;
@@ -721,11 +724,15 @@ namespace CommonPortCmd
                 }
             }
             Room_RightDo("31");
+
             Room_MotorMotionCanDo();
             SendCommand("1站电机中运动", out recStr);
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -747,6 +754,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -769,6 +779,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -791,6 +804,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -812,6 +828,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -823,12 +842,16 @@ namespace CommonPortCmd
             }
             Room_LeftDo("1");
 
-            //********************  测试完成
+            //********************  测试完成 运动到初始位置
+            Room_MotorMotionCanDo();
 
             SendCommand("1站电机中运动", out recStr);
             while (true)
             {
                 SendCommand("1站电机1原点检测", out recStr);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+recStr);
+#endif
                 if (recStr == "status=OK")
                 {
                     break;
@@ -1028,6 +1051,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站56站远离检测", out str);
+#if Test
+                Console.WriteLine("1站56站远离检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1040,6 +1066,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站45站远离检测", out str);
+#if Test
+                Console.WriteLine("1站45站远离检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1053,6 +1082,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1原点检测", out str);
+#if Test
+                Console.WriteLine("1站电机1原点检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1078,6 +1110,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站电机1左边检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站电机1左边检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1090,6 +1125,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站45站远离检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站45站远离检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1102,6 +1140,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站56站靠近检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站56站靠近检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -1172,7 +1213,6 @@ namespace CommonPortCmd
 
             int timeUp = 100;
             int timeNO = 100;
-            string res = "";
             string str;
             pram = pram.ToUpper();
             switch (pram)
@@ -2595,6 +2635,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站上升1检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站上升1检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -2607,6 +2650,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站上升2检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站上升2检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -2619,6 +2665,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站上升3检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站上升3检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -2631,6 +2680,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站上升4检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站上升4检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -2643,6 +2695,9 @@ namespace CommonPortCmd
             while (true)
             {
                 SendCommand("1站上升5检测", out str);
+#if Test
+                global::System.Console.WriteLine("1站上升5检测="+str);
+#endif
                 if (str == "status=OK")
                 {
                     break;
@@ -2655,9 +2710,9 @@ namespace CommonPortCmd
             return str;
         }
 
-        #endregion    /**********************************  龙门结构运动控制   *****************************************/
+#endregion    /**********************************  龙门结构运动控制   *****************************************/
 
-        #region /*************  Cam  *********************************************************************/
+#region /*************  Cam  *********************************************************************/
 
         /// <summary>
         /// Cam 组合命令控制
@@ -3653,7 +3708,7 @@ namespace CommonPortCmd
             recStr = "status=OK";
         }
 
-        #endregion /*************  Cam  *********************************************************************/
+#endregion /*************  Cam  *********************************************************************/
 
 
     }

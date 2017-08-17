@@ -84,7 +84,6 @@
     <Compile Include="Relationship\CmdPackageXml.cs" />
     <Compile Include="Relationship\MMI_Relationship.cs" />
     <Compile Include="HexToString\StrHexToStrPram.cs" />
-    <Compile Include="Hex\StrPramToHexPram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonClass\ShujuChuli.cs" />
     <Compile Include="ConfigXml\XMLConfig.cs" />
