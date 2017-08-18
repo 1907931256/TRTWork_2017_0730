@@ -26,3 +26,4 @@ e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\NPOI.OpenXmlFormats.
 e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\bin\x86\Debug\NPOI.xml
 e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.ColorSpec.resources
 E:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.csprojResolveAssemblyReference.cache
+e:\TRTWork\ExeceCamer\ExeceCamera\ExeceCamera\obj\x86\Debug\ExeceCamera.csproj.CoreCompileInputs.cache

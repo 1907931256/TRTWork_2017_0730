@@ -68,6 +68,35 @@ namespace StandardDeviations
         {
             return d.StandardDeviation();
         }
+        /// <summary>
+        /// 按照比例移除部分数据
+        /// 上下移除
+        /// </summary>
+        /// <param name="data">原始数据</param>
+        /// <param name="k">移除比例</param>
+        /// <param name="remain">剩下的数据</param>
+        public void RemoveProportionData(double[] data,double k,out double[] remain)
+        {
+
+            if (k < 0)//移除系数异常
+            {
+                throw new Exception("k is erro");
+            }
+
+
+            int len = Convert.ToInt32(Math.Round(k)) * data.Length;//需要移除的数据长度
+            data = ShellSorter.Sort(data);
+
+            List<double> dataList=data.ToList();
+            dataList.RemoveRange(0, len);
+            dataList.RemoveRange(dataList.Count - len-1, len);
+
+
+            remain = dataList.ToArray();
+
+
+        }
+
 
         /// <summary>
         /// 从数组最小值开始移除元素，直至标准偏差达到指定值

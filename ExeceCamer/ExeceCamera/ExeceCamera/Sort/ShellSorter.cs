@@ -7,6 +7,7 @@ namespace Sort
 
     /// <summary>
     /// 希尔排序
+    /// 会改变原始数据的位置
     /// </summary>
     public static class ShellSorter
     {

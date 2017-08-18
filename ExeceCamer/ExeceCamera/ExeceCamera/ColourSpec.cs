@@ -337,6 +337,7 @@ namespace ExeceCamera
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+#if false  //人工确认数据
             int index_;
             int[] ids = GetRowChecked(out index_);
             //outIndexs.AddRange(ids);//选中代表移除，不选择代表留下
@@ -368,6 +369,10 @@ namespace ExeceCamera
                 sys_ini.MinBG += dapublic_.GetMin(remainData).ToString() + ",";
                 i++;
             }
+#endif
+
+            SaveInIni();
+
         }
 
 
@@ -551,22 +556,115 @@ namespace ExeceCamera
         {
             if (bl)
             {
-                GetSpace.Visible = true;
+                //GetSpace.Visible = true;
                 textBox1.Visible = true;
                 textBox2.Visible = true;
                 label1.Visible = true;
                 label2.Visible = true;
+
+                button1.Visible = false;
+
             }
             else
             {
-                GetSpace.Visible = false;
+                //GetSpace.Visible = false;
                 textBox1.Visible = false;
                 textBox2.Visible = false;
 
                 label1.Visible = false;
                 label2.Visible = false;
+
+                button1.Visible = false;
             }
         }
+
+
+        /// <summary>
+        /// 按比例缩放数据
+        /// 默认采用10%的比例缩放
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProportionBtn_Click(object sender, EventArgs e)
+        {
+            sys_ini.MaxRG = sys_ini.MinRG = sys_ini.MaxRG1 = sys_ini.MinRG1 = sys_ini.MAXBG = sys_ini.MinBG = sys_ini.MAXBG1 = sys_ini.MinBG1="";
+
+            foreach (var item in columnNames_RG)
+            {
+                double[] remainData;//剩下的数据
+                double[] data_ = dapublic_.GetDataCateReturnDouble(dt, item, "0");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+
+                sys_ini.MaxRG += dapublic_.GetMax(remainData).ToString() + ",";
+                sys_ini.MinRG += dapublic_.GetMin(remainData).ToString() + ",";
+
+
+                data_ = dapublic_.GetDataCateReturnDouble(dt, item, "1");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+
+                sys_ini.MaxRG1 += dapublic_.GetMax(remainData).ToString() + ",";
+                sys_ini.MinRG1 += dapublic_.GetMin(remainData).ToString() + ",";
+
+
+            }
+            sys_ini.MaxRG = sys_ini.MaxRG + "1.5,1.5,1.5,1.5,";//补全后面部分数据
+            sys_ini.MinRG = sys_ini.MinRG + "1.5,1.5,1.5,1.5,";
+
+            sys_ini.MaxRG1 = sys_ini.MaxRG1 + "1.5,1.5,1.5,1.5,";//补全后面部分数据
+            sys_ini.MinRG1 = sys_ini.MinRG1 + "1.5,1.5,1.5,1.5,";
+
+            foreach (var item in columnNames_BG)
+            {
+                double[] remainData;//剩下的数据
+                double[] data_ = dapublic_.GetDataCateReturnDouble(dt, item, "0");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+
+                sys_ini.MAXBG += dapublic_.GetMax(remainData).ToString() + ",";
+                sys_ini.MinBG += dapublic_.GetMin(remainData).ToString() + ",";
+
+                data_ = dapublic_.GetDataCateReturnDouble(dt, item, "1");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+
+                sys_ini.MAXBG1 += dapublic_.GetMax(remainData).ToString() + ",";
+                sys_ini.MinBG1 += dapublic_.GetMin(remainData).ToString() + ",";
+
+
+            }
+            sys_ini.MAXBG = sys_ini.MAXBG + "1.5,1.5,1.5,1.5,";//补全后面部分数据
+            sys_ini.MinBG = sys_ini.MinBG + "1.5,1.5,1.5,1.5,";
+            sys_ini.MAXBG1 = sys_ini.MAXBG1 + "1.5,1.5,1.5,1.5,";//补全后面部分数据
+            sys_ini.MinBG1 = sys_ini.MinBG1 + "1.5,1.5,1.5,1.5,";
+
+            button1.Visible = true;
+
+
+
+
+
+        }
+
+        /// <summary>
+        /// 保存数据到ini文件
+        /// </summary>
+        private void SaveInIni()
+        {
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinRG", sys_ini.MinRG);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MaxRG", sys_ini.MaxRG);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MAXBG", sys_ini.MAXBG);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinBG", sys_ini.MinBG);
+
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinRG1", sys_ini.MinRG1);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MaxRG1", sys_ini.MaxRG1);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MAXBG1", sys_ini.MAXBG1);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinBG1", sys_ini.MinBG1);
+
+            MessageBox.Show("执行完毕！");
+        }
+
 
 
     }

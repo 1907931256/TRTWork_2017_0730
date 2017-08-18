@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProportionBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.GetSpace.TabIndex = 0;
             this.GetSpace.Text = "计算规格";
             this.GetSpace.UseVisualStyleBackColor = true;
+            this.GetSpace.Visible = false;
             this.GetSpace.Click += new System.EventHandler(this.Compute_Click);
             // 
             // openFileDialog1
@@ -102,7 +104,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(25, 91);
+            this.button1.Location = new System.Drawing.Point(317, 102);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 39);
             this.button1.TabIndex = 4;
@@ -124,12 +126,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(454, 230);
             this.dataGridView1.TabIndex = 3;
             // 
+            // ProportionBtn
+            // 
+            this.ProportionBtn.Location = new System.Drawing.Point(25, 102);
+            this.ProportionBtn.Name = "ProportionBtn";
+            this.ProportionBtn.Size = new System.Drawing.Size(170, 39);
+            this.ProportionBtn.TabIndex = 5;
+            this.ProportionBtn.Text = "比例放10%数据后计算规格";
+            this.ProportionBtn.UseVisualStyleBackColor = true;
+            this.ProportionBtn.Click += new System.EventHandler(this.ProportionBtn_Click);
+            // 
             // ColorSpec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(475, 394);
+            this.Controls.Add(this.ProportionBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ProportionBtn;
     }
 }

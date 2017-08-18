@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6FC50FEA-93C4-4ED2-BBE2-70D368F5D27A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>IntegrationSys</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonPortCmd, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CommonPortCmd.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="Microsoft.DirectX.DirectSound" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="NPOI.OOXML" />
+    <Reference Include="NPOI" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FFTWSharp\fftw.cs" />
+    <Compile Include="FFTWSharp\fftwf.cs" />
+    <Compile Include="FFTWSharp\fftwf_complexarray.cs" />
+    <Compile Include="FFTWSharp\fftwf_plan.cs" />
+    <Compile Include="FFTWSharp\fftw_complexarray.cs" />
+    <Compile Include="FFTWSharp\fftw_direction.cs" />
+    <Compile Include="FFTWSharp\fftw_flags.cs" />
+    <Compile Include="FFTWSharp\fftw_kind.cs" />
+    <Compile Include="FFTWSharp\fftw_plan.cs" />
+    <Compile Include="IntegrationSys.Assist\Assistant.cs" />
+    <Compile Include="IntegrationSys.Audio\AudioCmd.cs" />
+    <Compile Include="IntegrationSys.Audio\SoundRecorder.cs" />
+    <Compile Include="IntegrationSys.Audio\WaveFile.cs" />
+    <Compile Include="IntegrationSys.Audio\WaveHead.cs" />
+    <Compile Include="IntegrationSys.CommandLine\AdbCommand.cs" />
+    <Compile Include="IntegrationSys.CommandLine\CommandLineCmd.cs" />
+    <Compile Include="IntegrationSys.CommandUtils\RStechCmd.cs" />
+    <Compile Include="IntegrationSys.CustomControl\CellRange.cs" />
+    <Compile Include="IntegrationSys.CustomControl\MergeGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntegrationSys.Equipment\EquipmentCmd.cs" />
+    <Compile Include="IntegrationSys.Equipment\EquipmentInfo.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd1.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd2.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd3.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd4.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd5.cs" />
+    <Compile Include="IntegrationSys.Equipment\RemoteEquipmentCmd6.cs" />
+    <Compile Include="IntegrationSys.Equipment\StationInfo.cs" />
+    <Compile Include="IntegrationSys.FileUtil\FileCmd.cs" />
+    <Compile Include="IntegrationSys.Flow\ExecuteFinishEventArgs.cs" />
+    <Compile Include="IntegrationSys.Flow\ExecuteFinishEventHandler.cs" />
+    <Compile Include="IntegrationSys.Flow\FlowControl.cs" />
+    <Compile Include="IntegrationSys.Flow\FlowItem.cs" />
+    <Compile Include="IntegrationSys.Flow\FlowItemExecutor.cs" />
+    <Compile Include="IntegrationSys.Flow\IExecutable.cs" />
+    <Compile Include="IntegrationSys.Flow\Item.cs" />
+    <Compile Include="IntegrationSys.Flow\Method.cs" />
+    <Compile Include="IntegrationSys.Flow\Property.cs" />
+    <Compile Include="IntegrationSys.Flow\SpecValue.cs" />
+    <Compile Include="IntegrationSys.Image\ImageCmd.cs" />
+    <Compile Include="IntegrationSys.Image\ImageProcessCmd.cs" />
+    <Compile Include="IntegrationSys.LibWrap\TrustSystem.cs" />
+    <Compile Include="IntegrationSys.LogUtil\Log.cs" />
+    <Compile Include="IntegrationSys.LogUtil\TimeLog.cs" />
+    <Compile Include="IntegrationSys.Net\FileTransferClient.cs" />
+    <Compile Include="IntegrationSys.Net\FileTransferServer.cs" />
+    <Compile Include="IntegrationSys.Net\IpContainer.cs" />
+    <Compile Include="IntegrationSys.Net\LiteData.cs" />
+    <Compile Include="IntegrationSys.Net\LiteDataClient.cs" />
+    <Compile Include="IntegrationSys.Net\LiteDataServer.cs" />
+    <Compile Include="IntegrationSys.Net\NetUtil.cs" />
+    <Compile Include="IntegrationSys.Net\PhoneIpManager.cs" />
+    <Compile Include="IntegrationSys.Phone\FileTransferCmd.cs" />
+    <Compile Include="IntegrationSys.Phone\PhoneCmd.cs" />
+    <Compile Include="IntegrationSys.Phone\RespPair.cs" />
+    <Compile Include="IntegrationSys.Properties\Resources.cs" />
+    <Compile Include="IntegrationSys.Properties\Settings.cs" />
+    <Compile Include="IntegrationSys.Result\DataReport.cs" />
+    <Compile Include="IntegrationSys.Result\ResultCmd.cs" />
+    <Compile Include="IntegrationSys.Result\ResultInfo.cs" />
+    <Compile Include="IntegrationSys.Result\ResultRecord.cs" />
+    <Compile Include="IntegrationSys.Utility\Utils.cs" />
+    <Compile Include="IntegrationSys\AppInfo.cs" />
+    <Compile Include="IntegrationSys\CommonString.cs" />
+    <Compile Include="IntegrationSys\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntegrationSys\PhoneInfo.cs" />
+    <Compile Include="IntegrationSys\Program.cs" />
+    <Compile Include="IntegrationSys\Statistic.cs" />
+    <Compile Include="IntegrationSys\StatisticInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IntegrationSys\Form1.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
