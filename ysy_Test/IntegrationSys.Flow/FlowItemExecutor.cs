@@ -1,453 +1,449 @@
-using IntegrationSys.Assist;
-using IntegrationSys.Audio;
-using IntegrationSys.CommandLine;
-using IntegrationSys.CommandUtils;
-using IntegrationSys.Equipment;
-using IntegrationSys.FileUtil;
-using IntegrationSys.Image;
-using IntegrationSys.LogUtil;
-using IntegrationSys.Phone;
-using IntegrationSys.Result;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Text;
+using System.Diagnostics;
 using System.Threading;
+using IntegrationSys.LogUtil;
+using IntegrationSys.Equipment;
+using IntegrationSys.Assist;
+using IntegrationSys.Phone;
+using IntegrationSys.CommandLine;
+using System.Text.RegularExpressions;
+using IntegrationSys.FileUtil;
+using IntegrationSys.CommandUtils;
+using IntegrationSys.Audio;
+using IntegrationSys.Result;
+using IntegrationSys.Image;
 
 namespace IntegrationSys.Flow
 {
-	internal class FlowItemExecutor
-	{
-		private delegate void ExecuteMatchCmd(string action, string param, out string retValue);
+    interface IExecutable
+    {
+        void ExecuteCmd(string action, string param, out string retValue);
+    }
 
-		private const string CMD_EQUIPMENT = "设备操作";
+    class ExecuteFinishEventArgs : EventArgs
+    {
+        private FlowItem flowItem_;
 
-		private const string CMD_EQUIPMENT1 = "1站设备操作";
+        public ExecuteFinishEventArgs(FlowItem flowItem)
+        {
+            flowItem_ = flowItem;
+        }
 
-		private const string CMD_EQUIPMENT2 = "2站设备操作";
+        public FlowItem FlowItem
+        {
+            get
+            {
+                return flowItem_;
+            }
+        }
+    }
 
-		private const string CMD_EQUIPMENT3 = "3站设备操作";
+    delegate void ExecuteFinishEventHandler(object sender, ExecuteFinishEventArgs e);
 
-		private const string CMD_EQUIPMENT4 = "4站设备操作";
+    /// <summary>
+    /// 此类用于在工作线程中执行具体的测试
+    /// </summary>
+    class FlowItemExecutor
+    {
+        const string CMD_EQUIPMENT = "设备操作";
+        const string CMD_EQUIPMENT1 = "1站设备操作";
+        const string CMD_EQUIPMENT2 = "2站设备操作";
+        const string CMD_EQUIPMENT3 = "3站设备操作";
+        const string CMD_EQUIPMENT4 = "4站设备操作";
+        const string CMD_EQUIPMENT5 = "5站设备操作";
+        const string CMD_EQUIPMENT6 = "6站设备操作";
+        const string CMD_DELAY = "延时";
+        const string CMD_ASSISTANT = "辅助操作";
+        const string CMD_PHONE = "手机操作";
+        const string CMD_COMMANDLINE = "命令行操作";
+        const string CMD_FILE = "文件操作";
+        const string CMD_RSTECH = "RStechCmd";
+        const string CMD_AUDIO = "音频操作";
+        const string CMD_RESULT = "测试结果";
+        const string CMD_IMAGE_PROCESS = "图像处理操作";
+        const string CMD_IMAGE = "图像操作";
+        
 
-		private const string CMD_EQUIPMENT5 = "5站设备操作";
+        private delegate void ExecuteMatchCmd(string action, string param, out string retValue);
 
-		private const string CMD_EQUIPMENT6 = "6站设备操作";
+        public event ExecuteFinishEventHandler ExecuteFinish;
 
-		private const string CMD_DELAY = "延时";
+        private Dictionary<string, ExecuteMatchCmd> cmdDict_;
+        private FlowItem flowItem_;
 
-		private const string CMD_ASSISTANT = "辅助操作";
+        public FlowItemExecutor(FlowItem flowItem)
+        {
+            flowItem_ = flowItem;
+            cmdDict_ = new Dictionary<string, ExecuteMatchCmd>();
+            cmdDict_.Add(CMD_EQUIPMENT, new ExecuteMatchCmd(ExecuteEquipmentCmd));
+            cmdDict_.Add(CMD_DELAY, new ExecuteMatchCmd(ExecuteDelayCmd));
+            cmdDict_.Add(CMD_ASSISTANT, new ExecuteMatchCmd(Assistant.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_PHONE, new ExecuteMatchCmd(PhoneCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_COMMANDLINE, new ExecuteMatchCmd(CommandLineCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT1, new ExecuteMatchCmd(RemoteEquipmentCmd1.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT2, new ExecuteMatchCmd(RemoteEquipmentCmd2.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT3, new ExecuteMatchCmd(RemoteEquipmentCmd3.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT4, new ExecuteMatchCmd(RemoteEquipmentCmd4.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT5, new ExecuteMatchCmd(RemoteEquipmentCmd5.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_EQUIPMENT6, new ExecuteMatchCmd(RemoteEquipmentCmd6.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_FILE, new ExecuteMatchCmd(FileCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_RSTECH, new ExecuteMatchCmd(RStechCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_AUDIO, new ExecuteMatchCmd(AudioCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_RESULT, new ExecuteMatchCmd(ResultCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_IMAGE_PROCESS, new ExecuteMatchCmd(ImageProcessCmd.Instance.ExecuteCmd));
+            //cmdDict_.Add(CMD_IMAGE, new ExecuteMatchCmd(ImageCmd.Instance.ExecuteCmd));
+        }
 
-		private const string CMD_PHONE = "手机操作";
+        public void ThreadProc(Object stateInfo)
+        { 
+            if (flowItem_ != null)
+            {
+                flowItem_.BeginTime = DateTime.Now;
+                Log.Debug("Item[" + flowItem_.Id + "] " + flowItem_.Item.Property.Name + " start");
 
-		private const string CMD_COMMANDLINE = "命令行操作";
+                List<Method> methodList = flowItem_.Item.MethodList;
+                Tuple<int, int> firstLast = GetLoopFirstLast(methodList);
+                if (firstLast.Item1 == -1 || firstLast.Item2 == -1
+                    || firstLast.Item1 >= firstLast.Item2
+                    || flowItem_.Item.Property.Loop < 2)
+                {
+                    //不需要循环
+                    foreach (Method method in methodList)
+                    {
+                        if (!method.Disable)
+                        {
+                            string retValue;
+                            ExecuteCmd(method.Name, method.Action, ReplaceSymbol(method.Param), out retValue);
+                            if (!string.IsNullOrEmpty(method.Compare) && !string.IsNullOrEmpty(retValue))
+                            {
+                                UpdateSpecValue(retValue, method.Compare, flowItem_.SpecValueList);
+                            }   
+                        }
+                    }
+                }
+                else
+                {
+                    bool loopExit = false;
+                    for (int i = 0; i < flowItem_.Item.Property.Loop && !loopExit; i++)
+                    {
+                        for (int j = 0; j < methodList.Count; j++)
+                        {
+                            Method method = methodList[j];
+                            if (i == 0)
+                            {
+                                if (loopExit)
+                                {
+                                    if (method.Depend) continue;
+                                }
+                                else
+                                {
+                                    if (j > firstLast.Item2) continue;
+                                }
+                            }
+                            else if (i != flowItem_.Item.Property.Loop - 1)
+                            {
+                                if (loopExit)
+                                {
+                                    if (j <= firstLast.Item2) continue;
+                                }
+                                else
+                                {
+                                    if (!method.Depend && !method.Bedepend) continue;
+                                }
+                            }
+                            else
+                            {
+                                if (loopExit)
+                                {
+                                    if (j <= firstLast.Item2) continue;
+                                }
+                                else
+                                {
+                                    if (!method.Depend && !method.Bedepend && j <= firstLast.Item2) continue;
+                                }
+                            }
 
-		private const string CMD_FILE = "文件操作";
+                            if (!method.Disable)
+                            {
+                                string retValue;
+                                ExecuteCmd(method.Name, method.Action, ReplaceSymbol(method.Param), out retValue);
+                                if (!string.IsNullOrEmpty(method.Compare) && !string.IsNullOrEmpty(retValue))
+                                {
+                                    UpdateSpecValue(retValue, method.Compare, flowItem_.SpecValueList);
+                                }
 
-		private const string CMD_RSTECH = "RStechCmd";
+                                if (method.Bedepend && flowItem_.IsPass())
+                                {
+                                    loopExit = true;
+                                }
+                            }
 
-		private const string CMD_AUDIO = "音频操作";
+                        }
+                    }
+                }
 
-		private const string CMD_RESULT = "测试结果";
+                flowItem_.EndTime = DateTime.Now;
+                flowItem_.Duration = (long)(flowItem_.EndTime - flowItem_.BeginTime).TotalMilliseconds;
 
-		private const string CMD_IMAGE_PROCESS = "图像处理操作";
+                Log.Debug("Item[" + flowItem_.Id + "] " + flowItem_.Item.Property.Name + " finish");
 
-		private const string CMD_IMAGE = "图像操作";
+                if (ExecuteFinish != null)
+                {
+                    ExecuteFinish(this, new ExecuteFinishEventArgs(flowItem_));
+                }
+            }
+        }
 
-		private Dictionary<string, FlowItemExecutor.ExecuteMatchCmd> cmdDict_;
+        /// <summary>
+        /// 执行具体的测试命令
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue">命令返回结果</param>
+        private void ExecuteCmd(string name, string action, string param, out string retValue)
+        {
+            Log.Debug("ExecuteCmd name = " + name + ", action = " + action + ", param = " + param + " start");
+            if (cmdDict_.ContainsKey(name))
+            {
+                cmdDict_[name](action, param, out retValue);
+            }
+            else
+            {
+                retValue = "Res=CmdNotSupport";
+            }
+            Log.Debug("ExecuteCmd name = " + name + ", action = " + action + ", param = " + param + ", " + retValue);
+        }
 
-		private FlowItem flowItem_;
+        private void ExecuteEquipmentCmd(string action, string param, out string retValue)
+        {
+            EquipmentCmd cmd = EquipmentCmd.Instance;
+            cmd.SendCommand(action, param, out retValue);
+        }
 
-		public event ExecuteFinishEventHandler ExecuteFinish;
+        private void ExecuteDelayCmd(string action, string param, out string retValue)
+        {
+            int timeout = Convert.ToInt32(param);
+            Thread.Sleep(timeout);
 
-		public FlowItemExecutor(FlowItem flowItem)
-		{
-			this.flowItem_ = flowItem;
-			this.cmdDict_ = new Dictionary<string, FlowItemExecutor.ExecuteMatchCmd>();
-			this.cmdDict_.Add("设备操作", new FlowItemExecutor.ExecuteMatchCmd(this.ExecuteEquipmentCmd));
-			this.cmdDict_.Add("延时", new FlowItemExecutor.ExecuteMatchCmd(this.ExecuteDelayCmd));
-			this.cmdDict_.Add("辅助操作", new FlowItemExecutor.ExecuteMatchCmd(Assistant.Instance.ExecuteCmd));
-			this.cmdDict_.Add("手机操作", new FlowItemExecutor.ExecuteMatchCmd(PhoneCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("命令行操作", new FlowItemExecutor.ExecuteMatchCmd(CommandLineCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("1站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd1.Instance.ExecuteCmd));
-			this.cmdDict_.Add("2站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd2.Instance.ExecuteCmd));
-			this.cmdDict_.Add("3站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd3.Instance.ExecuteCmd));
-			this.cmdDict_.Add("4站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd4.Instance.ExecuteCmd));
-			this.cmdDict_.Add("5站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd5.Instance.ExecuteCmd));
-			this.cmdDict_.Add("6站设备操作", new FlowItemExecutor.ExecuteMatchCmd(RemoteEquipmentCmd6.Instance.ExecuteCmd));
-			this.cmdDict_.Add("文件操作", new FlowItemExecutor.ExecuteMatchCmd(FileCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("RStechCmd", new FlowItemExecutor.ExecuteMatchCmd(RStechCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("音频操作", new FlowItemExecutor.ExecuteMatchCmd(AudioCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("测试结果", new FlowItemExecutor.ExecuteMatchCmd(ResultCmd.Instance.ExecuteCmd));
-			this.cmdDict_.Add("图像处理操作", new FlowItemExecutor.ExecuteMatchCmd(ImageProcessCmd.Instance.ExecuteCmd));
-			//this.cmdDict_.Add("图像操作", new FlowItemExecutor.ExecuteMatchCmd(ImageCmd.Instance.ExecuteCmd));
-		}
+            retValue = "Res=Pass";
+        }
+
+        /// <summary>
+        /// 根据命令返回值和比较方法来更新FlowItem中的SpecValueList
+        /// </summary>
+        /// <param name="retValue">类似key1=value1;key2=value2;key3=value3的字串</param>
+        /// <param name="compare">类似S==;D[];D>=的字串</param>
+        /// <param name="specValueList"></param>
+        private void UpdateSpecValue(string retValue, string compare, List<SpecValue> specValueList)
+        {
+            if (specValueList == null || specValueList.Count == 0) return;
+
+            if (string.IsNullOrEmpty(retValue) || string.IsNullOrEmpty(compare)) return;
+
+            //parse key-value pair
+            string[] keyValueArray = retValue.Split(';');
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            foreach (string keyValue in keyValueArray)
+            {
+                if (!string.IsNullOrEmpty(keyValue))
+                {
+                    string[] pair = keyValue.Split('=');
+                    if (pair.Length == 3)
+                    {
+                        //针对类似返回值Res=PASS:key=value;的特殊处理
+                        string key = pair[1].Substring(pair[1].IndexOf(':') + 1);
+                        dict[key] = pair[2];
+                    }
+                    else if (pair.Length == 2)
+                    {
+                        dict[pair[0]] = pair[1];
+                    }
+                }
+            }
+
+            foreach (SpecValue specValue in specValueList)
+            {
+                if (dict.ContainsKey(specValue.SpecKey))
+                {
+                    specValue.MeasuredValue = dict[specValue.SpecKey];
+                }
+                else
+                {
+                    specValue.MeasuredValue = "None";
+                }
+            }
+
+            string[] compareArray = compare.Split(' ');
+            for (int i = 0; i < compareArray.Length; i++)
+            {
+                UpdateJudgmentResult(compareArray[i], specValueList[i]);
+            }
+
+        }
+
+        private void UpdateJudgmentResult(string compare, SpecValue specValue)
+        {
+            if (compare.Equals("S=="))
+            {
+                bool pass = specValue.Spec.Equals(specValue.MeasuredValue);
+                specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+            }
+            else if (compare.Equals("S!="))
+            {
+                bool pass = specValue.Spec != specValue.MeasuredValue;
+                specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+            }
+            else if (compare.Equals("S[]"))   //正则表达式
+            {
+                if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
+                {
+                    bool pass = Regex.IsMatch(specValue.MeasuredValue, specValue.Spec);
+                    specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+                }
+                else
+                {
+                    specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                }
+            }
+            else if (compare.Equals("D[]"))   //上下限
+            {
+                if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec) && specValue.Spec.Contains('~'))
+                {
+                    string[] bound = specValue.Spec.Split('~');
+                    double lower = Convert.ToDouble(bound[0]);
+                    double upper = Convert.ToDouble(bound[1]);
+                    try
+                    {
+                        double value = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, @"[^\d\.\-\+]*", string.Empty));
+                        bool pass = lower <= value && value <= upper;
+                        specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+                    }
+                    catch (Exception)
+                    {
+                        specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                    }
+
+                }
+                else
+                {
+                    specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                }
+            }
+            else if (compare.Equals("D>="))   //下限
+            {
+                if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
+                {
+                    double lower = Convert.ToDouble(specValue.Spec);
+                    try
+                    {
+                        double value = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, @"[^\d\.\-\+]*", string.Empty));
+                        bool pass = value >= lower;
+                        specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+                    }
+                    catch (Exception)
+                    {
+                        specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                    }
+                }
+                else
+                {
+                    specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                }
+            }
+            else if (compare.Equals("D<="))   //上限
+            {
+                if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
+                {
+                    double upper = Convert.ToDouble(specValue.Spec);
+                    try
+                    {
+                        double value = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, @"[^\d\.\-\+]*", string.Empty));
+                        bool pass = value <= upper;
+                        specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+                    }
+                    catch (Exception)
+                    {
+                        specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                    }
+                }
+                else
+                {
+                    specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                }
+            }
+            else if (compare.Equals("D=="))
+            {
+                if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
+                {
+                    double spec = Convert.ToDouble(specValue.Spec);
+                    try
+                    {
+                        double value = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, @"[^\d\.\-\+]*", string.Empty));
+                        bool pass = value == spec;
+                        specValue.JudgmentResult = pass ? CommonString.RESULT_SUCCEED : CommonString.RESULT_FAILURE;
+                    }
+                    catch (Exception)
+                    {
+                        specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                    }
+                }
+                else
+                {
+                    specValue.JudgmentResult = CommonString.RESULT_FAILURE;
+                }
+            }
+        }
 
 
         /// <summary>
-        /// 队列消息
+        /// 获取methodList中需要循环执行的第一项和最后一项索引
         /// </summary>
-        /// <param name="stateInfo"></param>
-		public void ThreadProc(object stateInfo)
-		{
-			if (this.flowItem_ != null)
-			{
-				this.flowItem_.BeginTime = DateTime.Now;
-				Log.Debug(string.Concat(new object[]
-				{"Item[",this.flowItem_.Id,"] ", this.flowItem_.Item.Property.Name," start" }));
+        /// <param name="methodList"></param>
+        /// <returns>fist bedepend , last 最后一个depend</returns>
+        private Tuple<int, int> GetLoopFirstLast(List<Method> methodList)
+        {
+            int first = -1;
+            int last = -1;
 
+            if (methodList != null)
+            {
+                for (int i = 0; i < methodList.Count; i++)
+                {
+                    Method m = methodList[i];
+                    if (!m.Disable)
+                    {
+                        if (m.Bedepend && -1 == first)
+                        {
+                            first = i;
+                        }
+                        else if (m.Depend)
+                        {
+                            last = i;
+                        }
+                    }
+                }
+            }
 
-                List<Method> methodList = this.flowItem_.Item.MethodList;
-				Tuple<int, int> loopFirstLast = this.GetLoopFirstLast(methodList);
-				if (loopFirstLast.Item1 == -1 || loopFirstLast.Item2 == -1 || loopFirstLast.Item1 >= loopFirstLast.Item2 || this.flowItem_.Item.Property.Loop < 2)
-				{
-					using (List<Method>.Enumerator enumerator = methodList.GetEnumerator())
-					{
-						while (enumerator.MoveNext())
-						{
-							Method current = enumerator.Current;
-							if (!current.Disable)
-							{
-								string text;
-								this.ExecuteCmd(current.Name, current.Action, this.ReplaceSymbol(current.Param), out text);
-								if (!string.IsNullOrEmpty(current.Compare) && !string.IsNullOrEmpty(text))
-								{
-									this.UpdateSpecValue(text, current.Compare, this.flowItem_.SpecValueList);
-								}
-							}
-						}
-						goto IL_2B6;
-					}
-				}
-				bool flag = false;
-				int num = 0;
-				while (num < this.flowItem_.Item.Property.Loop && !flag)
-				{
-					int i = 0;
-					while (i < methodList.Count)
-					{
-						Method method = methodList[i];
-						if (num == 0)
-						{
-							if (flag)
-							{
-								if (!method.Depend)
-								{
-									goto IL_207;
-								}
-							}
-							else if (i <= loopFirstLast.Item2)
-							{
-								goto IL_207;
-							}
-						}
-						else if (num != this.flowItem_.Item.Property.Loop - 1)
-						{
-							if (flag)
-							{
-								if (i > loopFirstLast.Item2)
-								{
-									goto IL_207;
-								}
-							}
-							else if (method.Depend || method.Bedepend)
-							{
-								goto IL_207;
-							}
-						}
-						else if (flag)
-						{
-							if (i > loopFirstLast.Item2)
-							{
-								goto IL_207;
-							}
-						}
-						else if (method.Depend || method.Bedepend || i > loopFirstLast.Item2)
-						{
-							goto IL_207;
-						}
-						IL_27D:
-						i++;
-						continue;
-						IL_207:
-						if (method.Disable)
-						{
-							goto IL_27D;
-						}
-						string text2;
-						this.ExecuteCmd(method.Name, method.Action, this.ReplaceSymbol(method.Param), out text2);
-						if (!string.IsNullOrEmpty(method.Compare) && !string.IsNullOrEmpty(text2))
-						{
-							this.UpdateSpecValue(text2, method.Compare, this.flowItem_.SpecValueList);
-						}
-						if (method.Bedepend && this.flowItem_.IsPass())
-						{
-							flag = true;
-							goto IL_27D;
-						}
-						goto IL_27D;
-					}
-					num++;
-				}
-				IL_2B6:
-				this.flowItem_.EndTime = DateTime.Now;
-				this.flowItem_.Duration = (long)(this.flowItem_.EndTime - this.flowItem_.BeginTime).TotalMilliseconds;
-				Log.Debug(string.Concat(new object[]
-				{
-					"Item[",
-					this.flowItem_.Id,
-					"] ",
-					this.flowItem_.Item.Property.Name,
-					" finish"
-				}));
-				if (this.ExecuteFinish != null)
-				{
-					this.ExecuteFinish(this, new ExecuteFinishEventArgs(this.flowItem_));
-				}
-			}
-		}
+            return new Tuple<int, int>(first, last);
+        }
 
-		private void ExecuteCmd(string name, string action, string param, out string retValue)
-		{
-			Log.Debug(string.Concat(new string[]
-			{
-				"ExecuteCmd name = ",
-				name,
-				", action = ",
-				action,
-				", param = ",
-				param,
-				" start"
-			}));
-			if (this.cmdDict_.ContainsKey(name))
-			{
-				this.cmdDict_[name](action, param, out retValue);
-			}
-			else
-			{
-				retValue = "Res=CmdNotSupport";
-			}
-			Log.Debug(string.Concat(new string[]
-			{
-				"ExecuteCmd name = ",
-				name,
-				", action = ",
-				action,
-				", param = ",
-				param,
-				", ",
-				retValue
-			}));
-		}
+        /// <summary>
+        /// 替换source中带有的 "手机SN号" "时间" 特殊标志
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private string ReplaceSymbol(string source)
+        {
+            string dest = source.Replace("手机SN号", AppInfo.PhoneInfo.SN);
 
-		private void ExecuteEquipmentCmd(string action, string param, out string retValue)
-		{
-			EquipmentCmd instance = EquipmentCmd.Instance;
-			instance.SendCommand(action, param, out retValue);
-		}
+            string time = DateTime.Now.ToString("yyyyMMddhhmmss");
+            dest = dest.Replace("时间", time);
 
-		private void ExecuteDelayCmd(string action, string param, out string retValue)
-		{
-			int millisecondsTimeout = Convert.ToInt32(param);
-			Thread.Sleep(millisecondsTimeout);
-			retValue = "Res=Pass";
-		}
-
-		private void UpdateSpecValue(string retValue, string compare, List<SpecValue> specValueList)
-		{
-			if (specValueList == null || specValueList.Count == 0)
-			{
-				return;
-			}
-			if (string.IsNullOrEmpty(retValue) || string.IsNullOrEmpty(compare))
-			{
-				return;
-			}
-			string[] array = retValue.Split(new char[]
-			{
-				';'
-			});
-			Dictionary<string, string> dictionary = new Dictionary<string, string>();
-			string[] array2 = array;
-			for (int i = 0; i < array2.Length; i++)
-			{
-				string text = array2[i];
-				if (!string.IsNullOrEmpty(text))
-				{
-					string[] array3 = text.Split(new char[]
-					{
-						'='
-					});
-					if (array3.Length == 3)
-					{
-						string key = array3[1].Substring(array3[1].IndexOf(':') + 1);
-						dictionary[key] = array3[2];
-					}
-					else if (array3.Length == 2)
-					{
-						dictionary[array3[0]] = array3[1];
-					}
-				}
-			}
-			foreach (SpecValue current in specValueList)
-			{
-				if (dictionary.ContainsKey(current.SpecKey))
-				{
-					current.MeasuredValue = dictionary[current.SpecKey];
-				}
-				else
-				{
-					current.MeasuredValue = "None";
-				}
-			}
-			string[] array4 = compare.Split(new char[]
-			{
-				' '
-			});
-			for (int j = 0; j < array4.Length; j++)
-			{
-				this.UpdateJudgmentResult(array4[j], specValueList[j]);
-			}
-		}
-
-		private void UpdateJudgmentResult(string compare, SpecValue specValue)
-		{
-			if (compare.Equals("S=="))
-			{
-				specValue.JudgmentResult = (specValue.Spec.Equals(specValue.MeasuredValue) ? "成功" : "失败");
-				return;
-			}
-			if (compare.Equals("S!="))
-			{
-				specValue.JudgmentResult = ((specValue.Spec != specValue.MeasuredValue) ? "成功" : "失败");
-				return;
-			}
-			if (!compare.Equals("S[]"))
-			{
-				if (compare.Equals("D[]"))
-				{
-					if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec) && specValue.Spec.Contains('~'))
-					{
-						string[] array = specValue.Spec.Split(new char[]
-						{
-							'~'
-						});
-						double num = Convert.ToDouble(array[0]);
-						double num2 = Convert.ToDouble(array[1]);
-						try
-						{
-							double num3 = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, "[^\\d\\.\\-\\+]*", string.Empty));
-							specValue.JudgmentResult = ((num <= num3 && num3 <= num2) ? "成功" : "失败");
-							return;
-						}
-						catch (Exception)
-						{
-							specValue.JudgmentResult = "失败";
-							return;
-						}
-					}
-					specValue.JudgmentResult = "失败";
-					return;
-				}
-				if (compare.Equals("D>="))
-				{
-					if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
-					{
-						double num4 = Convert.ToDouble(specValue.Spec);
-						try
-						{
-							double num5 = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, "[^\\d\\.\\-\\+]*", string.Empty));
-							specValue.JudgmentResult = ((num5 >= num4) ? "成功" : "失败");
-							return;
-						}
-						catch (Exception)
-						{
-							specValue.JudgmentResult = "失败";
-							return;
-						}
-					}
-					specValue.JudgmentResult = "失败";
-					return;
-				}
-				if (compare.Equals("D<="))
-				{
-					if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
-					{
-						double num6 = Convert.ToDouble(specValue.Spec);
-						try
-						{
-							double num7 = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, "[^\\d\\.\\-\\+]*", string.Empty));
-							specValue.JudgmentResult = ((num7 <= num6) ? "成功" : "失败");
-							return;
-						}
-						catch (Exception)
-						{
-							specValue.JudgmentResult = "失败";
-							return;
-						}
-					}
-					specValue.JudgmentResult = "失败";
-					return;
-				}
-				if (compare.Equals("D=="))
-				{
-					if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
-					{
-						double num8 = Convert.ToDouble(specValue.Spec);
-						try
-						{
-							double num9 = Convert.ToDouble(Regex.Replace(specValue.MeasuredValue, "[^\\d\\.\\-\\+]*", string.Empty));
-							specValue.JudgmentResult = ((num9 == num8) ? "成功" : "失败");
-							return;
-						}
-						catch (Exception)
-						{
-							specValue.JudgmentResult = "失败";
-							return;
-						}
-					}
-					specValue.JudgmentResult = "失败";
-				}
-				return;
-			}
-			if (!string.IsNullOrEmpty(specValue.MeasuredValue) && !string.IsNullOrEmpty(specValue.Spec))
-			{
-				specValue.JudgmentResult = (Regex.IsMatch(specValue.MeasuredValue, specValue.Spec) ? "成功" : "失败");
-				return;
-			}
-			specValue.JudgmentResult = "失败";
-		}
-
-		private Tuple<int, int> GetLoopFirstLast(List<Method> methodList)
-		{
-			int num = -1;
-			int item = -1;
-			if (methodList != null)
-			{
-				for (int i = 0; i < methodList.Count; i++)
-				{
-					Method method = methodList[i];
-					if (!method.Disable)
-					{
-						if (method.Bedepend && -1 == num)
-						{
-							num = i;
-						}
-						else if (method.Depend)
-						{
-							item = i;
-						}
-					}
-				}
-			}
-			return new Tuple<int, int>(num, item);
-		}
-
-		private string ReplaceSymbol(string source)
-		{
-			string text = source.Replace("手机SN号", AppInfo.PhoneInfo.SN);
-			string newValue = DateTime.Now.ToString("yyyyMMddhhmmss");
-			return text.Replace("时间", newValue);
-		}
-	}
+            return dest;
+        }
+    }
 }

@@ -109,6 +109,11 @@ namespace IntegrationSys.Flow
 			return 0;
 		}
 
+
+        /// <summary>
+        /// 加载xml文件
+        /// </summary>
+        /// <param name="filename"></param>
 		private void LoadFlowFile(string filename)
 		{
 			XmlReaderSettings xmlReaderSettings = new XmlReaderSettings();
@@ -136,6 +141,11 @@ namespace IntegrationSys.Flow
 			}
 		}
 
+        /// <summary>
+        /// 流程读取
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>流程对象</returns>
 		private FlowItem ParseFlowItem(XmlReader reader)
 		{
 			if (!reader.IsStartElement("Item"))
@@ -154,6 +164,11 @@ namespace IntegrationSys.Flow
 			return flowItem;
 		}
 
+        /// <summary>
+        /// Method属性的读取
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
 		private Method ParseMethod(XmlReader reader)
 		{
 			if (!reader.IsStartElement("Method"))
@@ -172,6 +187,11 @@ namespace IntegrationSys.Flow
 			return method;
 		}
 
+        /// <summary>
+        /// property 属性读取
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
 		private Property ParseProperty(XmlReader reader)
 		{
 			if (!reader.IsStartElement("Property"))
@@ -254,6 +274,10 @@ namespace IntegrationSys.Flow
 			reader.Read();
 			return property;
 		}
+
+
+
+
 
 		private void AddFlowItem(FlowItem flowItem)
 		{

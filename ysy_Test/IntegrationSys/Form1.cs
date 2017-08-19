@@ -441,6 +441,10 @@ namespace IntegrationSys
 			}
 		}
 
+        /// <summary>
+        /// 保存IP 和SN 并更新
+        /// </summary>
+        /// <param name="flowItem"></param>
 		private void UpdatePhoneInfo(FlowItem flowItem)
 		{
 			if (flowItem.Name == "SN")
@@ -459,6 +463,11 @@ namespace IntegrationSys
 			}
 		}
 
+        /// <summary>
+        /// 测试状态
+        /// 1测试中 2测试完成
+        /// </summary>
+        /// <param name="flowItem"></param>
 		private void UpdateData(FlowItem flowItem)
 		{
 			switch (flowItem.Status)
@@ -530,6 +539,11 @@ namespace IntegrationSys
 			}
 		}
 
+        /// <summary>
+        /// 依赖项检测
+        /// </summary>
+        /// <param name="dependSet"></param>
+        /// <returns></returns>
 		private bool CheckDepend(HashSet<int> dependSet)
 		{
 			if (dependSet == null)
@@ -699,16 +713,23 @@ namespace IntegrationSys
 			}
 		}
 
+        /// <summary>
+        /// 开始计时
+        /// </summary>
 		private void StartFlowTimer()
 		{
 			this.totalTime_ = 0;
 			this.timer.Start();
 		}
 
+        /// <summary>
+        /// 计时结束
+        /// </summary>
 		private void StopFlowTimer()
 		{
 			this.timer.Stop();
 		}
+
 
 		private void FlowTimerTickHandler(object sender, EventArgs e)
 		{
