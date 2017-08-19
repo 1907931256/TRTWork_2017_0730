@@ -125,6 +125,12 @@ namespace IntegrationSys
 			this.timer.Tick += new EventHandler(this.FlowTimerTickHandler);
 		}
 
+
+        /// <summary>
+        /// 窗体登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void MainFormLoad(object sender, EventArgs e)
 		{
 			this.LoadFlowItemList();
@@ -221,6 +227,9 @@ namespace IntegrationSys
 			}
 		}
 
+        /// <summary>
+        /// 复位，从新开始测试
+        /// </summary>
 		private void ReloadFlowTest()
 		{
 			if (FlowControl.Instance.FlowStatus == 3)

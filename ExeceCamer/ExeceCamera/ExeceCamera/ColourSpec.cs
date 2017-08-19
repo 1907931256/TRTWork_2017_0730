@@ -587,6 +587,12 @@ namespace ExeceCamera
         /// <param name="e"></param>
         private void ProportionBtn_Click(object sender, EventArgs e)
         {
+
+            upRatio =Convert.ToDouble(textBox1.Text);
+            downRatio = Convert.ToDouble(textBox2.Text);
+
+            #region  24快色卡
+
             sys_ini.MaxRG = sys_ini.MinRG = sys_ini.MaxRG1 = sys_ini.MinRG1 = sys_ini.MAXBG = sys_ini.MinBG = sys_ini.MAXBG1 = sys_ini.MinBG1="";
 
             foreach (var item in columnNames_RG)
@@ -596,16 +602,31 @@ namespace ExeceCamera
 
                 dapublic_.RemoveProportionData(data_, 0.1, out remainData);
 
-                sys_ini.MaxRG += dapublic_.GetMax(remainData).ToString() + ",";
-                sys_ini.MinRG += dapublic_.GetMin(remainData).ToString() + ",";
+                double max =dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min = dapublic_.GetMin(remainData) - dapublic_.GetOffect(remainData) * downRatio;
+                if (min < 0)
+                {
+                    min = 0;
+                }
+
+
+                sys_ini.MaxRG +=  max.ToString("#0.00") + ",";
+                sys_ini.MinRG += min.ToString("#0.00") + ",";
 
 
                 data_ = dapublic_.GetDataCateReturnDouble(dt, item, "1");
 
                 dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+                double max1 = dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min1 = dapublic_.GetMin(remainData) - dapublic_.GetOffect(remainData) * downRatio;
+                if (min1 < 0)
+                {
+                    min1 = 0;
+                }
 
-                sys_ini.MaxRG1 += dapublic_.GetMax(remainData).ToString() + ",";
-                sys_ini.MinRG1 += dapublic_.GetMin(remainData).ToString() + ",";
+
+                sys_ini.MaxRG1 +=  max1.ToString("#0.00") + ",";
+                sys_ini.MinRG1 += min1.ToString("#0.00") + ",";
 
 
             }
@@ -622,15 +643,27 @@ namespace ExeceCamera
 
                 dapublic_.RemoveProportionData(data_, 0.1, out remainData);
 
-                sys_ini.MAXBG += dapublic_.GetMax(remainData).ToString() + ",";
-                sys_ini.MinBG += dapublic_.GetMin(remainData).ToString() + ",";
+                double max = dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min = dapublic_.GetMin(remainData)-dapublic_.GetOffect(remainData) * downRatio;
+                if (min<0)
+                {
+                    min = 0;
+                }
+                sys_ini.MAXBG += max.ToString("#0.00") + ",";
+                sys_ini.MinBG += min.ToString("#0.00") + ",";
 
                 data_ = dapublic_.GetDataCateReturnDouble(dt, item, "1");
 
                 dapublic_.RemoveProportionData(data_, 0.1, out remainData);
 
-                sys_ini.MAXBG1 += dapublic_.GetMax(remainData).ToString() + ",";
-                sys_ini.MinBG1 += dapublic_.GetMin(remainData).ToString() + ",";
+                double max1 = dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min1 = dapublic_.GetMin(remainData) - dapublic_.GetOffect(remainData) * downRatio;
+                if (min1 < 0)
+                {
+                    min1 = 0;
+                }
+                sys_ini.MAXBG1 += max1.ToString("#0.00") + ",";
+                sys_ini.MinBG1 += min1.ToString("#0.00") + ",";
 
 
             }
@@ -638,6 +671,51 @@ namespace ExeceCamera
             sys_ini.MinBG = sys_ini.MinBG + "1.5,1.5,1.5,1.5,";
             sys_ini.MAXBG1 = sys_ini.MAXBG1 + "1.5,1.5,1.5,1.5,";//补全后面部分数据
             sys_ini.MinBG1 = sys_ini.MinBG1 + "1.5,1.5,1.5,1.5,";
+
+            #endregion
+
+            #region stdev
+
+            sys_ini.ColorFrontMaxStdev = sys_ini.ColorFrontMinStdev = sys_ini.ColorMaxStdev = sys_ini.ColorMinStdev = "";
+
+            foreach (var item in columnNames_STDEV)
+            {
+                double[] remainData;//剩下的数据
+                double[] data_ = dapublic_.GetDataCateReturnDouble(dt, item, "1");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+                double max1 = dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min1 = dapublic_.GetMin(remainData) - dapublic_.GetOffect(remainData) * downRatio;
+                if (min1 < 0)
+                {
+                    min1 = 0;
+                }
+
+
+                sys_ini.ColorFrontMaxStdev +=  max1.ToString("#0.00") + ",";
+                sys_ini.ColorFrontMinStdev += min1.ToString("#0.00") + ",";
+
+
+                data_ = dapublic_.GetDataCateReturnDouble(dt, item, "0");
+
+                dapublic_.RemoveProportionData(data_, 0.1, out remainData);
+                double max = dapublic_.GetMax(remainData) + dapublic_.GetOffect(remainData) * upRatio;
+                double min = dapublic_.GetMin(remainData) - dapublic_.GetOffect(remainData) * downRatio;
+                if (min < 0)
+                {
+                    min = 0;
+                }
+
+                sys_ini.ColorMaxStdev +=  max.ToString("#0.00") + ",";
+                sys_ini.ColorMinStdev += min.ToString("#0.00") + ",";
+
+
+            }
+
+            #endregion
+
+
+
 
             button1.Visible = true;
 
@@ -652,6 +730,8 @@ namespace ExeceCamera
         /// </summary>
         private void SaveInIni()
         {
+            #region 24色块
+
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinRG", sys_ini.MinRG);
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MaxRG", sys_ini.MaxRG);
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MAXBG", sys_ini.MAXBG);
@@ -661,6 +741,18 @@ namespace ExeceCamera
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MaxRG1", sys_ini.MaxRG1);
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MAXBG1", sys_ini.MAXBG1);
             INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "System", "MinBG1", sys_ini.MinBG1);
+
+            #endregion
+
+
+            #region stdev
+
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "Cam", "ColorMaxStdev", sys_ini.ColorMaxStdev);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "Cam", "ColorMinStdev", sys_ini.ColorMinStdev);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "FrontCam", "ColorFrontMaxStdev", sys_ini.ColorFrontMaxStdev);
+            INIOperationClass.INIWriteValue(filePath_ini + "\\system1.ini", "FrontCam", "ColorFrontMinStdev", sys_ini.ColorFrontMinStdev);
+
+            #endregion
 
             MessageBox.Show("执行完毕！");
         }
