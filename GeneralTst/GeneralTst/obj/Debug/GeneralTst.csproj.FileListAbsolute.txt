@@ -16,3 +16,4 @@ e:\TRTWork\GeneralTst\GeneralTst\obj\Debug\GeneralTst.csproj.GenerateResource.Ca
 e:\TRTWork\GeneralTst\GeneralTst\obj\Debug\GeneralTst.exe
 e:\TRTWork\GeneralTst\GeneralTst\obj\Debug\GeneralTst.pdb
 E:\TRTWork\GeneralTst\GeneralTst\obj\Debug\GeneralTst.csprojResolveAssemblyReference.cache
+e:\TRTWork\GeneralTst\GeneralTst\obj\Debug\GeneralTst.csproj.CoreCompileInputs.cache
