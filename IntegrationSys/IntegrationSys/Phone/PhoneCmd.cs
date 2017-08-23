@@ -101,6 +101,12 @@ namespace IntegrationSys.Phone
             }
         }
 
+
+        /// <summary>
+        /// wifi通讯连接
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecuteApkConnect(string param, out string retValue)
         {
             bool result = false;
@@ -108,7 +114,7 @@ namespace IntegrationSys.Phone
             if (param == "Wifi")
             {
                 //result = Connect(AppInfo.PhoneInfo.IP, 3000);
-                result = Connect("192.168.0.48", 3000);
+                result = Connect("192.168.0.53", 3000);
                 AppInfo.PhoneInfo.ConnectType = 1;
             }
             else
