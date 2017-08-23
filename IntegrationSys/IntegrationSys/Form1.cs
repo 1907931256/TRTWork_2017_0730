@@ -255,6 +255,11 @@ namespace IntegrationSys
             }
         }
 
+        /// <summary>
+        /// 手动点击流程测试开始
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void 关于AToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StartFlowTest();
@@ -372,6 +377,10 @@ namespace IntegrationSys
             labelSN.Text = sn;
         }
 
+
+        /// <summary>
+        /// 测试结果显示
+        /// </summary>
         private void ShowResult()
         {
             if (FlowControl.Instance.FlowResult == FlowControl.FLOW_RESULT_PASS)
@@ -388,6 +397,10 @@ namespace IntegrationSys
             }
         }
 
+        /// <summary>
+        /// 更新手机状态信息
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void UpdatePhoneInfo(FlowItem flowItem)
         {
             if (flowItem.Name == "SN")
@@ -444,6 +457,11 @@ namespace IntegrationSys
             }
         }
 
+
+        /// <summary>
+        /// 测试完成后数据更新
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void UpdateFinish(FlowItem flowItem)
         {
             if (flowItem.Status == FlowItem.STATUS_FINISH && !flowItem.Item.Property.Hide)
@@ -489,6 +507,11 @@ namespace IntegrationSys
             }
         }
 
+        /// <summary>
+        /// 依赖项目检测
+        /// </summary>
+        /// <param name="dependSet"></param>
+        /// <returns></returns>
         private bool CheckDepend(HashSet<int> dependSet)
         {
             if (dependSet == null) return true;

@@ -214,6 +214,10 @@ namespace IntegrationSys.Flow
             }
         }
 
+        /// <summary>
+        /// 增加依赖项
+        /// </summary>
+        /// <param name="depend"></param>
         public void AddDepend(int depend)
         {
             if (dependSet_ == null)

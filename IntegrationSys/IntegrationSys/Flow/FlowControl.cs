@@ -12,22 +12,49 @@ namespace IntegrationSys.Flow
     /// </summary>
     sealed class FlowControl
     {
+        /// <summary>
+        /// 测试初始化
+        /// </summary>
         public const int FLOW_STATUS_INIT = 0;
+        /// <summary>
+        /// 测试中
+        /// </summary>
         public const int FLOW_STATUS_RUNNING = 1;
+        /// <summary>
+        /// 暂停
+        /// </summary>
         public const int FLOW_STATUS_PAUSE = 2;
+        /// <summary>
+        /// 测试完成
+        /// </summary>
         public const int FLOW_STATUS_COMPLETE = 3;
 
-        public const int FLOW_COMPLETE_NORMAL = 0;
+        public const int FLOW_COMPLETE_NORMAL = 0;   //正常测试完成
         public const int FLOW_COMPLETE_SWITCH = 1;   //switch引起的测试完成
         public const int FLOW_COMPLETE_STOP = 2;     //stop引起的测试完成
 
+        /// <summary>
+        /// 测试结果初始化
+        /// </summary>
         public const int FLOW_RESULT_INIT = 0;
+        /// <summary>
+        /// 测试结果PASS
+        /// </summary>
         public const int FLOW_RESULT_PASS = 1;
+        /// <summary>
+        /// 测试结果Fall
+        /// </summary>
         public const int FLOW_RESULT_FAIL = 2;
+        /// <summary>
+        /// 测试结果异常
+        /// </summary>
         public const int FLOW_RESULT_EXCEPTION = 3;   //测试中异常stop，则直接输出exception结果
 
         private static FlowControl instance_ = null;
 
+        /// <summary>
+        /// Item集合
+        /// </summary>
         private List<FlowItem> flowItemList_;
 
         public static FlowControl Instance
@@ -88,7 +115,7 @@ namespace IntegrationSys.Flow
         }
 
         /// <summary>
-        /// 根据id来获取FlowItem
+        /// 根据id来获取 Item
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -114,9 +141,13 @@ namespace IntegrationSys.Flow
             return 0;
         }
 
+        /// <summary>
+        /// 测试脚本加载
+        /// </summary>
+        /// <param name="filename"></param>
         private void LoadFlowFile(string filename)
         {
-            XmlReaderSettings settings = new XmlReaderSettings();
+            XmlReaderSettings settings = new XmlReaderSettings(); //测试脚本初始化的一些设定
             settings.IgnoreComments = true;
             settings.IgnoreProcessingInstructions = true;
             settings.IgnoreWhitespace = true;
@@ -124,7 +155,7 @@ namespace IntegrationSys.Flow
             {
                 using (XmlReader reader = XmlReader.Create(filename, settings))
                 {
-                    reader.MoveToContent();
+                    reader.MoveToContent();//移动到文本正确内容
                     while (reader.Read())
                     {
                         if (reader.IsStartElement("Item"))
@@ -143,6 +174,11 @@ namespace IntegrationSys.Flow
 
         }
 
+        /// <summary>
+        /// 解析Item
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         private FlowItem ParseFlowItem(XmlReader reader)
         {
             if (!reader.IsStartElement("Item")) return null;
@@ -162,6 +198,11 @@ namespace IntegrationSys.Flow
             return flowItem;
         }
 
+        /// <summary>
+        /// 解析Method节
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         private Method ParseMethod(XmlReader reader)
         {
             if (!reader.IsStartElement("Method")) return null;
@@ -180,6 +221,12 @@ namespace IntegrationSys.Flow
             return method;
         }
 
+
+        /// <summary>
+        /// 解析Property节
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         private Property ParseProperty(XmlReader reader)
         {
             if (!reader.IsStartElement("Property")) return null;
@@ -281,6 +328,11 @@ namespace IntegrationSys.Flow
             return property;
         }
 
+
+        /// <summary>
+        /// 添加测试脚本
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void AddFlowItem(FlowItem flowItem)
         {
             if (flowItemList_ == null)
@@ -291,9 +343,11 @@ namespace IntegrationSys.Flow
             flowItemList_.Add(flowItem);
         }
 
+
         private void AddDependAndBedepend(FlowItem flowItem, int dependId)
         {
             FlowItem dependItem = GetFlowItem(dependId);
+
             if (dependItem != null)
             {
                 if (dependItem.Item.Property.Disable)

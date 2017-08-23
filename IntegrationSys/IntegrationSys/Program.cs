@@ -8,6 +8,8 @@ using IntegrationSys.LogUtil;
 using IntegrationSys.Net;
 using System.Diagnostics;
 
+
+//log4net写日志的必备条件
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace IntegrationSys
 {
