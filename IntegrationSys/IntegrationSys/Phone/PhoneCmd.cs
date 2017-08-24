@@ -113,8 +113,16 @@ namespace IntegrationSys.Phone
 
             if (param == "Wifi")
             {
-                //result = Connect(AppInfo.PhoneInfo.IP, 3000);
-                result = Connect("192.168.0.53", 3000);
+#if home
+               result = Connect("192.168.0.53", 3000);
+#elif company
+
+               result = Connect("192.168.0.53", 3000);
+#else
+                result = Connect(AppInfo.PhoneInfo.IP, 3000);
+#endif
+
+
                 AppInfo.PhoneInfo.ConnectType = 1;
             }
             else

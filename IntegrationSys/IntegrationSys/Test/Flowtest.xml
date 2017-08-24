@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="命令行操作" action="ADB命令" parameters="getprop gsm.serial 0 16" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="SN">
+		</Property><Property spec="[A-Z0-9]{16}">
+		</Property><Property specdescribe="SN">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="1">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	
+	<Item id="2">
+		<Method name="手机操作" action="APK通信连接" parameters="Wifi" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" disable="" bedepend="" depend="1">
+		</Method><Property name="APK通信连接">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="结果">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="10">
+		</Property><Property hide="">
+		</Property><Property condition="">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	
+	<Item id="3">
+		<Method name="手机操作" action="GetSDCInfo" parameters="all" compare="S== D[] D[]" disable="" bedepend="" depend="">
+		</Method><Property name="SD卡">
+		</Property><Property spec="/storage/emulated/0 100~60000 0~60000">
+		</Property><Property specdescribe="路径 总量 可用">
+		</Property><Property enspecdescribe="Path1 Total1 Avail1">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>		
+	
+	<Item id="4">
+		<Method name="手机操作" action="APK通信断开" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Property name="Wifi断开">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="结果">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="">
+		</Property><Property depend="3">
+		</Property>
+	</Item>
+		
+</Main>

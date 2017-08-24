@@ -165,6 +165,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Test\IntegrationSys.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -176,6 +177,18 @@
     <Content Include="FFTWSharp\libfftw3f-3.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Test\1000HZ.wav" />
+    <Content Include="Test\adb.exe" />
+    <Content Include="Test\AdbWinApi.dll" />
+    <Content Include="Test\AdbWinUsbApi.dll" />
+    <Content Include="Test\apkset.xml" />
+    <Content Include="Test\CommonPortCmd.dll" />
+    <Content Include="Test\DataConfig.xml" />
+    <Content Include="Test\Flowtest.xml" />
+    <Content Include="Test\Flowtest_merge.xml" />
+    <Content Include="Test\trt1.jpg" />
+    <Content Include="Test\trt2.jpg" />
+    <Content Include="Test\trt3.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
